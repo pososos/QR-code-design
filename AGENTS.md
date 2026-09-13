@@ -329,3 +329,11 @@ node語法與無頭Edge實測通過：文字檔、真實文字PDF、截斷、非
 使用者已自行建立 HF ZeroGPU Space，要求串接。新增 [hf_space/app.py](hf_space/app.py)：自包含 Gradio 版 cement/inference.py 檢索＋可選重排邏輯（不依賴本機 SQLite／cement 套件其餘部分，不暴露清冊或標註端點），`stages()`／`top()` 已用單元比對確認與 cement/staged_classification.py 逐字元一致，7 類描述已核對與 config/semantic-labels.json 完全相同（原稿 manuscript_notes 曾有改寫差異，已修正為逐字相同）。另有 [hf_space/requirements.txt](hf_space/requirements.txt)、[hf_space/README.md](hf_space/README.md)（含 Spaces YAML 前頭與推送步驟）。
 
 推送需使用者自己 `hf auth login` 或 git 推送，本輪未取得 token 也未代為登入。已用 `py_compile` 確認語法正確，因本機無 gradio/spaces/torch 無法端到端執行；核心邏輯已用單元測試驗證行為與既有程式一致。59 項既有 pytest 不受影響（未改動 cement/ 套件）。下一步待使用者提供實際部署後的 Space API 網址，才能把 docs/showcase.js 接上真正的公開推論端點。
+
+## 公開展示頁接上 HF ZeroGPU Space（2026-09-14）
+
+使用者已自行建立並推送 Space（https://huggingface.co/spaces/YOU-LIN/QR-code-design ，host `you-lin-qr-code-design.hf.space`，hardware zero-a10g，狀態 RUNNING）。修正 hf_space/README.md 的 YAML `colorTo: orange` 不在 HF 允許清單（改 yellow）。
+
+`docs/showcase.js` 新增第二個推論後端：先試本機同站 `/api/model-status`（不變），失敗才試公開 Space 的 `/config`；偵測到 Space 時停用「自訓分類」選項（Space 未部署該模型），狀態文字先告知「會傳送到該服務」才允許按下執行。已用 curl 直接呼叫 Space 的 `/gradio_api/call/predict`＋SSE 結果端點確認端到端可用，且回應含 `access-control-allow-origin` 正確回顯 GitHub Pages 來源。
+
+瀏覽器實測 https://pososos.github.io/QR-code-design/ ：狀態列正確顯示「已連接公開 Hugging Face Space」；輸入 SDS 相關英文文字，retrieval 方法在 title 階段以 embedding score=0.901 命中 safety，耗時 4.66 秒；輸入水泥收縮開裂中文段落，retrieval_rerank 方法跑完 title→body embedding→body reranker 全部三階段，因 reranker score=-5.128 未達 ≥0 門檻正確棄權（即使 gap=1.719 已達標，兩條件需同時成立），耗時 11.56 秒。兩次呼叫皆為真實模型推論，非模擬。59 項既有 pytest 不受影響（僅改前端 JS／HTML 與 hf_space/ 部署檔）。
