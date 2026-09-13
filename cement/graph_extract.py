@@ -9,7 +9,7 @@ import argparse
 import hashlib
 import json
 import re
-from cement import store, graph_handoff
+from cement import migrations, store, graph_handoff
 
 EXTRACTOR_VERSION = 'graph_extract-v1-rule'
 CUE_PHRASES = {
@@ -30,10 +30,7 @@ def schema(db):
       id TEXT PRIMARY KEY, document_version_id TEXT NOT NULL,
       extractor_version TEXT NOT NULL, schema_version TEXT NOT NULL,
       status TEXT NOT NULL DEFAULT 'candidates_generated', created_at TEXT DEFAULT CURRENT_TIMESTAMP);''')
-    # No migration framework exists yet; add the column for installs created before staleness tracking.
-    columns = {row[1] for row in db.execute('PRAGMA table_info(extraction_jobs)')}
-    if 'document_id' not in columns:
-        db.execute('ALTER TABLE extraction_jobs ADD COLUMN document_id TEXT NOT NULL DEFAULT \'\'')
+    migrations.ensure_column(db, 'extraction_jobs', 'document_id', "TEXT NOT NULL DEFAULT ''")
     db.executescript('''
     CREATE TABLE IF NOT EXISTS graph_candidates (
       id TEXT PRIMARY KEY, job_id TEXT NOT NULL, document_version_id TEXT NOT NULL,

@@ -149,3 +149,13 @@ pytest -q -p no:cacheprovider --basetemp=data/test-d008-track3-full-20260913：3
 pytest -q -p no:cacheprovider：44 passed（原37＋新增 tests/test_pagination.py 4 項、tests/test_graph_extract.py 新增 3 項），2 個既有相依套件棄用警告。
 
 本機以既有 513 份庫（392 parsed）重啟服務實測：`GET /api/documents?limit=3` 回傳 `X-Total-Count: 513` 且僅回 3 筆；`POST /api/graph/extract` 對現有 pending 候選正常運作（初次遷移時因 `extraction_jobs` 缺 `document_id` 欄位觸發 `sqlite3.OperationalError`，已用 `PRAGMA table_info` 偵測後 `ALTER TABLE` 補欄位修復，修復後重試成功、pytest 44 項仍全過）；以 API 直接接受兩筆候選並建立一筆 `same_event_candidate` 關聯後，`/graph` 頁面以瀏覽器 DOM 查詢確認 SVG 正確畫出 2 個 `<rect>` 節點與 1 條 `<line>` 連線（畫面截圖因瀏覽器分頁背景執行不穩定而改用 DOM／API 交叉驗證，非省略驗證）。未修改既有人工標籤、review.py 或 dataset 邏輯。
+
+## D-006 深化、時間軸與本機語意檢索（2026-09-13）
+
+pytest -q -p no:cacheprovider：54 passed（原44＋新增 tests/test_graph_store.py 5 項、tests/test_vector_search.py 5 項；test_pipeline.py 既有訓練/預測測試擴充斷言涵蓋 registry／calibration／predict-log，未增加測試數）。
+
+真實模型推論實測（非 mock，本機 CPU）：`POST /api/search/semantic-reindex` 對 392 份 parsed 文件建置 E5-small embedding 快取，耗時約 61 秒；`GET /api/search/semantic?q=hydration+kinetics+of+cement+paste` 前五名結果主題相關（NIST 水化動力學／水泥漿模型論文），管理頁語意搜尋切換鈕操作得到一致結果。管理頁分頁：513 份、每頁 50、共 11 頁，上一頁／下一頁與頁碼正確更新。
+
+`/graph` 頁面掃描出 281 筆規則式實體候選（config/entity-gazetteer.json）；把兩份不同文件的「NIST」候選分別連結到同一個新建實體後，`/api/graph/entities/{id}/mentions` 正確回報「2 處提及、2 個文件版本」，證實跨文件實體對齊實際運作。過程中發現一個真實前端 bug：實體連結成功後畫面重繪順序寫反（先重畫候選清單、後更新實體快取），導致新建實體不會立即出現在其他候選的「連到既有實體」下拉選單，需再操作一次才顯示；已修正為先 `loadEntities()` 再 `loadMentions()`，修正後重新整理頁面驗證選單正確顯示新實體。
+
+從一筆已接受候選拆出 Event 與 Outcome 節點，建立 `has_outcome` 正式關係（assertion_mode=explicit_in_source，引用該候選 evidence_id）成功；建立 tag「shrinkage／收縮」與其 broader 為「drying shrinkage／乾燥收縮」成功；在 Event 節點填 `event_time=day 7` 後，`/timeline` 頁面正確把它列入「已知事件時間」區塊、與「抓取時間」區塊（101 筆，含截斷提示）分開顯示。rerank 路徑（bge-reranker）本次僅程式與 mock 測試驗證，未在瀏覽器實測（預期單次查詢需十幾秒，超出本輪互動測試時間）。詳見 [知識圖譜深化與語意檢索](docs/知識圖譜深化與語意檢索20260913.md)，含完整限制聲明。

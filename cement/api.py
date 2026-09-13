@@ -1,6 +1,8 @@
 from io import BytesIO
 from pathlib import Path
 from typing import Literal
+import json
+import time
 import joblib
 import qrcode
 import qrcode.image.svg
@@ -50,10 +52,34 @@ class Predict(BaseModel):
 def predict(value: Predict):
     path = Path('models/classifier.joblib')
     if not path.exists(): raise HTTPException(409, 'No trained model. Label documents and train first.')
+    start = time.perf_counter()
     # Load only this locally generated artifact; never accept uploaded pickle files.
     model = joblib.load(path)
     scores = model.predict_proba([sample(value.text)])[0]
-    return {'label': str(model.classes_[scores.argmax()]), 'scores': dict(zip(model.classes_, map(float, scores))), 'review_required': True}
+    latency_ms = (time.perf_counter() - start) * 1000
+    label = str(model.classes_[scores.argmax()])
+    with store.connect() as db:
+        db.execute('''CREATE TABLE IF NOT EXISTS prediction_log (
+            id INTEGER PRIMARY KEY, latency_ms REAL NOT NULL, predicted_label TEXT NOT NULL,
+            top_score REAL NOT NULL, created_at TEXT DEFAULT CURRENT_TIMESTAMP)''')
+        db.execute('INSERT INTO prediction_log(latency_ms, predicted_label, top_score) VALUES (?,?,?)',
+                   (latency_ms, label, float(scores.max())))
+    return {'label': label, 'scores': dict(zip(model.classes_, map(float, scores))),
+            'review_required': True, 'latency_ms': latency_ms}
+
+@app.get('/api/predict-log')
+def predict_log(limit: int = 50):
+    with store.connect() as db:
+        db.execute('''CREATE TABLE IF NOT EXISTS prediction_log (
+            id INTEGER PRIMARY KEY, latency_ms REAL NOT NULL, predicted_label TEXT NOT NULL,
+            top_score REAL NOT NULL, created_at TEXT DEFAULT CURRENT_TIMESTAMP)''')
+        rows = db.execute('SELECT * FROM prediction_log ORDER BY id DESC LIMIT ?', (limit,)).fetchall()
+        return [dict(r) for r in rows]
+
+@app.get('/api/model-registry')
+def model_registry():
+    registry_path = Path('models/registry.json')
+    return json.loads(registry_path.read_text(encoding='utf-8')) if registry_path.exists() else []
 
 @app.get('/api/qr')
 def qr(url: str = 'http://127.0.0.1:8000/'):
@@ -70,7 +96,6 @@ def review_page():
 
 @app.get('/api/review/{doc_id}')
 def review_detail(doc_id: str, full: bool = False):
-    import json
     from cement.review import schema, fingerprint
     with store.connect() as db:
         schema(db)
@@ -220,3 +245,164 @@ def api_add_candidate_relation(value: CandidateRelation):
 def api_list_candidate_relations():
     from cement import graph_extract
     return graph_extract.list_candidate_relations()
+
+
+# --- Entities, nodes, formal relations, tags, timeline (cement/graph_store.py) ---
+
+@app.post('/api/graph/entity-mentions/extract')
+def api_extract_mentions():
+    from cement import graph_store
+    return {'mentions_created': len(graph_store.extract_mentions())}
+
+@app.get('/api/graph/entity-mentions')
+def api_list_mentions(status: str = 'pending'):
+    from cement import graph_store
+    return graph_store.list_mentions(status)
+
+class MentionLink(BaseModel):
+    entity_id: str | None = None
+    name_en: str = ''
+    name_zh: str = ''
+    created_by: str = Field(min_length=1, max_length=100)
+
+@app.post('/api/graph/entity-mentions/{mention_id}/link')
+def api_link_mention(mention_id: str, value: MentionLink):
+    from cement import graph_store
+    try:
+        entity_id = graph_store.link_mention(
+            mention_id, value.created_by, entity_id=value.entity_id,
+            new_entity={'name_en': value.name_en, 'name_zh': value.name_zh} if not value.entity_id else None)
+    except ValueError as exc:
+        raise HTTPException(400, str(exc)) from exc
+    return {'entity_id': entity_id}
+
+@app.get('/api/graph/entities')
+def api_list_entities():
+    from cement import graph_store
+    return graph_store.list_entities()
+
+@app.get('/api/graph/entities/{entity_id}/mentions')
+def api_entity_mentions(entity_id: str):
+    from cement import graph_store
+    return graph_store.mentions_for_entity(entity_id)
+
+
+class GraphNode(BaseModel):
+    node_type: Literal['Event', 'Condition', 'Outcome']
+    parent_candidate_id: str
+    description: str = Field(min_length=1, max_length=2000)
+    event_time: str = Field(default='', max_length=200)
+    created_by: str = Field(min_length=1, max_length=100)
+
+@app.post('/api/graph/nodes')
+def api_create_node(value: GraphNode):
+    from cement import graph_store
+    payload = {'description': value.description}
+    if value.event_time:
+        payload['event_time'] = value.event_time
+    try:
+        return {'id': graph_store.create_node(value.node_type, value.parent_candidate_id, payload, value.created_by)}
+    except ValueError as exc:
+        raise HTTPException(400, str(exc)) from exc
+
+@app.get('/api/graph/nodes')
+def api_list_nodes(document_version_id: str | None = None):
+    from cement import graph_store
+    return graph_store.list_nodes(document_version_id)
+
+
+class GraphRelation(BaseModel):
+    from_id: str
+    from_type: Literal['Event', 'Condition', 'Outcome', 'Claim', 'Entity', 'DocumentVersion']
+    to_id: str
+    to_type: Literal['Event', 'Condition', 'Outcome', 'Claim', 'Entity', 'DocumentVersion']
+    relation_type: Literal['participates_in', 'occurs_under', 'has_outcome', 'claims_cause',
+                            'supports', 'contradicts', 'concludes_from', 'precedes', 'describes']
+    evidence_ids: list[str] = Field(min_length=1)
+    assertion_mode: Literal['explicit_in_source', 'model_inference', 'human_interpretation']
+    polarity: Literal['affirmative', 'negative'] = 'affirmative'
+    note: str = Field(default='', max_length=2000)
+    created_by: str = Field(min_length=1, max_length=100)
+
+@app.post('/api/graph/relations')
+def api_create_relation(value: GraphRelation):
+    from cement import graph_store
+    try:
+        return {'id': graph_store.create_relation(
+            value.from_id, value.from_type, value.to_id, value.to_type, value.relation_type,
+            value.created_by, value.evidence_ids, value.assertion_mode, value.note, value.polarity)}
+    except ValueError as exc:
+        raise HTTPException(400, str(exc)) from exc
+
+@app.get('/api/graph/relations')
+def api_list_relations():
+    from cement import graph_store
+    return graph_store.list_relations()
+
+
+class Tag(BaseModel):
+    pref_label_en: str = ''
+    pref_label_zh: str = ''
+    definition: str = Field(default='', max_length=2000)
+    broader_id: str | None = None
+    created_by: str = Field(min_length=1, max_length=100)
+
+@app.post('/api/graph/tags')
+def api_create_tag(value: Tag):
+    from cement import graph_store
+    try:
+        return {'id': graph_store.create_tag(value.created_by, value.pref_label_en, value.pref_label_zh,
+                                              definition=value.definition, broader_id=value.broader_id)}
+    except ValueError as exc:
+        raise HTTPException(400, str(exc)) from exc
+
+@app.get('/api/graph/tags')
+def api_list_tags():
+    from cement import graph_store
+    return graph_store.list_tags()
+
+class NodeTag(BaseModel):
+    node_id: str
+    node_type: str
+    tag_id: str
+    created_by: str = Field(min_length=1, max_length=100)
+
+@app.post('/api/graph/node-tags')
+def api_tag_node(value: NodeTag):
+    from cement import graph_store
+    try:
+        graph_store.tag_node(value.node_id, value.node_type, value.tag_id, value.created_by)
+    except ValueError as exc:
+        raise HTTPException(400, str(exc)) from exc
+    return {'saved': True}
+
+@app.get('/api/graph/node-tags')
+def api_node_tags(node_id: str):
+    from cement import graph_store
+    return graph_store.tags_for(node_id)
+
+
+@app.get('/timeline')
+def timeline_page():
+    return FileResponse(Path(__file__).parent / 'static' / 'timeline.html')
+
+@app.get('/api/graph/timeline')
+def api_timeline():
+    from cement import graph_store
+    return graph_store.timeline()
+
+
+# --- Local semantic search (cement/vector_search.py); complements /api/search, not a replacement ---
+
+@app.post('/api/search/semantic-reindex')
+def api_semantic_reindex():
+    from cement import vector_search
+    return {'updated': vector_search.reindex()}
+
+@app.get('/api/search/semantic')
+def api_semantic_search(q: str, limit: int = 10, rerank: bool = False):
+    from cement import vector_search
+    try:
+        return vector_search.semantic_search(q, limit, rerank)
+    except ValueError as exc:
+        raise HTTPException(400, str(exc)) from exc

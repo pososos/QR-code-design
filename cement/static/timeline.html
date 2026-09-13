@@ -1,0 +1,28 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>時間軸（雛形）</title>
+<style>body{font:16px system-ui;background:#f4f3ee;color:#233b36;margin:0}main{max-width:900px;margin:40px auto;padding:24px}h1{font-size:26px}h2{font-size:18px;margin-top:32px}a{color:#236e63}article{background:white;border:1px solid #ddd;border-radius:8px;padding:14px 18px;margin:10px 0}.meta{color:#667;font-size:13px}.warn{background:#fff6e0;border:1px solid #e0c56a;padding:10px 14px;border-radius:6px;margin:10px 0}</style>
+<main><p><a href="/">← 返回清冊</a> · <a href="/graph">圖譜候選審核</a></p>
+<h1>時間軸（雛形）</h1>
+<p class="meta">兩組資料分開列出，刻意不合併排序：合併會製造假精確度。事件時間只在 /graph 頁面對已接受候選做節點分解時，人工填寫才會出現；抓取時間只是爬蟲拿到檔案的時間，不是出版日期。</p>
+
+<h2>已知事件時間（人工登錄，於 /graph 節點分解時填寫）</h2>
+<div id="events">載入中…</div>
+
+<h2>抓取時間（僅供參考排序，非出版日期）</h2>
+<div class="warn">以下時間是爬蟲取得檔案的時間（sources.checked_at），不是文件的出版或撰寫日期；同一批次抓取的文件時間會很接近，不代表它們同時發生或同時發布。</div>
+<div id="fetch">載入中…</div>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+async function api(url){const r=await fetch(url);const body=await r.json();if(!r.ok)throw Error(JSON.stringify(body));return body}
+(async()=>{
+  try{
+    const data=await api('/api/graph/timeline');
+    $('events').replaceChildren();
+    if(!data.event_times.length){$('events').textContent='目前沒有人工登錄的事件時間。';}
+    for(const e of data.event_times){const a=document.createElement('article');const meta=document.createElement('div');meta.className='meta';meta.textContent=`文件版本 ${(e.document_version_id||'').slice(0,20)}…`;const v=document.createElement('div');v.textContent=`${e.value} — ${e.description}`;a.append(meta,v);$('events').append(a)}
+    $('fetch').replaceChildren();
+    for(const f of data.fetch_times.slice(0,100)){const a=document.createElement('article');a.textContent=`${f.value} · ${f.source_id||''} · ${(f.document_id||'').slice(0,16)}`;$('fetch').append(a)}
+    if(data.fetch_times.length>100){const p=document.createElement('p');p.className='meta';p.textContent=`僅顯示前 100 筆，共 ${data.fetch_times.length} 筆。`;$('fetch').append(p)}
+  }catch(e){$('events').textContent='載入失敗：'+e.message;$('fetch').textContent=''}
+})();
+</script></html>

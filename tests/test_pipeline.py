@@ -86,10 +86,17 @@ def test_training_and_prediction_roundtrip(tmp_path, monkeypatch):
     train()
     report = json.loads(Path('models/evaluation.json').read_text())
     assert not set(report['train_ids']) & set(report['test_ids'])
+    assert report['calibration']['bins']
+    registry = json.loads(Path('models/registry.json').read_text())
+    assert registry[0]['holdout_sources'] == ['test-source']
+    assert Path(registry[0]['path']).exists()
     response = TestClient(app).post('/api/predict', json={'text':'hydration kinetics research'})
     assert response.status_code == 200
     assert set(response.json()['scores']) == {'research','safety'}
     assert response.json()['review_required'] is True
+    assert response.json()['latency_ms'] >= 0
+    log = TestClient(app).get('/api/predict-log').json()
+    assert log[0]['predicted_label'] in {'research', 'safety'}
 
 def test_challenge_and_corrupt_text_not_training_ready(tmp_path, monkeypatch):
     setup_data(tmp_path, monkeypatch)

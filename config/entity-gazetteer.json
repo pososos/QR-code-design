@@ -1,0 +1,9 @@
+{
+  "material": ["Portland cement", "fly ash", "silica fume", "slag cement", "limestone",
+               "水泥", "飛灰", "矽灰", "爐石粉", "石灰石", "波特蘭水泥"],
+  "organization": ["NIST", "FHWA", "ASTM", "Heidelberg", "Cemex", "IEA",
+                    "台灣水泥", "台泥", "內政部建築研究所", "經濟部標準檢驗局", "水利署"],
+  "standard": ["ASTM C150", "ASTM C618", "ACI 318", "CNS 1088"],
+  "method": ["XRD", "SEM", "compressive strength", "hydration", "水化", "抗壓強度"],
+  "specimen": ["cylinder specimen", "mortar cube", "試體", "砂漿試塊"]
+}

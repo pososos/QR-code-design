@@ -1,6 +1,6 @@
 <!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>圖譜候選審核</title>
 <style>body{font:16px system-ui;background:#f4f3ee;color:#233b36;margin:0}main{max-width:900px;margin:40px auto;padding:24px}h1{font-size:26px}h2{font-size:19px;margin-top:40px}button,input,select{padding:9px;border:1px solid #aaa;border-radius:6px;background:white;font:inherit}article{background:white;border:1px solid #ddd;border-radius:8px;padding:16px;margin:14px 0}blockquote{margin:10px 0;padding:10px 14px;background:#f7f6f1;border-left:4px solid #226449}.meta{color:#667;font-size:13px}.row{display:flex;gap:10px;align-items:center;margin-top:10px;flex-wrap:wrap}a{color:#236e63}#msg,#linkMsg{min-height:24px;color:#667}#diagram{background:white;border:1px solid #ddd;border-radius:8px;overflow:auto}</style>
-<main><p><a href="/">← 返回清冊</a> · <a href="/review">審核工具</a></p>
+<main><p><a href="/">← 返回清冊</a> · <a href="/review">審核工具</a> · <a href="/timeline">時間軸</a></p>
 <h1>圖譜候選審核（規則抽取，僅供人工判斷）</h1>
 <p class="meta">句子含因果詞（導致／造成／因此／由於／引起／因而／due to／results in／leads to／caused by／because of／contributes to）不代表已證實因果；每筆都是原文句子（explicit_in_source），需人工接受或拒絕才算數，拒絕的候選不會再出現。原文更新後，舊版本尚未審核的候選會自動標記為 stale 並從此清單消失，已接受／拒絕的紀錄仍保留為歷史。</p>
 <div class="row"><button id="run">重新掃描既有解析文件</button><input id="reviewer" placeholder="審核者" list="reviewers"><datalist id="reviewers"><option value="pososos"></datalist></div>
@@ -12,6 +12,35 @@
 <div class="row"><select id="fromCand"></select><select id="relType"><option value="same_event_candidate">same_event_candidate（可能同一事件）</option><option value="precedes">precedes（時間先後）</option><option value="related">related（相關，非因果）</option></select><select id="toCand"></select><input id="linkNote" placeholder="備註（選填）" style="flex:1"><button id="link">建立關聯</button></div>
 <div id="linkMsg"></div>
 <div id="diagram"></div>
+
+<h2>節點分解：Event／Condition／Outcome（雛形，僅供已接受候選）</h2>
+<p class="meta">從一筆已接受的候選手動拆出結構化節點；這是人工判讀分解，不是自動 NLP／NLU 抽取。description 為必填，event_time 選填（如「day 7」「28天養護」等相對時間，不要用今天日期或抓取時間代替出版日期）。</p>
+<div class="row"><select id="nodeCand"></select><select id="nodeType"><option value="Event">Event（發生了什麼）</option><option value="Condition">Condition（什麼條件下）</option><option value="Outcome">Outcome（觀察到什麼結果）</option></select></div>
+<div class="row"><input id="nodeDesc" placeholder="description（必填，簡述節點內容）" style="flex:1"><input id="nodeTime" placeholder="event_time（選填，例如 day 7）"><button id="addNode">建立節點</button></div>
+<div id="nodeMsg"></div>
+<div id="nodeList"></div>
+
+<h2>正式關係（雛形）：連結節點／候選／實體</h2>
+<p class="meta">relation_type 依 docs/知識圖譜銜接設計.md 的關係詞彙；必須至少指定一個 evidence_id（可用下方「候選 evidence_id」欄位複製已接受候選的 evidence_id）。assertion_mode 需誠實填寫：explicit_in_source＝原文明說、human_interpretation＝你的判讀、model_inference＝模型推論（本頁無模型推論來源，通常不會用到）。</p>
+<div class="row"><select id="relFromType"></select><input id="relFromId" placeholder="from_id（貼上節點／候選／實體 id）" style="flex:1"><select id="relType2"></select><select id="relToType"></select><input id="relToId" placeholder="to_id（貼上節點／候選／實體 id）" style="flex:1"></div>
+<div class="row"><input id="relEvidence" placeholder="evidence_id（逗號分隔，可從候選卡片複製）" style="flex:2"><select id="relAssertion"><option value="explicit_in_source">explicit_in_source</option><option value="human_interpretation">human_interpretation</option><option value="model_inference">model_inference</option></select><select id="relPolarity"><option value="affirmative">affirmative</option><option value="negative">negative</option></select></div>
+<div class="row"><input id="relNote" placeholder="備註（選填）" style="flex:1"><button id="addRel">建立正式關係</button></div>
+<div id="relMsg"></div>
+<div id="relList"></div>
+
+<h2>實體候選與跨文件對齊（規則式，僅供人工確認）</h2>
+<p class="meta">依 config/entity-gazetteer.json 的小型詞表比對原文片段，命中只是候選；同一實體要在不同文件間對齊，必須人工選擇「連到既有實體」或「建立新實體」，字串相同不會自動合併。</p>
+<div class="row"><button id="scanMentions">掃描實體候選</button></div>
+<div id="mentionMsg"></div>
+<div id="mentionList"></div>
+<h3 style="font-size:15px">已對齊的實體（跨文件）</h3>
+<div id="entityList"></div>
+
+<h2>Tag 詞彙表（雛形）</h2>
+<p class="meta">tag 只是詞彙表節點，本身不代表因果或分類；可設定 broader（上位概念）。</p>
+<div class="row"><input id="tagEn" placeholder="pref_label_en"><input id="tagZh" placeholder="pref_label_zh"><select id="tagBroader"><option value="">（無上位概念）</option></select><button id="addTag">新增 tag</button></div>
+<div id="tagMsg"></div>
+<div id="tagList"></div>
 </main>
 <script>
 const $=id=>document.getElementById(id);
@@ -19,11 +48,11 @@ async function api(url,opts){const r=await fetch(url,opts);const body=await r.js
 function msg(s){$('msg').textContent=s}
 function linkMsg(s){$('linkMsg').textContent=s}
 function label(c){return `[${(c.document_version_id||'').slice(0,10)}…] ${c.quote.slice(0,50)}`}
-async function load(){try{const rows=await api('/api/graph/candidates?status=pending');$('list').replaceChildren();if(!rows.length){$('list').textContent='目前沒有待審候選。';return}for(const c of rows){const a=document.createElement('article');const meta=document.createElement('div');meta.className='meta';meta.textContent=`文件版本 ${c.document_version_id.slice(0,20)}… · 因果詞「${c.cue_phrase}」 · assertion_mode=${c.assertion_mode}`;const q=document.createElement('blockquote');q.textContent=c.quote;const row=document.createElement('div');row.className='row';const accept=document.createElement('button');accept.textContent='接受';const reject=document.createElement('button');reject.textContent='拒絕';const note=document.createElement('input');note.placeholder='備註（選填）';note.style.flex='1';const act=async decision=>{const reviewer=$('reviewer').value.trim();if(!reviewer){msg('請先填審核者。');return}try{await api(`/api/graph/candidates/${c.id}/review`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({decision,reviewer,note:note.value})});msg('已儲存。');await load();await loadLinks()}catch(e){msg('未儲存：'+e.message)}};accept.onclick=()=>act('accepted');reject.onclick=()=>act('rejected');row.append(accept,reject,note);a.append(meta,q,row);$('list').append(a)}}catch(e){msg('載入失敗：'+e.message)}}
+async function load(){try{const rows=await api('/api/graph/candidates?status=pending');$('list').replaceChildren();if(!rows.length){$('list').textContent='目前沒有待審候選。';return}for(const c of rows){const a=document.createElement('article');const meta=document.createElement('div');meta.className='meta';meta.textContent=`id=${c.id} · evidence_id=${c.evidence_id} · 因果詞「${c.cue_phrase}」 · assertion_mode=${c.assertion_mode}`;const q=document.createElement('blockquote');q.textContent=c.quote;const row=document.createElement('div');row.className='row';const accept=document.createElement('button');accept.textContent='接受';const reject=document.createElement('button');reject.textContent='拒絕';const note=document.createElement('input');note.placeholder='備註（選填）';note.style.flex='1';const act=async decision=>{const reviewer=$('reviewer').value.trim();if(!reviewer){msg('請先填審核者。');return}try{await api(`/api/graph/candidates/${c.id}/review`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({decision,reviewer,note:note.value})});msg('已儲存。');await load();await loadLinks()}catch(e){msg('未儲存：'+e.message)}};accept.onclick=()=>act('accepted');reject.onclick=()=>act('rejected');row.append(accept,reject,note);a.append(meta,q,row);$('list').append(a)}}catch(e){msg('載入失敗：'+e.message)}}
 async function loadLinks(){
   let accepted=[],relations=[];
   try{[accepted,relations]=await Promise.all([api('/api/graph/candidates?status=accepted'),api('/api/graph/candidate-relations')])}catch(e){linkMsg('載入關聯失敗：'+e.message);return}
-  for(const sel of [$('fromCand'),$('toCand')]){sel.replaceChildren();for(const c of accepted)sel.add(new Option(label(c),c.id))}
+  for(const sel of [$('fromCand'),$('toCand'),$('nodeCand')]){sel.replaceChildren();for(const c of accepted)sel.add(new Option(label(c),c.id))}
   const byId=Object.fromEntries(accepted.map(c=>[c.id,c]));
   const svgNs='http://www.w3.org/2000/svg',boxW=220,boxH=60,gapX=60,gapY=110,pad=20;
   const nodeIds=[...new Set(relations.flatMap(r=>[r.from_candidate_id,r.to_candidate_id]))].filter(id=>byId[id]);
@@ -38,5 +67,26 @@ async function loadLinks(){
 }
 $('run').onclick=async()=>{msg('掃描中…');try{const r=await api('/api/graph/extract',{method:'POST'});msg(`已產生 ${r.candidates_created} 筆新候選，${r.candidates_staled} 筆因原文更新變為 stale（含重複詞略過）。`);await load();await loadLinks()}catch(e){msg('掃描失敗：'+e.message)}};
 $('link').onclick=async()=>{const from_candidate_id=$('fromCand').value,to_candidate_id=$('toCand').value,relation_type=$('relType').value,created_by=$('reviewer').value.trim();if(!created_by){linkMsg('請先填審核者（同上方欄位）。');return}if(!from_candidate_id||!to_candidate_id||from_candidate_id===to_candidate_id){linkMsg('請選擇兩個不同的已接受候選。');return}try{await api('/api/graph/candidate-relations',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({from_candidate_id,to_candidate_id,relation_type,created_by,note:$('linkNote').value})});linkMsg('已建立關聯。');await loadLinks()}catch(e){linkMsg('未建立：'+e.message)}};
-load();loadLinks();
+
+// --- Event/Condition/Outcome node decomposition ---
+async function loadNodes(){try{const nodes=await api('/api/graph/nodes');$('nodeList').replaceChildren();if(!nodes.length){$('nodeList').textContent='尚未建立任何節點。';return}for(const n of nodes){const payload=JSON.parse(n.payload_json);const a=document.createElement('article');const meta=document.createElement('div');meta.className='meta';meta.textContent=`id=${n.id} · ${n.node_type} · parent_candidate=${n.parent_candidate_id}`;const body=document.createElement('div');body.textContent=payload.description+(payload.event_time?` （event_time: ${payload.event_time}）`:'');a.append(meta,body);$('nodeList').append(a)}}catch(e){$('nodeMsg').textContent='載入節點失敗：'+e.message}}
+$('addNode').onclick=async()=>{const parent_candidate_id=$('nodeCand').value,node_type=$('nodeType').value,description=$('nodeDesc').value.trim(),event_time=$('nodeTime').value.trim(),created_by=$('reviewer').value.trim();if(!created_by){$('nodeMsg').textContent='請先填審核者（同上方欄位）。';return}if(!parent_candidate_id){$('nodeMsg').textContent='請先在上方接受至少一筆候選。';return}if(!description){$('nodeMsg').textContent='description 必填。';return}try{await api('/api/graph/nodes',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({node_type,parent_candidate_id,description,event_time,created_by})});$('nodeMsg').textContent='已建立節點。';$('nodeDesc').value='';$('nodeTime').value='';await loadNodes()}catch(e){$('nodeMsg').textContent='未建立：'+e.message}};
+
+// --- Formal relations between nodes/candidates/entities ---
+for(const sel of [$('relFromType'),$('relToType')])for(const t of ['Event','Condition','Outcome','Claim','Entity','DocumentVersion'])sel.add(new Option(t,t));
+for(const t of ['participates_in','occurs_under','has_outcome','claims_cause','supports','contradicts','concludes_from','precedes','describes'])$('relType2').add(new Option(t,t));
+async function loadRelations(){try{const rows=await api('/api/graph/relations');$('relList').replaceChildren();if(!rows.length){$('relList').textContent='尚未建立任何正式關係。';return}for(const r of rows){const a=document.createElement('div');a.className='meta';a.textContent=`${r.from_type}:${r.from_id.slice(0,12)}… --[${r.relation_type} / ${r.assertion_mode} / ${r.polarity}]--> ${r.to_type}:${r.to_id.slice(0,12)}…${r.note?' ('+r.note+')':''}`;$('relList').append(a)}}catch(e){$('relMsg').textContent='載入失敗：'+e.message}}
+$('addRel').onclick=async()=>{const from_id=$('relFromId').value.trim(),from_type=$('relFromType').value,to_id=$('relToId').value.trim(),to_type=$('relToType').value,relation_type=$('relType2').value,evidence_ids=$('relEvidence').value.split(',').map(s=>s.trim()).filter(Boolean),assertion_mode=$('relAssertion').value,polarity=$('relPolarity').value,note=$('relNote').value,created_by=$('reviewer').value.trim();if(!created_by){$('relMsg').textContent='請先填審核者。';return}if(!from_id||!to_id){$('relMsg').textContent='from_id／to_id 必填。';return}if(!evidence_ids.length){$('relMsg').textContent='至少需要一個 evidence_id。';return}try{await api('/api/graph/relations',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({from_id,from_type,to_id,to_type,relation_type,evidence_ids,assertion_mode,polarity,note,created_by})});$('relMsg').textContent='已建立正式關係。';await loadRelations()}catch(e){$('relMsg').textContent='未建立：'+e.message}};
+
+// --- Entity mentions (gazetteer candidates) and human-confirmed cross-document alignment ---
+let entityCache=[];
+async function loadEntities(){try{entityCache=await api('/api/graph/entities');$('entityList').replaceChildren();if(!entityCache.length){$('entityList').textContent='目前沒有已對齊的實體。';return}for(const en of entityCache){const mentions=await api(`/api/graph/entities/${en.id}/mentions`);const docs=new Set(mentions.map(m=>m.document_version_id));const a=document.createElement('div');a.className='meta';a.textContent=`id=${en.id} · ${en.entity_type} · ${en.name_en||''} ${en.name_zh||''} · ${mentions.length} 處提及、${docs.size} 個文件版本`;$('entityList').append(a)}}catch(e){$('entityList').textContent='載入失敗：'+e.message}}
+async function loadMentions(){try{const rows=await api('/api/graph/entity-mentions?status=pending');$('mentionList').replaceChildren();if(!rows.length){$('mentionList').textContent='目前沒有待確認的實體候選。';return}for(const m of rows){const a=document.createElement('article');const meta=document.createElement('div');meta.className='meta';meta.textContent=`id=${m.id} · ${m.entity_type} · 命中詞「${m.gazetteer_term}」 · 原文「${m.surface_text}」`;const row=document.createElement('div');row.className='row';const nameEn=document.createElement('input');nameEn.placeholder='新實體 name_en';const nameZh=document.createElement('input');nameZh.placeholder='新實體 name_zh';const linkNew=document.createElement('button');linkNew.textContent='建立新實體並連結';const entitySel=document.createElement('select');entitySel.add(new Option('（選擇既有實體）',''));for(const en of entityCache)entitySel.add(new Option(`${en.name_en||en.name_zh} (${en.entity_type})`,en.id));const linkExisting=document.createElement('button');linkExisting.textContent='連到既有實體';row.append(nameEn,nameZh,linkNew,entitySel,linkExisting);a.append(meta,row);$('mentionList').append(a);const reviewerOf=()=>$('reviewer').value.trim();linkNew.onclick=async()=>{const created_by=reviewerOf();if(!created_by){$('mentionMsg').textContent='請先填審核者。';return}try{await api(`/api/graph/entity-mentions/${m.id}/link`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name_en:nameEn.value.trim(),name_zh:nameZh.value.trim(),created_by})});$('mentionMsg').textContent='已建立並連結新實體。';await loadEntities();await loadMentions()}catch(e){$('mentionMsg').textContent='未儲存：'+e.message}};linkExisting.onclick=async()=>{const created_by=reviewerOf();if(!created_by){$('mentionMsg').textContent='請先填審核者。';return}if(!entitySel.value){$('mentionMsg').textContent='請先選一個既有實體。';return}try{await api(`/api/graph/entity-mentions/${m.id}/link`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({entity_id:entitySel.value,created_by})});$('mentionMsg').textContent='已連結既有實體。';await loadEntities();await loadMentions()}catch(e){$('mentionMsg').textContent='未儲存：'+e.message}}}}catch(e){$('mentionMsg').textContent='載入失敗：'+e.message}}
+$('scanMentions').onclick=async()=>{$('mentionMsg').textContent='掃描中…';try{const r=await api('/api/graph/entity-mentions/extract',{method:'POST'});$('mentionMsg').textContent=`新增 ${r.mentions_created} 筆候選（含重複略過）。`;await loadMentions()}catch(e){$('mentionMsg').textContent='掃描失敗：'+e.message}};
+
+// --- Tag vocabulary ---
+async function loadTags(){try{const rows=await api('/api/graph/tags');$('tagList').replaceChildren();const broader=$('tagBroader');broader.replaceChildren();broader.add(new Option('（無上位概念）',''));if(!rows.length){$('tagList').textContent='尚未建立任何 tag。'}for(const t of rows){const a=document.createElement('div');a.className='meta';a.textContent=`id=${t.id} · ${t.pref_label_en} / ${t.pref_label_zh}${t.broader_id?' · broader='+t.broader_id.slice(0,10)+'…':''}`;$('tagList').append(a);broader.add(new Option(t.pref_label_en||t.pref_label_zh,t.id))}}catch(e){$('tagMsg').textContent='載入失敗：'+e.message}}
+$('addTag').onclick=async()=>{const pref_label_en=$('tagEn').value.trim(),pref_label_zh=$('tagZh').value.trim(),broader_id=$('tagBroader').value||null,created_by=$('reviewer').value.trim();if(!created_by){$('tagMsg').textContent='請先填審核者。';return}try{await api('/api/graph/tags',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({pref_label_en,pref_label_zh,broader_id,created_by})});$('tagMsg').textContent='已新增 tag。';$('tagEn').value='';$('tagZh').value='';await loadTags()}catch(e){$('tagMsg').textContent='未新增：'+e.message}};
+
+load();loadLinks();loadNodes();loadRelations();loadTags();(async()=>{await loadEntities();await loadMentions()})();
 </script></html>

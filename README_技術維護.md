@@ -41,11 +41,18 @@ D:/QR code design/
     api.py                     FastAPI
     search.py                  關鍵字索引、處理政策、文件關係
     graph_extract.py           規則式因果詞候選抽取與審核
-    static/index.html          管理頁（含關鍵字搜尋）
-    static/graph.html          圖譜候選審核頁
+    graph_store.py             實體/節點/正式關係/tag/時間軸
+    vector_search.py           本機 E5 embedding + 可選 reranker 語意檢索
+    migrations.py              共用 ensure_column schema 遷移工具
+    static/index.html          管理頁（含關鍵字/語意搜尋、分頁）
+    static/graph.html          圖譜候選審核、節點分解、實體對齊、tag
+    static/timeline.html       時間軸頁面
   tests/test_pipeline.py       整合與功能測試
   tests/test_search_index.py   搜尋、政策、關係測試
   tests/test_graph_extract.py  圖譜候選抽取與審核測試
+  tests/test_graph_store.py    實體/節點/正式關係/tag/時間軸測試
+  tests/test_vector_search.py  語意檢索測試（monkeypatch 模型）
+  tests/test_pagination.py     分頁測試
   data/                        執行產物，不進 Git
     raw/<sha256>.pdf|html       去重後原文
     text/<sha256>.json          [{page: 1, text: ...}, ...]
@@ -144,6 +151,11 @@ robots 200 解析規則、404 視為無規則，其餘狀態或讀取失敗停�
 | extraction_jobs | id；document_id、document_version_id、extractor_version、schema_version、status、created_at | 圖譜候選抽取批次；見 cement/graph_extract.py；document_id 為後補欄位（見下節遷移說明） |
 | graph_candidates | id；job_id、document_version_id、node_type、quote、cue_phrase、evidence_id、assertion_mode、review_status、reviewer、note | 因果詞句候選，pending/accepted/rejected/stale |
 | candidate_relations | id；from_candidate_id、to_candidate_id、relation_type、note、created_by、created_at | 跨文件候選關聯（雛形），僅能連結已接受候選 |
+| entities／entity_mentions | entities: id、entity_type、name_en、name_zh；entity_mentions: id、document_version_id、evidence_id、entity_id、review_status | 規則式實體候選與人工跨文件對齊；見 cement/graph_store.py |
+| graph_nodes／graph_relations | graph_nodes: id、node_type(Event/Condition/Outcome)、parent_candidate_id、payload_json；graph_relations: 依 graph-contract.json 必要欄位 | 人工從已接受候選分解出的結構化節點與正式關係 |
+| tags／node_tags | tags: id、pref_label_en/zh、broader_id、status；node_tags: node_id、node_type、tag_id | SKOS-lite tag 詞彙表 |
+| document_embeddings | document_id；text_hash、model、revision、dim、vector_json | 本機語意檢索快取，依 text_hash 增量更新；見 cement/vector_search.py |
+| prediction_log | id；latency_ms、predicted_label、top_score、created_at | /api/predict 延遲觀測，不存輸入文字 |
 
 目前沒有正式 migration 系統、外鍵約束或圖譜資料表。SQLite CURRENT_TIMESTAMP 為 UTC；UI 未做台北時區轉換。不要將 created_at／checked_at 当成出版日期；304 分支目前也未刷新 sources.checked_at。
 
@@ -203,6 +215,9 @@ API 每次預測重新載入本機 joblib；不接收上傳 pickle，勿載入�
 | POST /api/graph/extract | 對既有 parsed 文件跑規則式因果詞候選抽取，並將已改版文件的舊 pending 候選標記 stale（見下節） |
 | POST /api/graph/candidates/{id}/review | 人工接受／拒絕候選 |
 | POST /api/graph/candidate-relations、GET /api/graph/candidate-relations | 跨文件候選關聯（same_event_candidate/precedes/related），須兩端皆為 accepted |
+| /api/graph/entity-mentions、/api/graph/entities、/api/graph/nodes、/api/graph/relations、/api/graph/tags、/api/graph/node-tags、/api/graph/timeline、/timeline | 實體對齊、Event/Condition/Outcome 節點、正式關係、tag 詞彙表、時間軸；細節見 [知識圖譜深化與語意檢索](docs/知識圖譜深化與語意檢索20260913.md) |
+| POST /api/search/semantic-reindex、GET /api/search/semantic | 本機語意檢索（E5 embedding，可選 rerank） |
+| GET /api/predict-log、GET /api/model-registry | 預測延遲紀錄、模型登錄 |
 | GET /docs | 自動 API 操作文件 |
 
 `GET /api/documents`／`GET /api/search` 加 `limit`／`offset` 選填分頁；不帶 `limit` 時回傳格式與行為完全不變（純陣列，無分頁），帶 `limit` 時 `/api/documents` 額外回傳 `X-Total-Count` 標頭。
@@ -485,3 +500,11 @@ cement-crawl 全域 Skill 仍有舊入口名稱，但使用者已要求合併，
 ```
 
 API：`POST/GET /api/graph/candidate-relations`。本機實測：對既有 pending 候選接受兩筆、建立一筆 `same_event_candidate` 關聯，`/graph` 頁面 SVG 正確畫出 2 個節點與 1 條連線（以瀏覽器 DOM 查詢確認節點/連線數，畫面截圖因視窗背景執行而未能穩定擷取，改以 DOM 與 API 回應交叉驗證）。44 項 pytest（含本輪新增 7 項：3 項候選版本失效／關聯驗證、4 項分頁）通過。未新增人工標籤、未動既有訓練與審核邏輯。
+
+## D-006 再深一層、時間軸、本機語意檢索與技術債（2026-09-13）
+
+使用者明確要求擴張到時間軸、實體候選、局部向量化／排序、（詢問後排除）LLM 關係抽取，以及 D-006 節點分解／跨文件實體對齊／正式關係／tag 詞彙表／圖 UI，並先做可做的技術債。新增 [cement/graph_store.py](cement/graph_store.py)（entities、entity_mentions、graph_nodes、graph_relations、tags、node_tags、timeline）、[cement/vector_search.py](cement/vector_search.py)（本機 E5 embedding 快取＋可選 bge-reranker 重排序）、[cement/migrations.py](cement/migrations.py)（`ensure_column` 共用遷移工具）；新頁面 `/timeline`，`/graph` 加節點分解／正式關係／實體對齊／tag 四個區塊，管理頁加分頁與語意搜尋切換。
+
+技術債：`/api/documents`／`/api/search` 前端（管理頁）已接上分頁；`cement/train.py` 新增 `models/registry.json` 模型登錄與 `evaluation.json.calibration`（top-label 信心校準桶，樣本數過小時明確加註不是有效校準）；`/api/predict` 記錄延遲到 `prediction_log`，`GET /api/predict-log`／`GET /api/model-registry` 供查詢。
+
+一切節點／關係／tag／實體對齊皆為人工從已接受候選手動建立，不是自動 NLP／LLM 抽取；實體候選只是 [config/entity-gazetteer.json](config/entity-gazetteer.json) 小型詞表的規則命中，跨文件對齊需人工明確連結，字串相同不自動合併。54 項 pytest 通過（新增 10 項）。瀏覽器實測：語意索引對 392 份文件建置約 61 秒、查詢結果主題相關；管理頁分頁 513 份/11 頁正確；實體候選 281 筆，兩份不同文件的「NIST」候選連到同一實體後正確顯示「2 處提及、2 個文件版本」；節點分解＋正式關係＋tag broader 皆驗證成功；`/timeline` 正確分開顯示人工事件時間與抓取時間。過程中發現並修正一個真實前端 bug（實體連結後畫面更新順序寫反，導致新建實體不會立刻出現在其他候選的下拉選單）。詳見 [知識圖譜深化與語意檢索](docs/知識圖譜深化與語意檢索20260913.md)，含完整限制聲明。
