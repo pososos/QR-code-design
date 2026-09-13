@@ -94,7 +94,7 @@
 
 1. 修復／審核文字品質，擴充跨來源、跨版型的各用途樣本，補安全資料類。**暫緩**：人工標註暫緩中；且 D-007／D-008 已停止以用途搜尋補配額，不再單純衝樣本數。
 2. 人工標註；依來源／文件家族切分，避免版本、近似文件、切片洩漏。**暫緩**（使用者要求）。
-3. 訓練真實基準模型，量測各類召回率、Macro-F1、混淆矩陣、延遲；與人工規則比較。**部分**：D-008 軌道二已用現有 12 份人工標籤做過一次來源隔離小樣本診斷（n=12，僅供流程驗證，非成效數字）；正式基準模型待標註恢復或真實資料到位。
+3. 訓練真實基準模型，量測各類召回率、Macro-F1、混淆矩陣、延遲；與人工規則比較。**部分**：D-008 軌道二 n=12 小樣本診斷（僅流程驗證）之後，2026-09-14 依 D-010 用 LLM 標註 240 份＋來源隔離訓練得 macro-F1 0.70（n=81）與另一組對人工標籤查核 macro-F1 0.62（n=12，非乾淨獨立來源）；樣本量變大且發現 guidance/research 混淆、manual 異質性等具體弱點，但分組非隨機代表性抽樣，仍不是正式成效數字，正式基準模型待人工標註恢復或 D-007 真實代表性資料到位。
 4. 加關鍵字索引、處理政策、狀態與版本管理；分類不可成唯一檢索閘門。**已完成**（2026-09-13）：cement/search.py、graph_extract 的候選版本失效管理、store/API 分頁。前端（index.html／review.html）尚未接上新分頁 API，仍是待改善項，不影響既有頁面行為。
 5. 需求允許時再做時間軸、實體候選、局部向量化／排序及 LLM 關係抽取。**未開始**，仍待使用者新要求才擴張——不含在本輪自主推進範圍內。
 6. 整理三分鐘 QR Demo、架構說明、Git 與驗證證據。**已完成**（2026-09-13）：[docs/QR_Demo腳本20260913.md](docs/QR_Demo腳本20260913.md)；Git 已核對並建立首個與第二個 commit、推送至 https://github.com/pososos/QR-code-design.git 。已建立 cement-crawl Skill 作爬蟲操作入口；其餘 Skill 尚未建立。
@@ -335,5 +335,21 @@ node語法與無頭Edge實測通過：文字檔、真實文字PDF、截斷、非
 使用者已自行建立並推送 Space（https://huggingface.co/spaces/YOU-LIN/QR-code-design ，host `you-lin-qr-code-design.hf.space`，hardware zero-a10g，狀態 RUNNING）。修正 hf_space/README.md 的 YAML `colorTo: orange` 不在 HF 允許清單（改 yellow）。
 
 `docs/showcase.js` 新增第二個推論後端：先試本機同站 `/api/model-status`（不變），失敗才試公開 Space 的 `/config`；偵測到 Space 時停用「自訓分類」選項（Space 未部署該模型），狀態文字先告知「會傳送到該服務」才允許按下執行。已用 curl 直接呼叫 Space 的 `/gradio_api/call/predict`＋SSE 結果端點確認端到端可用，且回應含 `access-control-allow-origin` 正確回顯 GitHub Pages 來源。
+
+## D-010 LLM 標註取代人工標註暫緩期（2026-09-14）
+
+使用者明確要求：人工標註暫緩期間改由 LLM（本對話 Claude Sonnet 5）直接讀文件標註、訓練並展示模型。依既有研究依據規則，先查 LLM-as-annotator／弱監督稽核文獻再定準則（Gilardi et al. 2023 PNAS 等），記錄於 [README_總體架構.md D-010](README_總體架構.md#d-010-llm-標註取代人工標註暫緩期2026-09-14)。
+
+執行：240 份既有未標註 parsed 文件由 Claude Sonnet 5 讀標題＋前約1,200字判七類用途並匯入（`reviewer=claude-sonnet-5-llm`，與人工 `pososos` 分開稽核，2 份內容過短跳過），與既有規則弱標籤重疊 40 筆比對一致率 97.5%。依來源分組留 23 個 source_id 為測試集，`cement.train --holdout-sources` 得 macro-F1 0.70（n=81，訓練170／測試81）；另一組僅用五個原始類別、以既有 12 筆人工標籤做獨立查核（非乾淨獨立來源，nist.gov 等主機兩邊重疊）得 macro-F1 0.62（n=12）。guidance/research 因訓測分組語言與文風差異互相混淆，manual 類別因「硬體設備手冊 vs 軟體工具手冊」異質性表現差。模型已寫入 models/classifier.joblib，demo_api／api「自訓分類」選項即時反映（inference.py 每次重新讀檔）。完整結果、限制與不宜引用範圍見 README_總體架構.md 對應章節與 data/reports/llm-label-human-verification-20260914.json。
+
+這是暫緩期間的替代方案，不是 D-007 要求的真實代表性資料與獨立測試集；既有 12 筆人工標籤完全未被覆寫。人工標註恢復後兩來源仍分開稽核。
+
+## 四方法頭對頭比較：檢索＋重排是否有效（2026-09-14）
+
+使用者要求 LLM 標註訓練結果須跟既有其他策略比較才有意義。在同一組81份（LLM標籤為真值）與12份（獨立人工標籤為真值）測試集上，同時跑規則式弱標籤、本輪LLM標籤訓練的分類器、純檢索（E5）、檢索＋重排（E5+bge-reranker，沿用D-006已驗證門檻）。結果：重排未展現一致的準確率提升——81份組「有答案時準確率」加重排後從81.5%掉到65.7%，12份組則小幅提升(67%→75%)但樣本過小；兩組重排都比純檢索慢50倍以上（546秒 vs 9.8秒；42秒 vs 0.8秒）。過程中抓到並修正一個真實資料洩漏bug（12份人工文件的source_id未被排除在分類器訓練集外，導致虛假100%準確率）。純檢索/檢索+重排涵蓋率（27–75%）遠低於訓練分類器的100%，定位應是保守高精準子集而非主力方案。完整表格、方法與限制見 [README_總體架構.md](README_總體架構.md) 對應章節與 data/reports/method-comparison-20260914.json。
+
+## 公開展示頁新增「成果與方向」（2026-09-14）
+
+使用者要求展示頁加入未來方向與具體價值說明。`docs/index.html` 新增 `#roadmap` 區塊（導覽列同步加連結），說明本輪 LLM 標註＋四方法比較實際證明的工程能力（可稽核標註來源、同測試集頭對頭比較、誠實揭露重排負面結果），並明確列出「還缺什麼」——所有成效數字建立在 LLM 自身標籤或僅12筆人工標籤上，下一步關鍵是真實代表性資料與獨立測試集（D-007），不是模型或工程問題，無法用更多 LLM 標註繞過。同時把 project-note 區塊的清冊快照數字更新為當下實際值（513／414／59，含標籤來源分布）。僅新增/修改 HTML 文字與既有 CSS class，未加新前端相依套件；未改 JS 邏輯。已用瀏覽器讀取頁面文字與 console 確認無錯誤、無破版。
 
 瀏覽器實測 https://pososos.github.io/QR-code-design/ ：狀態列正確顯示「已連接公開 Hugging Face Space」；輸入 SDS 相關英文文字，retrieval 方法在 title 階段以 embedding score=0.901 命中 safety，耗時 4.66 秒；輸入水泥收縮開裂中文段落，retrieval_rerank 方法跑完 title→body embedding→body reranker 全部三階段，因 reranker score=-5.128 未達 ≥0 門檻正確棄權（即使 gap=1.719 已達標，兩條件需同時成立），耗時 11.56 秒。兩次呼叫皆為真實模型推論，非模擬。59 項既有 pytest 不受影響（僅改前端 JS／HTML 與 hf_space/ 部署檔）。
