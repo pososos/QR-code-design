@@ -509,10 +509,10 @@ API：`POST/GET /api/graph/candidate-relations`。本機實測：對既有 pendi
 
 一切節點／關係／tag／實體對齊皆為人工從已接受候選手動建立，不是自動 NLP／LLM 抽取；實體候選只是 [config/entity-gazetteer.json](config/entity-gazetteer.json) 小型詞表的規則命中，跨文件對齊需人工明確連結，字串相同不自動合併。54 項 pytest 通過（新增 10 項）。瀏覽器實測：語意索引對 392 份文件建置約 61 秒、查詢結果主題相關；管理頁分頁 513 份/11 頁正確；實體候選 281 筆，兩份不同文件的「NIST」候選連到同一實體後正確顯示「2 處提及、2 個文件版本」；節點分解＋正式關係＋tag broader 皆驗證成功；`/timeline` 正確分開顯示人工事件時間與抓取時間。過程中發現並修正一個真實前端 bug（實體連結後畫面更新順序寫反，導致新建實體不會立刻出現在其他候選的下拉選單）。詳見 [知識圖譜深化與語意檢索](docs/知識圖譜深化與語意檢索20260913.md)，含完整限制聲明。
 
-## QR 固定指向公開互動展示頁（2026-09-13，取代 GitHub repo 版本）
+## QR 固定指向公開互動展示頁（2026-09-13，GitHub Pages 版）
 
-使用者要求 QR「固定狀態、非本機展示」，並在看過公司提供的參考範例（信紙 QR 掃了進公司網站）後，進一步要求「必須能即時互動」。本機 FastAPI 服務沒有登入／權限保護，不能直接公開部署；詢問後使用者選擇另做一個公開、可互動的展示頁，而非冒險把本機服務曝露出去。原本改成固定指向 GitHub repo 的版本（同一天稍早）已被取代。
+使用者要求 QR「固定狀態、非本機展示」，並在看過公司提供的參考範例（信紙 QR 掃了進公司網站）後，進一步要求「必須能即時互動」。本機 FastAPI 服務沒有登入／權限保護，不能直接公開部署；詢問後使用者選擇另做一個公開、可互動的展示頁。第一版用 Claude Artifact（`claude.ai/...` 網址），使用者反饋希望網址掛在自己的 GitHub 底下，改為 **GitHub Pages**：同一份純前端 JavaScript 展示頁放到 [docs/index.html](docs/index.html)（`docs/.nojekyll` 停用 Jekyll，避免處理資料夾裡其他 Markdown 文件），固定網址 `https://pososos.github.io/QR-code-design/`；[cement/static/index.html](cement/static/index.html) 與 `GET /api/qr` 預設值都已改指向這裡。
 
-用 Claude Artifact 做了一個純前端 JavaScript 的獨立展示頁（不連本機資料庫，不需要伺服器）：可展開的資料管線／圖譜銜接階段說明、一個即時的關鍵詞路由分類示範、可篩選搜尋的真實範例文件清冊、與一段清楚區分「真實現況」和「簡化示範」的誠實聲明。網址固定：`https://claude.ai/code/artifact/de1d0d09-fc67-4623-98fa-ab1cc3a7aff2`；[cement/static/index.html](cement/static/index.html) 與 `GET /api/qr` 預設值都已改指向這裡。
+頁面內容：可展開的資料管線／圖譜銜接階段說明、一個即時的關鍵詞路由分類示範（重現 cement/weaklabel.py 規則邏輯，含棄權判斷）、可篩選搜尋的真實範例文件清冊（7 筆本專案實際解析過的公開文件）、與一段清楚區分「真實現況」和「簡化示範」的誠實聲明；不連本機資料庫，不需要伺服器。
 
-**已知限制**：Artifact 預設是私人的，必須由帳號擁有者在頁面分享選單手動設為可分享，QR 才對外有效——這一步無法由程式代勞，展示前務必手動確認過。詳見 [QR Demo 腳本](docs/QR_Demo腳本20260913.md) 的「QR 現在指向哪裡」。54 項 pytest 仍全數通過（此變動只涉及前端網址與展示頁，未動 Python 邏輯）。
+**已知限制**：GitHub Pages 需使用者本人在 repo Settings → Pages 手動開啟一次（Source: Deploy from a branch，main／docs），這一步無法由程式代勞，展示前務必手動確認 `https://pososos.github.io/QR-code-design/` 真的能打開。詳見 [QR Demo 腳本](docs/QR_Demo腳本20260913.md) 的「QR 現在指向哪裡」。54 項 pytest 仍全數通過（此變動只涉及前端網址與展示頁，未動 Python 邏輯）。

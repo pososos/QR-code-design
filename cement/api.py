@@ -82,7 +82,7 @@ def model_registry():
     return json.loads(registry_path.read_text(encoding='utf-8')) if registry_path.exists() else []
 
 @app.get('/api/qr')
-def qr(url: str = 'https://claude.ai/code/artifact/de1d0d09-fc67-4623-98fa-ab1cc3a7aff2'):
+def qr(url: str = 'https://pososos.github.io/QR-code-design/'):
     if len(url) > 500 or not url.startswith(('https://', 'http://')):
         raise HTTPException(400, 'Provide a short HTTP(S) collection URL')
     out = BytesIO()
