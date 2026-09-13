@@ -159,3 +159,20 @@ pytest -q -p no:cacheprovider：54 passed（原44＋新增 tests/test_graph_stor
 `/graph` 頁面掃描出 281 筆規則式實體候選（config/entity-gazetteer.json）；把兩份不同文件的「NIST」候選分別連結到同一個新建實體後，`/api/graph/entities/{id}/mentions` 正確回報「2 處提及、2 個文件版本」，證實跨文件實體對齊實際運作。過程中發現一個真實前端 bug：實體連結成功後畫面重繪順序寫反（先重畫候選清單、後更新實體快取），導致新建實體不會立即出現在其他候選的「連到既有實體」下拉選單，需再操作一次才顯示；已修正為先 `loadEntities()` 再 `loadMentions()`，修正後重新整理頁面驗證選單正確顯示新實體。
 
 從一筆已接受候選拆出 Event 與 Outcome 節點，建立 `has_outcome` 正式關係（assertion_mode=explicit_in_source，引用該候選 evidence_id）成功；建立 tag「shrinkage／收縮」與其 broader 為「drying shrinkage／乾燥收縮」成功；在 Event 節點填 `event_time=day 7` 後，`/timeline` 頁面正確把它列入「已知事件時間」區塊、與「抓取時間」區塊（101 筆，含截斷提示）分開顯示。rerank 路徑（bge-reranker）本次僅程式與 mock 測試驗證，未在瀏覽器實測（預期單次查詢需十幾秒，超出本輪互動測試時間）。詳見 [知識圖譜深化與語意檢索](docs/知識圖譜深化與語意檢索20260913.md)，含完整限制聲明。
+
+
+## 公開展示頁重新設計（2026-09-13）
+依使用者要求，以「用途→互動使用→技術架構」重設 docs/index.html，樣式及行為拆至 docs/showcase.css、docs/showcase.js，無新增前端相依套件。首屏說明文件分類／人工確認／知識整理用途；七類教學示例、即時命中數、零命中／同分棄權、人工修正與後續處理建議在瀏覽器運行，確認僅存當次頁面、不寫本機資料庫。架構五階段可點選查看輸入／輸出／技術／原始碼，區分自訓基準、離線 E5 級聯實驗與公開簡化規則。保留7筆公開文件靜態快照與搜尋，移除原頁對未取得來源的概括描述。公開網址及 QR 不變；此次僅工作目錄修改，未推送部署。
+
+驗證：node --check 通過；使用既有 Playwright＋無頭 Edge 驗證七類教學例、兩種棄權、人工修正、空輸入停用、重設、架構切換、搜尋及組合篩選，無 pageerror。390px viewport 無水平溢出；桌面1440px及手機截圖保存 data/reports/showcase-desktop.png、showcase-mobile.png。初次測試發現衝突例命中不平衡，修正後上述檢查通過。截圖檢視工具受沙箱 helper 故障阻擋，未完成截圖人工視覺核對。未改 Python、分類資料或人工標籤；未重跑後端54項測試，頁上54為既有歷史快照。
+
+
+## 展示頁檔案上傳與模型說明（2026-09-13）
+公開頁新增瀏覽器本機檔案讀取：PDF、UTF-8 TXT／MD／CSV，10 MiB 上限，前12,000字元；PDF最多前10頁，不含OCR。以固定PDF.js 4.10.38解析，模組／worker／Apache授權存docs/vendor/pdfjs，來源 https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/ ，API參考 https://mozilla.github.io/pdf.js/examples/ （本輪查核官方範例）。文件內容不送伺服器、不寫正式清冊。載入失敗清除舊結果；切換示例、重設或手動編輯使舊非同步結果失效。上傳後仍使用頁面簡化關鍵詞規則，不宣稱呼叫E5或自訓模型。
+架構說明改用「多語言檢索模型把文件與用途描述轉向量找候選、重排模型逐對比較內容與候選」，保留標題優先及重排僅用於內容的設計。本機實驗與公開規則能力分開。
+node語法與無頭Edge實測通過：文字檔、真實文字PDF、截斷、非法UTF-8、空檔、不支援副檔名、超大檔、損毀PDF、重設與模型說明。未改後端／資料，未推送公開頁。
+
+
+## 系統架構圖展示（2026-09-13）
+展示頁技術區新增明確架構：A公開GitHub Pages瀏覽器層、B本機JavaScript介面→HTTP/JSON→FastAPI→用途分類／雙路檢索／知識整理→SQLite及檔案儲存、C用途分類模型離線實驗。另畫CLI批次資料準備，標明非自動佇列、公開頁無本機API連線，圖譜使用SQLite並非另有圖資料庫。補上分類與檢索分離、人工證據關卡、新文件衍生資料更新的設計理由。保留可點選模組詳情與上傳體驗。此次為現有設計呈現，不改模型策略或後端。
+驗證：無頭Edge檢查架構分層、三個服務區塊、模組切換；1440／390px皆無水平溢出。手機架構截圖data/reports/system-architecture-mobile.png。未推送公開頁。
