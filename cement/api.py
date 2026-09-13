@@ -5,7 +5,7 @@ import joblib
 import qrcode
 import qrcode.image.svg
 from fastapi import FastAPI, HTTPException
-from fastapi.responses import FileResponse, Response
+from fastapi.responses import FileResponse, JSONResponse, Response
 from pydantic import BaseModel, Field
 from cement import store
 from cement.parse import text_of, sample
@@ -16,7 +16,11 @@ app = FastAPI(title='Cement Knowledge Intake', version='0.1.0')
 def index(): return FileResponse(Path(__file__).parent / 'static' / 'index.html')
 
 @app.get('/api/documents')
-def documents(): return store.documents()
+def documents(limit: int | None = None, offset: int = 0):
+    # limit omitted keeps the historical full-array response so existing pages need no changes.
+    if limit is None:
+        return store.documents()
+    return JSONResponse(store.documents(limit, offset), headers={'X-Total-Count': str(store.document_count())})
 
 @app.get('/api/events')
 def events():
@@ -111,10 +115,10 @@ def review_progress():
 
 
 @app.get('/api/search')
-def api_search(q: str, limit: int = 20):
+def api_search(q: str, limit: int = 20, offset: int = 0):
     from cement import search
     try:
-        return search.search(q, limit)
+        return search.search(q, limit, offset)
     except ValueError as exc:
         raise HTTPException(400, str(exc)) from exc
 
@@ -178,7 +182,8 @@ def api_graph_candidates(status: str = 'pending'):
 @app.post('/api/graph/extract')
 def api_graph_extract():
     from cement import graph_extract
-    return {'candidates_created': len(graph_extract.extract_candidates())}
+    result = graph_extract.extract_candidates()
+    return {'candidates_created': len(result['created']), 'candidates_staled': len(result['staled'])}
 
 class GraphReview(BaseModel):
     decision: Literal['accepted', 'rejected']
@@ -193,3 +198,25 @@ def api_graph_review(candidate_id: str, value: GraphReview):
     except ValueError as exc:
         raise HTTPException(400, str(exc)) from exc
     return {'saved': True}
+
+
+class CandidateRelation(BaseModel):
+    from_candidate_id: str
+    to_candidate_id: str
+    relation_type: Literal['same_event_candidate', 'precedes', 'related']
+    created_by: str = Field(min_length=1, max_length=100)
+    note: str = Field(default='', max_length=2000)
+
+@app.post('/api/graph/candidate-relations')
+def api_add_candidate_relation(value: CandidateRelation):
+    from cement import graph_extract
+    try:
+        return {'id': graph_extract.add_candidate_relation(
+            value.from_candidate_id, value.to_candidate_id, value.relation_type, value.created_by, value.note)}
+    except ValueError as exc:
+        raise HTTPException(400, str(exc)) from exc
+
+@app.get('/api/graph/candidate-relations')
+def api_list_candidate_relations():
+    from cement import graph_extract
+    return graph_extract.list_candidate_relations()

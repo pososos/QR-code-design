@@ -38,7 +38,7 @@ def reindex():
     return count
 
 
-def search(query, limit=20):
+def search(query, limit=20, offset=0):
     if not query or not query.strip():
         raise ValueError('Query required')
     with store.connect() as db:
@@ -46,7 +46,7 @@ def search(query, limit=20):
         rows = db.execute('''SELECT document_id, snippet(document_text_fts, 2, '[', ']', '...', 12) AS snippet,
                               bm25(document_text_fts) AS score
                               FROM document_text_fts WHERE document_text_fts MATCH ?
-                              ORDER BY score LIMIT ?''', (query, limit)).fetchall()
+                              ORDER BY score LIMIT ? OFFSET ?''', (query, limit, offset)).fetchall()
         by_id = {d['id']: d for d in store.documents()}
         results = []
         for r in rows:

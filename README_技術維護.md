@@ -141,8 +141,9 @@ robots 200 解析規則、404 視為無規則，其餘狀態或讀取失敗停�
 | document_text_fts | FTS5；document_id、title、body | 關鍵字全文索引，需手動 reindex；見 cement/search.py |
 | processing_policy | document_id；policy、reason、set_by、updated_at | 處理政策，與 label 分開，須明確設定 |
 | document_relations | id；from_id、to_id、relation_type、note、created_by、created_at | 版本／系列／引用關係，須明確宣告 |
-| extraction_jobs | id；document_version_id、extractor_version、schema_version、status、created_at | 圖譜候選抽取批次；見 cement/graph_extract.py |
-| graph_candidates | id；job_id、document_version_id、node_type、quote、cue_phrase、evidence_id、assertion_mode、review_status、reviewer、note | 因果詞句候選，pending 需人工接受／拒絕 |
+| extraction_jobs | id；document_id、document_version_id、extractor_version、schema_version、status、created_at | 圖譜候選抽取批次；見 cement/graph_extract.py；document_id 為後補欄位（見下節遷移說明） |
+| graph_candidates | id；job_id、document_version_id、node_type、quote、cue_phrase、evidence_id、assertion_mode、review_status、reviewer、note | 因果詞句候選，pending/accepted/rejected/stale |
+| candidate_relations | id；from_candidate_id、to_candidate_id、relation_type、note、created_by、created_at | 跨文件候選關聯（雛形），僅能連結已接受候選 |
 
 目前沒有正式 migration 系統、外鍵約束或圖譜資料表。SQLite CURRENT_TIMESTAMP 為 UTC；UI 未做台北時區轉換。不要將 created_at／checked_at 当成出版日期；304 分支目前也未刷新 sources.checked_at。
 
@@ -198,10 +199,13 @@ API 每次預測重新載入本機 joblib；不接收上傳 pickle，勿載入�
 | GET／PUT /api/documents/{doc_id}/policy | 處理政策（unset/fast_track/standard/deprioritized/excluded），須明確 set_by，不會由分類自動推定 |
 | POST /api/relations、GET /api/documents/{doc_id}/relations | 文件版本關係（supersedes/same_series/cites），需明確 created_by；不會依日期自動推定 |
 | GET /graph | 圖譜候選審核頁 |
-| GET /api/graph/candidates?status= | 列出候選（預設 pending） |
-| POST /api/graph/extract | 對既有 parsed 文件跑規則式因果詞候選抽取（見下節） |
+| GET /api/graph/candidates?status= | 列出候選（預設 pending；也可查 accepted/rejected/stale） |
+| POST /api/graph/extract | 對既有 parsed 文件跑規則式因果詞候選抽取，並將已改版文件的舊 pending 候選標記 stale（見下節） |
 | POST /api/graph/candidates/{id}/review | 人工接受／拒絕候選 |
+| POST /api/graph/candidate-relations、GET /api/graph/candidate-relations | 跨文件候選關聯（same_event_candidate/precedes/related），須兩端皆為 accepted |
 | GET /docs | 自動 API 操作文件 |
+
+`GET /api/documents`／`GET /api/search` 加 `limit`／`offset` 選填分頁；不帶 `limit` 時回傳格式與行為完全不變（純陣列，無分頁），帶 `limit` 時 `/api/documents` 額外回傳 `X-Total-Count` 標頭。
 
 沒有上傳、爬蟲啟動、訓練啟動或使用者管理 API。標註 API 可以替非 parsed 文件寫 label，但 train 仍排除它們。清冊與單文件 API 目前載入全表；這是規模化待改善項。搜尋、政策與關係 API 見下節「關鍵字索引、處理政策與圖譜候選審核（2026-09-13）」，此前「沒有…關係、搜尋」的描述已過時。
 
@@ -465,3 +469,19 @@ cement-crawl 全域 Skill 仍有舊入口名稱，但使用者已要求合併，
 ```
 
 本機以既有 513 份庫（392 parsed）實測：reindex 索引 392 份、跨語言／跨標籤關鍵字搜尋在瀏覽器驗證可用；extract 對現有 parsed 文件產生 77 筆候選，於 /graph 頁面接受 1 筆後在 API 與畫面均正確歸類為 accepted、剩餘 76 筆仍為 pending。管理頁新增搜尋框與「開啟圖譜候選審核」連結；審核頁未變動。37 項 pytest（含新增 7 項）通過；沒有可用的 Node 環境做獨立 JS 語法檢查，改以啟動本機服務並在瀏覽器實際操作管理頁搜尋、圖譜候選列表與接受操作驗證。未修改既有標籤、review.py 或 dataset 邏輯。
+
+## 分頁、版本失效管理與跨文件候選關聯雛形（2026-09-13）
+
+延續上節，補規模化與 D-006 深化兩項不需新人工標註的待辦。
+
+**分頁**：`store.documents(limit=None, offset=0)`、新增 `store.document_count()`；預設 `limit=None` 保留全表行為，既有呼叫者（train.py、dataset.py、weaklabel.py、review.py、graph_handoff.py 等）完全不受影響。`GET /api/documents`／`GET /api/search` 加 `limit`／`offset`；不帶 `limit` 時回應格式不變（純陣列），帶 `limit` 時 `/api/documents` 額外回 `X-Total-Count` 標頭，`/api/search` 用 `offset` 翻頁。目前前端（管理頁／審核頁）仍呼叫不帶分頁參數的舊版，尚未接上分頁 UI——這次只做後端能力，沒有為了展示而動既有頁面。
+
+**版本失效管理**：`extraction_jobs` 新增 `document_id` 欄位（沒有正式 migration 系統，`graph_extract.schema()` 用 `PRAGMA table_info` 偵測後 `ALTER TABLE ADD COLUMN` 補齊既有 DB，預設空字串）。`extract_candidates()` 重跑時，若同一 `document_id` 已有其他 `document_version_id`（代表原文被重新解析、text_hash 改變），會把該舊版本仍是 `pending` 的 `graph_candidates` 標記為 `stale`、對應 `extraction_jobs.status` 也改 `stale`；已經 `accepted`／`rejected` 的紀錄維持原狀，作為那個版本當時的歷史判斷，不會被覆寫或刪除，也不會自動遷移到新版本重新驗證。`/graph` 頁面重新掃描後會顯示「新增 N 筆、M 筆變 stale」。
+
+**跨文件候選關聯（D-006 雛形）**：新增 `candidate_relations` 表與 `add_candidate_relation`／`list_candidate_relations`（[cement/graph_extract.py](cement/graph_extract.py)），relation_type 限 `same_event_candidate`／`precedes`／`related`，兩端候選都必須先是 `accepted` 才能連結，且需明確 `created_by`。`same_event_candidate` 只是「候選合併」，不是自動確認——docs/知識圖譜銜接設計.md 已寫明實體、時間、地點／試體與條件需另外核對。`/graph` 頁面新增區塊：選兩個已接受候選＋關聯類型＋備註建立連結，並用內建 SVG（無額外套件）畫出目前所有關聯的節點與連線當作圖 UI 雛形，不是正式圖資料庫或版面演算法。
+
+```powershell
+.venv/Scripts/python.exe -m cement.graph_extract extract   # 印出 candidates_created / candidates_staled
+```
+
+API：`POST/GET /api/graph/candidate-relations`。本機實測：對既有 pending 候選接受兩筆、建立一筆 `same_event_candidate` 關聯，`/graph` 頁面 SVG 正確畫出 2 個節點與 1 條連線（以瀏覽器 DOM 查詢確認節點/連線數，畫面截圖因視窗背景執行而未能穩定擷取，改以 DOM 與 API 回應交叉驗證）。44 項 pytest（含本輪新增 7 項：3 項候選版本失效／關聯驗證、4 項分頁）通過。未新增人工標籤、未動既有訓練與審核邏輯。

@@ -1,17 +1,42 @@
 <!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>圖譜候選審核</title>
-<style>body{font:16px system-ui;background:#f4f3ee;color:#233b36;margin:0}main{max-width:900px;margin:40px auto;padding:24px}h1{font-size:26px}button,input{padding:9px;border:1px solid #aaa;border-radius:6px;background:white;font:inherit}article{background:white;border:1px solid #ddd;border-radius:8px;padding:16px;margin:14px 0}blockquote{margin:10px 0;padding:10px 14px;background:#f7f6f1;border-left:4px solid #226449}.meta{color:#667;font-size:13px}.row{display:flex;gap:10px;align-items:center;margin-top:10px;flex-wrap:wrap}a{color:#236e63}#msg{min-height:24px;color:#667}</style>
+<style>body{font:16px system-ui;background:#f4f3ee;color:#233b36;margin:0}main{max-width:900px;margin:40px auto;padding:24px}h1{font-size:26px}h2{font-size:19px;margin-top:40px}button,input,select{padding:9px;border:1px solid #aaa;border-radius:6px;background:white;font:inherit}article{background:white;border:1px solid #ddd;border-radius:8px;padding:16px;margin:14px 0}blockquote{margin:10px 0;padding:10px 14px;background:#f7f6f1;border-left:4px solid #226449}.meta{color:#667;font-size:13px}.row{display:flex;gap:10px;align-items:center;margin-top:10px;flex-wrap:wrap}a{color:#236e63}#msg,#linkMsg{min-height:24px;color:#667}#diagram{background:white;border:1px solid #ddd;border-radius:8px;overflow:auto}</style>
 <main><p><a href="/">← 返回清冊</a> · <a href="/review">審核工具</a></p>
 <h1>圖譜候選審核（規則抽取，僅供人工判斷）</h1>
-<p class="meta">句子含因果詞（導致／造成／因此／由於／引起／因而／due to／results in／leads to／caused by／because of／contributes to）不代表已證實因果；每筆都是原文句子（explicit_in_source），需人工接受或拒絕才算數，拒絕的候選不會再出現。</p>
+<p class="meta">句子含因果詞（導致／造成／因此／由於／引起／因而／due to／results in／leads to／caused by／because of／contributes to）不代表已證實因果；每筆都是原文句子（explicit_in_source），需人工接受或拒絕才算數，拒絕的候選不會再出現。原文更新後，舊版本尚未審核的候選會自動標記為 stale 並從此清單消失，已接受／拒絕的紀錄仍保留為歷史。</p>
 <div class="row"><button id="run">重新掃描既有解析文件</button><input id="reviewer" placeholder="審核者" list="reviewers"><datalist id="reviewers"><option value="pososos"></datalist></div>
 <div id="msg"></div>
 <div id="list"></div>
+
+<h2>跨文件事件關聯（雛形）</h2>
+<p class="meta">只能連結已接受的候選；same_event_candidate 是「可能是同一事件的候選」，不是自動確認的合併——實體、時間、地點／試體與條件是否一致仍需人工判斷。</p>
+<div class="row"><select id="fromCand"></select><select id="relType"><option value="same_event_candidate">same_event_candidate（可能同一事件）</option><option value="precedes">precedes（時間先後）</option><option value="related">related（相關，非因果）</option></select><select id="toCand"></select><input id="linkNote" placeholder="備註（選填）" style="flex:1"><button id="link">建立關聯</button></div>
+<div id="linkMsg"></div>
+<div id="diagram"></div>
 </main>
 <script>
 const $=id=>document.getElementById(id);
 async function api(url,opts){const r=await fetch(url,opts);const body=await r.json();if(!r.ok)throw Error(typeof body.detail==='string'?body.detail:JSON.stringify(body.detail));return body}
 function msg(s){$('msg').textContent=s}
-async function load(){try{const rows=await api('/api/graph/candidates?status=pending');$('list').replaceChildren();if(!rows.length){$('list').textContent='目前沒有待審候選。';return}for(const c of rows){const a=document.createElement('article');const meta=document.createElement('div');meta.className='meta';meta.textContent=`文件版本 ${c.document_version_id.slice(0,20)}… · 因果詞「${c.cue_phrase}」 · assertion_mode=${c.assertion_mode}`;const q=document.createElement('blockquote');q.textContent=c.quote;const row=document.createElement('div');row.className='row';const accept=document.createElement('button');accept.textContent='接受';const reject=document.createElement('button');reject.textContent='拒絕';const note=document.createElement('input');note.placeholder='備註（選填）';note.style.flex='1';const act=async decision=>{const reviewer=$('reviewer').value.trim();if(!reviewer){msg('請先填審核者。');return}try{await api(`/api/graph/candidates/${c.id}/review`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({decision,reviewer,note:note.value})});msg('已儲存。');await load()}catch(e){msg('未儲存：'+e.message)}};accept.onclick=()=>act('accepted');reject.onclick=()=>act('rejected');row.append(accept,reject,note);a.append(meta,q,row);$('list').append(a)}}catch(e){msg('載入失敗：'+e.message)}}
-$('run').onclick=async()=>{msg('掃描中…');try{const r=await api('/api/graph/extract',{method:'POST'});msg(`已產生 ${r.candidates_created} 筆新候選（含重複詞略過）。`);await load()}catch(e){msg('掃描失敗：'+e.message)}};
-load();
+function linkMsg(s){$('linkMsg').textContent=s}
+function label(c){return `[${(c.document_version_id||'').slice(0,10)}…] ${c.quote.slice(0,50)}`}
+async function load(){try{const rows=await api('/api/graph/candidates?status=pending');$('list').replaceChildren();if(!rows.length){$('list').textContent='目前沒有待審候選。';return}for(const c of rows){const a=document.createElement('article');const meta=document.createElement('div');meta.className='meta';meta.textContent=`文件版本 ${c.document_version_id.slice(0,20)}… · 因果詞「${c.cue_phrase}」 · assertion_mode=${c.assertion_mode}`;const q=document.createElement('blockquote');q.textContent=c.quote;const row=document.createElement('div');row.className='row';const accept=document.createElement('button');accept.textContent='接受';const reject=document.createElement('button');reject.textContent='拒絕';const note=document.createElement('input');note.placeholder='備註（選填）';note.style.flex='1';const act=async decision=>{const reviewer=$('reviewer').value.trim();if(!reviewer){msg('請先填審核者。');return}try{await api(`/api/graph/candidates/${c.id}/review`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({decision,reviewer,note:note.value})});msg('已儲存。');await load();await loadLinks()}catch(e){msg('未儲存：'+e.message)}};accept.onclick=()=>act('accepted');reject.onclick=()=>act('rejected');row.append(accept,reject,note);a.append(meta,q,row);$('list').append(a)}}catch(e){msg('載入失敗：'+e.message)}}
+async function loadLinks(){
+  let accepted=[],relations=[];
+  try{[accepted,relations]=await Promise.all([api('/api/graph/candidates?status=accepted'),api('/api/graph/candidate-relations')])}catch(e){linkMsg('載入關聯失敗：'+e.message);return}
+  for(const sel of [$('fromCand'),$('toCand')]){sel.replaceChildren();for(const c of accepted)sel.add(new Option(label(c),c.id))}
+  const byId=Object.fromEntries(accepted.map(c=>[c.id,c]));
+  const svgNs='http://www.w3.org/2000/svg',boxW=220,boxH=60,gapX=60,gapY=110,pad=20;
+  const nodeIds=[...new Set(relations.flatMap(r=>[r.from_candidate_id,r.to_candidate_id]))].filter(id=>byId[id]);
+  $('diagram').replaceChildren();
+  if(!nodeIds.length){$('diagram').textContent=accepted.length?'尚未建立任何跨文件關聯。':'目前沒有已接受的候選可供連結。';return}
+  const pos=Object.fromEntries(nodeIds.map((id,i)=>[id,{x:pad+(i%3)*(boxW+gapX),y:pad+Math.floor(i/3)*gapY}]));
+  const width=pad*2+Math.min(3,nodeIds.length)*(boxW+gapX),height=pad*2+(Math.floor((nodeIds.length-1)/3)+1)*gapY+boxH;
+  const svg=document.createElementNS(svgNs,'svg');svg.setAttribute('viewBox',`0 0 ${width} ${height}`);svg.setAttribute('width',width);svg.setAttribute('height',height);
+  for(const r of relations){const a=pos[r.from_candidate_id],b=pos[r.to_candidate_id];if(!a||!b)continue;const line=document.createElementNS(svgNs,'line');line.setAttribute('x1',a.x+boxW/2);line.setAttribute('y1',a.y+boxH/2);line.setAttribute('x2',b.x+boxW/2);line.setAttribute('y2',b.y+boxH/2);line.setAttribute('stroke','#226449');line.setAttribute('stroke-width','2');svg.append(line);const t=document.createElementNS(svgNs,'text');t.setAttribute('x',(a.x+b.x)/2+boxW/2);t.setAttribute('y',(a.y+b.y)/2+boxH/2-6);t.setAttribute('font-size','11');t.setAttribute('fill','#556');t.textContent=r.relation_type;svg.append(t)}
+  for(const id of nodeIds){const p=pos[id],c=byId[id];const rect=document.createElementNS(svgNs,'rect');rect.setAttribute('x',p.x);rect.setAttribute('y',p.y);rect.setAttribute('width',boxW);rect.setAttribute('height',boxH);rect.setAttribute('rx','8');rect.setAttribute('fill','#f7f6f1');rect.setAttribute('stroke','#226449');svg.append(rect);const text=document.createElementNS(svgNs,'text');text.setAttribute('x',p.x+10);text.setAttribute('y',p.y+24);text.setAttribute('font-size','11');text.setAttribute('fill','#233b36');text.textContent=(c.document_version_id||'').slice(0,18)+'…';svg.append(text);const text2=document.createElementNS(svgNs,'text');text2.setAttribute('x',p.x+10);text2.setAttribute('y',p.y+42);text2.setAttribute('font-size','11');text2.setAttribute('fill','#233b36');text2.textContent=c.quote.slice(0,28)+'…';svg.append(text2)}
+  $('diagram').append(svg);
+}
+$('run').onclick=async()=>{msg('掃描中…');try{const r=await api('/api/graph/extract',{method:'POST'});msg(`已產生 ${r.candidates_created} 筆新候選，${r.candidates_staled} 筆因原文更新變為 stale（含重複詞略過）。`);await load();await loadLinks()}catch(e){msg('掃描失敗：'+e.message)}};
+$('link').onclick=async()=>{const from_candidate_id=$('fromCand').value,to_candidate_id=$('toCand').value,relation_type=$('relType').value,created_by=$('reviewer').value.trim();if(!created_by){linkMsg('請先填審核者（同上方欄位）。');return}if(!from_candidate_id||!to_candidate_id||from_candidate_id===to_candidate_id){linkMsg('請選擇兩個不同的已接受候選。');return}try{await api('/api/graph/candidate-relations',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({from_candidate_id,to_candidate_id,relation_type,created_by,note:$('linkNote').value})});linkMsg('已建立關聯。');await loadLinks()}catch(e){linkMsg('未建立：'+e.message)}};
+load();loadLinks();
 </script></html>

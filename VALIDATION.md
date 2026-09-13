@@ -141,3 +141,11 @@ pytest -q -p no:cacheprovider --basetemp=data/test-d008-track3-full-20260913：3
 ## Git 狀態核對（2026-09-13）
 
 `git -c safe.directory='D:/QR code design' log` 回報 branch 'master' 尚無任何 commit；`git status` 顯示全部檔案為 untracked。即本機三天以來的所有程式與文件變更目前只存在工作目錄，從未提交。另清除本次診斷中誤建的 0 byte 根目錄 catalog.sqlite（與 data/catalog.sqlite 正式資料庫無關）。本輪僅核對狀態與清理殘留檔，未執行 git add／commit，是否建立首個 commit 留待使用者決定。
+
+依使用者確認建立首個 commit（`7f64891`）：僅本機 repo-local 設定 `user.name=pososos`／`user.email=annyjpc@gmail.com`（未動全域設定）；`git add -A` 前逐一核對 92 個待加入檔案（`git add -A -n` 全量列出並抽查最大檔案 `sources.json` 113KB），確認皆為程式／設定／文件／測試，沒有 `data/`／`models/` 下的任何蒐集文件或模型檔（已被 `.gitignore` 排除）。commit 後依使用者提供的網址新增 remote origin（`https://github.com/pososos/QR-code-design.git`，push 前以 `git ls-remote` 確認該 repo 目前為空、無衝突風險）並推送 master 分支成功。
+
+## 分頁、版本失效管理與跨文件候選關聯（2026-09-13）
+
+pytest -q -p no:cacheprovider：44 passed（原37＋新增 tests/test_pagination.py 4 項、tests/test_graph_extract.py 新增 3 項），2 個既有相依套件棄用警告。
+
+本機以既有 513 份庫（392 parsed）重啟服務實測：`GET /api/documents?limit=3` 回傳 `X-Total-Count: 513` 且僅回 3 筆；`POST /api/graph/extract` 對現有 pending 候選正常運作（初次遷移時因 `extraction_jobs` 缺 `document_id` 欄位觸發 `sqlite3.OperationalError`，已用 `PRAGMA table_info` 偵測後 `ALTER TABLE` 補欄位修復，修復後重試成功、pytest 44 項仍全過）；以 API 直接接受兩筆候選並建立一筆 `same_event_candidate` 關聯後，`/graph` 頁面以瀏覽器 DOM 查詢確認 SVG 正確畫出 2 個 `<rect>` 節點與 1 條 `<line>` 連線（畫面截圖因瀏覽器分頁背景執行不穩定而改用 DOM／API 交叉驗證，非省略驗證）。未修改既有人工標籤、review.py 或 dataset 邏輯。

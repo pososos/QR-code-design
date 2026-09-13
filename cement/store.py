@@ -29,11 +29,17 @@ def event(url, status, detail=''):
     with connect() as db:
         db.execute('INSERT INTO events(url,status,detail) VALUES (?,?,?)', (url, status, detail))
 
-def documents():
+def documents(limit=None, offset=0):
+    """limit=None keeps the historical full-table behavior every existing caller relies on."""
     subtype_path = Path(__file__).resolve().parent.parent / 'config' / 'source-subtypes.json'
     subtypes = json.loads(subtype_path.read_text(encoding='utf-8')) if subtype_path.exists() else {}
     with connect() as db:
-        rows = db.execute('SELECT * FROM documents ORDER BY created_at DESC').fetchall()
+        query = 'SELECT * FROM documents ORDER BY created_at DESC'
+        params = ()
+        if limit is not None:
+            query += ' LIMIT ? OFFSET ?'
+            params = (limit, offset)
+        rows = db.execute(query, params).fetchall()
         result = []
         for row in rows:
             item = dict(row)
@@ -41,3 +47,8 @@ def documents():
             item['source_metadata'] = [dict(source_id=s['source_id'], **subtypes[s['source_id']]) for s in item['sources'] if s['source_id'] in subtypes] if item['kind'] != 'html' else []
             result.append(item)
         return result
+
+
+def document_count():
+    with connect() as db:
+        return db.execute('SELECT COUNT(*) FROM documents').fetchone()[0]
