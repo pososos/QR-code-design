@@ -1,0 +1,27 @@
+[
+  {
+    "id": "quota-fourth-chc",
+    "url": "https://www.chc.com.tw/csr/",
+    "allowed_hosts": [
+      "www.chc.com.tw"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf",
+    "suggested_label": "industry",
+    "language_hint": "zh",
+    "domain": "cement_concrete",
+    "license": "Public report; copyright retained"
+  },
+  {
+    "id": "quota-fourth-taiheiyo",
+    "url": "https://www.taiheiyo-cement.co.jp/english/csr/pdf/data/2025/Taiheiyo-Cement-rep2025en.pdf",
+    "allowed_hosts": [
+      "www.taiheiyo-cement.co.jp"
+    ],
+    "max_depth": 0,
+    "suggested_label": "industry",
+    "language_hint": "en",
+    "domain": "cement_concrete",
+    "license": "Public report; copyright retained"
+  }
+]

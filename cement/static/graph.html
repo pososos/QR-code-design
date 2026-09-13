@@ -1,0 +1,17 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>圖譜候選審核</title>
+<style>body{font:16px system-ui;background:#f4f3ee;color:#233b36;margin:0}main{max-width:900px;margin:40px auto;padding:24px}h1{font-size:26px}button,input{padding:9px;border:1px solid #aaa;border-radius:6px;background:white;font:inherit}article{background:white;border:1px solid #ddd;border-radius:8px;padding:16px;margin:14px 0}blockquote{margin:10px 0;padding:10px 14px;background:#f7f6f1;border-left:4px solid #226449}.meta{color:#667;font-size:13px}.row{display:flex;gap:10px;align-items:center;margin-top:10px;flex-wrap:wrap}a{color:#236e63}#msg{min-height:24px;color:#667}</style>
+<main><p><a href="/">← 返回清冊</a> · <a href="/review">審核工具</a></p>
+<h1>圖譜候選審核（規則抽取，僅供人工判斷）</h1>
+<p class="meta">句子含因果詞（導致／造成／因此／由於／引起／因而／due to／results in／leads to／caused by／because of／contributes to）不代表已證實因果；每筆都是原文句子（explicit_in_source），需人工接受或拒絕才算數，拒絕的候選不會再出現。</p>
+<div class="row"><button id="run">重新掃描既有解析文件</button><input id="reviewer" placeholder="審核者" list="reviewers"><datalist id="reviewers"><option value="pososos"></datalist></div>
+<div id="msg"></div>
+<div id="list"></div>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+async function api(url,opts){const r=await fetch(url,opts);const body=await r.json();if(!r.ok)throw Error(typeof body.detail==='string'?body.detail:JSON.stringify(body.detail));return body}
+function msg(s){$('msg').textContent=s}
+async function load(){try{const rows=await api('/api/graph/candidates?status=pending');$('list').replaceChildren();if(!rows.length){$('list').textContent='目前沒有待審候選。';return}for(const c of rows){const a=document.createElement('article');const meta=document.createElement('div');meta.className='meta';meta.textContent=`文件版本 ${c.document_version_id.slice(0,20)}… · 因果詞「${c.cue_phrase}」 · assertion_mode=${c.assertion_mode}`;const q=document.createElement('blockquote');q.textContent=c.quote;const row=document.createElement('div');row.className='row';const accept=document.createElement('button');accept.textContent='接受';const reject=document.createElement('button');reject.textContent='拒絕';const note=document.createElement('input');note.placeholder='備註（選填）';note.style.flex='1';const act=async decision=>{const reviewer=$('reviewer').value.trim();if(!reviewer){msg('請先填審核者。');return}try{await api(`/api/graph/candidates/${c.id}/review`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({decision,reviewer,note:note.value})});msg('已儲存。');await load()}catch(e){msg('未儲存：'+e.message)}};accept.onclick=()=>act('accepted');reject.onclick=()=>act('rejected');row.append(accept,reject,note);a.append(meta,q,row);$('list').append(a)}}catch(e){msg('載入失敗：'+e.message)}}
+$('run').onclick=async()=>{msg('掃描中…');try{const r=await api('/api/graph/extract',{method:'POST'});msg(`已產生 ${r.candidates_created} 筆新候選（含重複詞略過）。`);await load()}catch(e){msg('掃描失敗：'+e.message)}};
+load();
+</script></html>

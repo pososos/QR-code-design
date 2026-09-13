@@ -1,0 +1,38 @@
+[
+  {
+    "id": "quota-zh-test-0",
+    "url": "https://minghung-group.com/dowload/report03.pdf",
+    "allowed_hosts": [
+      "minghung-group.com"
+    ],
+    "max_depth": 0,
+    "suggested_label": "experiment_log",
+    "domain": "civil_building_materials",
+    "language_hint": "zh",
+    "license": "Public full report; copyright retained; check reproduction restrictions"
+  },
+  {
+    "id": "quota-zh-test-1",
+    "url": "https://jin-matrix.com.tw/upload/tesring/1663574165.pdf",
+    "allowed_hosts": [
+      "jin-matrix.com.tw"
+    ],
+    "max_depth": 0,
+    "suggested_label": "experiment_log",
+    "domain": "civil_building_materials",
+    "language_hint": "zh",
+    "license": "Public full report; copyright retained; check reproduction restrictions"
+  },
+  {
+    "id": "quota-zh-test-2",
+    "url": "https://www.prowin.tw/UserFiles/down/file_D201707200001220170720174510c4h7p.pdf",
+    "allowed_hosts": [
+      "www.prowin.tw"
+    ],
+    "max_depth": 0,
+    "suggested_label": "experiment_log",
+    "domain": "civil_building_materials",
+    "language_hint": "zh",
+    "license": "Public full report; copyright retained; check reproduction restrictions"
+  }
+]

@@ -1,0 +1,535 @@
+[
+  {
+    "id": "quota-fhwa-000",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif19026.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Washington State I-90 Pavement Rehabilitation Using Precast Concrete Pavement [Primary Topic:  Materials-Concrete] 2019 FHWA-HIF-19-026 PDF [ 1 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-001",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif19021.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Permeable Interlocking Concrete Pavement [Primary Topic:  Pavement Drainage] 2019 FHWA-HIF-19-021 PDF [  ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-002",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif19015.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Tech Brief: NM 136 Continuously Reinforced Concrete Pavement [Primary Topic:  Materials-Concrete] 2019 FHWA-HIF-19-015 PDF [ 1 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-003",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif19013.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Precast Concrete Pavement Technology Implementation [Primary Topic:  Materials-Concrete] 2019 FHWA-HIF-19-013 PDF [ 2 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-004",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif19012.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Precast Concrete Pavement Technology Resources [Primary Topic:  Materials-Concrete] 2019 FHWA-HIF-19-012 PDF [ 0.3 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-005",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif19011.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Precast Concrete Pavement Implementation by U.S. Highway Agencies [Primary Topic:  Materials-Concrete] 2019 FHWA-HIF-19-011 PDF [ 0.2 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-006",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif19066.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Tech Brief: Optimized Design Details for Continuously Reinforced Concrete Pavements [Primary Topic:  Pavement Design] 2019 FHWA-HIF-19-006 PDF [ 1 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-007",
+    "url": "https://www.fhwa.dot.gov/pavement/pubs/hif019099.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Tech Brief: Overview of Precast Concrete Pavement in the United States [Primary Topic:  Materials-Concrete] 2019 FHWA-HIF-019-099 PDF [ 0.3 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-008",
+    "url": "https://www.fhwa.dot.gov/pavement/pubs/hif019098.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Tech Brief: Overview of Continuously Reinforced Concrete Pavement in the United States [Primary Topic:  Materials-Concrete] 2019 FHWA-HIF-019-098 PDF [ 0.3 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-009",
+    "url": "https://www.fhwa.dot.gov/publications/research/infrastructure/pavements/ltpp/17059/17059.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Characterizing Existing Asphalt Concrete Layer Damage for Mechanistic Pavement Rehabilitation Design [Primary Topic:  Pavement Design] 2018 FHWA-HRT-17-059 HTML PDF [ 96  mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-010",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif18051.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Technology Transfer, Delivery, and Implementation of Best Practices for Jointed Concrete Pavements [Primary Topic:  Pavement Construction] 2018 FHWA-HIF-18-051 PDF [  ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-011",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif16026.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Continuously Reinforced Concrete Pavement Manual, Guidelines for Design, Construction, Maintenance, and Rehabilitation [Primary Topic:  Materials-Concrete] 2016 FHWA-HIF-16-026 PDF [ 5 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-012",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif16025.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Continuously Reinforced Concrete Pavement (CRCP) - Executive Brief [Primary Topic:  Rigid Pavement] 2016 FHWA-HIF-16-025 PDF [ 0.2 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-013",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif16006.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Internal Curing for Concrete Pavements [Primary Topic:  Materials-Concrete] 2016 FHWA-HIF-16-006 PDF [ 0.4 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-014",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif16005.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Bases and Subbases for Concrete Pavements [Primary Topic:  Pavement Construction] 2016 FHWA-HIF-16-005 PDF [ 2 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-015",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif16004.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Technical Brief: Permeable Concrete Pavements [Primary Topic:  Pavement Drainage] 2016 FHWA-HIF-16-004 PDF [ 1 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-016",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif16003.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Technical Brief: Roller-Compacted Concrete Pavement [Primary Topic:  Pavement Construction] 2016 FHWA-HIF-16-003 PDF [ 1 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-017",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif16001.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Supplementary Cementitious Materials -  Best Practices for Concrete Pavements [Primary Topic:  Materials-Concrete] 2016 FHWA-HIF-16-001 PDF [ 0.4 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-018",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif16009.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Precast Concrete Pavement Bedding Support Systems [Primary Topic:  Pavement Base and Subbase] 2015 FHWA-HIF-16-009 PDF [ 0.1 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-019",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif16008.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Load Transfer Systems for Jointed Precast Concrete Pavements [Primary Topic:  Materials-Concrete] 2015 FHWA-HIF-16-008 PDF [ 0.3 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-020",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif15006.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "TechBrief: Permeable Interlocking Concrete Pavement [Primary Topic:  Pavement Drainage] 2015 FHWA-HIF-15-006 PDF [ 2 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-021",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif14005.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Precast Concrete Pavement Technology - Marketing Plan for Implementation of Products from SHRP2 Project R05 [Primary Topic:  Pavement Rehabilitation] 2014 FHWA-HIF-14-005 PDF [ 1 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-022",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/asr/pubs/hif14004.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Methods for Preventing ASR in New Construction Results of Field Exposure Sites [Primary Topic:  Materials-Concrete] 2013 FHWA-HIF-14-004 PDF [ 1 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-023",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/asr/pubs/hif14003.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Methods for Evaluating and Treating ASR-Affected Structures: Results of Field Application and Demonstration Projects Volume II: Details of Field Applications and Analysis Final Report [Primary Topic:  Materials-Concrete] 2013 FHWA-HIF-14-003 PDF [ 31 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-024",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/asr/pubs/hif14002.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Methods for Evaluating and Treating ASR-Affected Structures: Results of Field Application and Demonstration Projects Volume I: Summary of Findings and Recommendations Final Report [Primary Topic:  Materials-Concrete] 2013 FHWA-HIF-14-002 PDF [ 2 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-025",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif13027/hif13027.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Continuously Reinforced Concrete Pavement: Design Using the AASHTO Pavement ME Design Program [Primary Topic:  Pavement Design] 2013 FHWA-HIF-13-027 PDF [ 1 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-026",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif13025.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Continuously Reinforced Concrete Pavement: Design Using the AASHTOWare Pavement ME Design Procedure [Primary Topic:  Pavement Design] 2013 FHWA-HIF-13-025 PDF [ 2 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-027",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif12031.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Use of Air-Cooled Blast Furnace Slag as Coarse Aggregate in Concrete Pavements - Tech Brief [Primary Topic:  Materials-Concrete] 2012 FHWA-HIF-12-031 PDF [ 1 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-028",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif12009.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Use of Air-Cooled Blast Furnace Slag as Coarse Aggregate in Concrete Pavements - Guide to Best Practice [Primary Topic:  Materials-Concrete] 2012 FHWA-HIF-12-009 PDF [ 1 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-029",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif12008.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Use of Air-Cooled Blast Furnace Slag as Coarse Aggregate in Concrete Pavements - Final Report [Primary Topic:  Materials-Concrete] 2012 FHWA-HIF-12-008 PDF [ 3 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-030",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif10010/hif10010.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Impact of Temperature Curling and Moisture Warping on Jointed Concrete Pavement Performance [Primary Topic:  Pavement Base and Subbase] 2010 FHWA-HIF-10-010 PDF [ 2 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-031",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif09023/hif09023.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "TechBrief: Determination of Concrete Pavement Thickness Nondestructively Using the Magnetic Imaging Tomography Technique [Primary Topic:  Pavement Issues] 2009 FHWA-HIF-09-023 PDF [ 1 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-032",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif09012/hif09012.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Techbrief: Evaluating the Use of Fiber-Reinforced Polymer Bars in Continuously Reinforced Concrete Pavement [Primary Topic:  Materials-Concrete] 2009 FHWA-HIF-09-012 PDF [ 0.4 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-033",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/asr/hif09001/hif09001.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Report on Determining the Reactivity of Concrete Aggregates and Selecting Appropriate Measures for Preventing Deleterious Expansion in New Concrete Construction [Primary Topic:  Materials-Concrete] 2008 FHWA-HIF-09-001 PDF [ 6 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-034",
+    "url": "https://international.fhwa.dot.gov/pubs/pl07027/pl07027.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Long-Life Concrete Pavements in Europe and Canada [Primary Topic:  Rigid Pavement] 2007 FHWA-PL-07-027 HTML PDF [ 7 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-035",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/07030/07030.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "TechBrief: Long-Life Concrete Pavements: Best Practices and Directions from the States [Primary Topic:  Pavement Design] 2007 FHWA-IF-07-030 PDF [ 0.2 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-036",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/07021/07021.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "TechBrief: Best Practices for Dowel Placement Tolerances [Primary Topic:  Pavement Rehabilitation] 2007 FHWA-IF-07-021 PDF [ 1 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-037",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/asrbench.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Alkali-Silica Reactivity (ASR) Benchmarking Workshop Final Report [Primary Topic:  Materials-Concrete] 2006 PDF [ 0.3 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-038",
+    "url": "https://www.fhwa.dot.gov/pavement/recycling/applications.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Transportation Applications Of Recycled Concrete Aggregate [Primary Topic:  Pavement Design] 2004 PDF [ 3 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-039",
+    "url": "https://www.fhwa.dot.gov/pavement/pubs/013167.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Summary Report - U.S. Tour of European Concrete Highways (U.S. Tech) Follow-up Tour of Germany and Austria [Primary Topic:  Materials-Concrete] 1993 FHWA-SA-93-080 PDF [ 22 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-040",
+    "url": "https://www.fhwa.dot.gov/pavement/pubs/014732.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Soil and Base Stabilization and Associated Drainage Considerations - volume II, Mixture Design Considerations [Primary Topic:  Materials-Concrete] 1992 FHWA-SA-93-005 PDF [ 46 mb ]",
+    "license": "Public access; verify individual document rights"
+  }
+]

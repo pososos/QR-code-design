@@ -1,0 +1,167 @@
+{
+  "version": "cement-purpose-v3-course-notes",
+  "min_score": 4,
+  "min_margin": 2,
+  "domain_terms": [
+    "cement",
+    "clinker",
+    "cementitious",
+    "fly ash",
+    "slag cement",
+    "水泥",
+    "熟料",
+    "膠結材料",
+    "飛灰"
+  ],
+  "classes": {
+    "research": {
+      "strong": [
+        "hydration kinetics",
+        "experimental study",
+        "microstructure development",
+        "水化動力學",
+        "實驗研究"
+      ],
+      "support": [
+        "methods",
+        "results",
+        "experiment",
+        "研究方法",
+        "實驗結果"
+      ],
+      "search_terms": [
+        "cement hydration experimental study",
+        "水泥 水化 實驗研究"
+      ]
+    },
+    "manual": {
+      "strong": [
+        "user guide",
+        "user manual",
+        "使用手冊",
+        "操作手冊"
+      ],
+      "support": [
+        "software",
+        "installation",
+        "parameter",
+        "軟體",
+        "操作步驟",
+        "參數"
+      ],
+      "search_terms": [
+        "cement software user guide",
+        "水泥 操作手冊"
+      ]
+    },
+    "guidance": {
+      "strong": [
+        "technical brief",
+        "tech brief",
+        "best practices",
+        "application guide",
+        "技術指引",
+        "施工指南"
+      ],
+      "support": [
+        "recommend",
+        "application",
+        "guidance",
+        "選用",
+        "適用",
+        "建議"
+      ],
+      "search_terms": [
+        "cement best practices technical brief",
+        "水泥 工程 技術指引"
+      ]
+    },
+    "safety": {
+      "strong": [
+        "safety data sheet",
+        "安全資料表"
+      ],
+      "support": [
+        "hazard identification",
+        "first aid",
+        "exposure controls",
+        "危害辨識",
+        "急救措施",
+        "暴露預防"
+      ],
+      "search_terms": [
+        "cement safety data sheet",
+        "水泥 安全資料表"
+      ]
+    },
+    "industry": {
+      "strong": [
+        "sustainability report",
+        "annual report",
+        "industry outlook",
+        "永續報告書",
+        "年報"
+      ],
+      "support": [
+        "reporting period",
+        "emissions",
+        "revenue",
+        "報告期間",
+        "營收",
+        "排放"
+      ],
+      "search_terms": [
+        "cement sustainability report",
+        "水泥 永續報告書"
+      ]
+    },
+    "experiment_log": {
+      "strong": [
+        "experiment log",
+        "laboratory record",
+        "實驗記錄",
+        "試驗紀錄"
+      ],
+      "support": [
+        "specimen",
+        "measurement",
+        "試體編號",
+        "量測",
+        "試驗日期"
+      ],
+      "search_terms": [
+        "cement laboratory experiment log",
+        "水泥 實驗記錄 試體編號"
+      ]
+    },
+    "manuscript_notes": {
+      "strong": [
+        "working notes",
+        "draft manuscript",
+        "手稿筆記",
+        "工作筆記",
+        "lecture notes",
+        "course handout",
+        "課堂筆記",
+        "課堂講義"
+      ],
+      "support": [
+        "draft",
+        "todo",
+        "草稿",
+        "待辦",
+        "想法",
+        "lecture",
+        "course",
+        "課程",
+        "教學"
+      ],
+      "search_terms": [
+        "cement working notes draft",
+        "水泥 工作筆記 草稿",
+        "concrete lecture notes course handouts",
+        "土木 課堂筆記 講義"
+      ]
+    }
+  }
+}

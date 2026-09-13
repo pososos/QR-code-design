@@ -1,0 +1,54 @@
+[
+  {
+    "id": "quota-fifth-giatec-icor",
+    "url": "https://www.giatecscientific.com/wp-content/uploads/2019/05/Giatec-iCOR-User-Manual-V5-new-app.pdf",
+    "allowed_hosts": [
+      "www.giatecscientific.com"
+    ],
+    "max_depth": 0,
+    "link_pattern": "(?i)\\.pdf",
+    "suggested_label": "manual",
+    "language_hint": "en",
+    "domain": "cement_concrete",
+    "license": "Public author/manufacturer document; copyright retained"
+  },
+  {
+    "id": "quota-fifth-giatec-rcon",
+    "url": "https://www.giatecscientific.com/products/concrete-ndt-devices/rcon-bulk-resistivity/",
+    "allowed_hosts": [
+      "www.giatecscientific.com"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)user.?manual",
+    "suggested_label": "manual",
+    "language_hint": "en",
+    "domain": "cement_concrete",
+    "license": "Public author/manufacturer document; copyright retained"
+  },
+  {
+    "id": "quota-fifth-giatec-surf",
+    "url": "https://www.giatecscientific.com/products/concrete-ndt-devices/surf-surface-resistivity-meter-giatec/",
+    "allowed_hosts": [
+      "www.giatecscientific.com"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)user.?manual",
+    "suggested_label": "manual",
+    "language_hint": "en",
+    "domain": "cement_concrete",
+    "license": "Public author/manufacturer document; copyright retained"
+  },
+  {
+    "id": "quota-fifth-caprani-notes",
+    "url": "https://colincaprani.com/structural-engineering/courses/lecture-notes/",
+    "allowed_hosts": [
+      "colincaprani.com"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf",
+    "suggested_label": "manuscript_notes",
+    "language_hint": "en",
+    "domain": "civil_structural",
+    "license": "Public author/manufacturer document; copyright retained"
+  }
+]

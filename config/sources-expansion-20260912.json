@@ -1,0 +1,98 @@
+[
+  {
+    "id": "cement-australia-gp",
+    "url": "https://www.cementaustralia.com.au/sites/default/files/2023-07/CASDS01_General_Purpose_Cement_Jul23.pdf",
+    "allowed_hosts": [
+      "www.cementaustralia.com.au"
+    ],
+    "suggested_label": "safety",
+    "license": "Public access; verify document-specific reuse terms",
+    "max_depth": 0,
+    "source_group_hint": "cement-australia",
+    "discovered_at": "2026-09-12"
+  },
+  {
+    "id": "cement-australia-white",
+    "url": "https://www.cementaustralia.com.au/sites/default/files/2022-05/CASDS73%20White%20Cement.pdf",
+    "allowed_hosts": [
+      "www.cementaustralia.com.au"
+    ],
+    "suggested_label": "safety",
+    "license": "Public access; verify document-specific reuse terms",
+    "max_depth": 0,
+    "source_group_hint": "cement-australia",
+    "discovered_at": "2026-09-12"
+  },
+  {
+    "id": "holcim-ready-mix",
+    "url": "https://www.holcim.us/sites/us/files/2022-08/ready_mix_concrete_sds_08172022_final2_0.pdf",
+    "allowed_hosts": [
+      "www.holcim.us"
+    ],
+    "suggested_label": "safety",
+    "license": "Public access; verify document-specific reuse terms",
+    "max_depth": 0,
+    "source_group_hint": "holcim",
+    "discovered_at": "2026-09-12"
+  },
+  {
+    "id": "heidelberg-2022",
+    "url": "https://www.heidelbergmaterials.com/sites/default/files/2023-03/HM_Annual_and_Sustainability_Report_2022.pdf",
+    "allowed_hosts": [
+      "www.heidelbergmaterials.com"
+    ],
+    "suggested_label": "industry",
+    "license": "Public access; verify document-specific reuse terms",
+    "max_depth": 0,
+    "source_group_hint": "heidelberg",
+    "discovered_at": "2026-09-12"
+  },
+  {
+    "id": "heidelberg-2021",
+    "url": "https://www.heidelbergmaterials.com/sites/default/files/2022-06/220529-HC-NB-2021-EN.pdf",
+    "allowed_hosts": [
+      "www.heidelbergmaterials.com"
+    ],
+    "suggested_label": "industry",
+    "license": "Public access; verify document-specific reuse terms",
+    "max_depth": 0,
+    "source_group_hint": "heidelberg",
+    "discovered_at": "2026-09-12"
+  },
+  {
+    "id": "nist-vcctl-1173",
+    "url": "https://www.nist.gov/document/vcctluserguidepdf",
+    "allowed_hosts": [
+      "www.nist.gov"
+    ],
+    "suggested_label": "manual",
+    "license": "Public access; verify document-specific reuse terms",
+    "max_depth": 0,
+    "source_group_hint": "nist",
+    "discovered_at": "2026-09-12"
+  },
+  {
+    "id": "nist-hydration-b97004",
+    "url": "https://www.nist.gov/system/files/documents/2017/07/25/b97004.pdf",
+    "allowed_hosts": [
+      "www.nist.gov"
+    ],
+    "suggested_label": "research",
+    "license": "Public access; verify document-specific reuse terms",
+    "max_depth": 0,
+    "source_group_hint": "nist",
+    "discovered_at": "2026-09-12"
+  },
+  {
+    "id": "fhwa-materials-manual",
+    "url": "https://www.fhwa.dot.gov/pavement/pubs/013733.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "suggested_label": "guidance",
+    "license": "Public access; verify document-specific reuse terms",
+    "max_depth": 0,
+    "source_group_hint": "fhwa",
+    "discovered_at": "2026-09-12"
+  }
+]

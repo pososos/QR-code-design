@@ -1,0 +1,2652 @@
+[
+  {
+    "id": "nist-hydration",
+    "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1138.pdf",
+    "allowed_hosts": [
+      "nvlpubs.nist.gov"
+    ],
+    "suggested_label": "research",
+    "license": "Check document-specific terms",
+    "max_depth": 0
+  },
+  {
+    "id": "nist-manual",
+    "url": "https://www.nist.gov/document/evcctlguidepdf",
+    "allowed_hosts": [
+      "www.nist.gov"
+    ],
+    "suggested_label": "manual",
+    "license": "Check document-specific terms",
+    "max_depth": 0
+  },
+  {
+    "id": "fhwa-scm",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif16001.Pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "suggested_label": "guidance",
+    "license": "Check document-specific terms",
+    "max_depth": 0
+  },
+  {
+    "id": "fhwa-plc",
+    "url": "https://highways.dot.gov/sites/fhwa.dot.gov/files/FHWA-HRT-23-104.pdf",
+    "allowed_hosts": [
+      "highways.dot.gov"
+    ],
+    "suggested_label": "guidance",
+    "license": "Check document-specific terms",
+    "max_depth": 0
+  },
+  {
+    "id": "cemex-library",
+    "url": "https://www.cemexusa.com/documents-hub",
+    "allowed_hosts": [
+      "www.cemexusa.com"
+    ],
+    "link_pattern": "(?i)(cement|clinker)",
+    "suggested_label": null,
+    "license": "Public access; redistribution not assumed",
+    "max_depth": 1
+  },
+  {
+    "id": "tcc-2022",
+    "url": "https://media.taiwancement.com/web_tcc/tw/report/csr/report_2022_all.pdf",
+    "allowed_hosts": [
+      "media.taiwancement.com"
+    ],
+    "suggested_label": "industry",
+    "license": "Public access; redistribution not assumed",
+    "max_depth": 0
+  },
+  {
+    "id": "iea-2023",
+    "url": "https://www.iea.org/reports/cement-3",
+    "allowed_hosts": [
+      "www.iea.org"
+    ],
+    "suggested_label": "industry",
+    "license": "CC BY 4.0 as stated on source page",
+    "max_depth": 0
+  },
+  {
+    "id": "cement-australia-gp",
+    "url": "https://www.cementaustralia.com.au/sites/default/files/2023-07/CASDS01_General_Purpose_Cement_Jul23.pdf",
+    "allowed_hosts": [
+      "www.cementaustralia.com.au"
+    ],
+    "suggested_label": "safety",
+    "license": "Public access; verify document-specific reuse terms",
+    "max_depth": 0,
+    "source_group_hint": "cement-australia",
+    "discovered_at": "2026-09-12"
+  },
+  {
+    "id": "cement-australia-white",
+    "url": "https://www.cementaustralia.com.au/sites/default/files/2022-05/CASDS73%20White%20Cement.pdf",
+    "allowed_hosts": [
+      "www.cementaustralia.com.au"
+    ],
+    "suggested_label": "safety",
+    "license": "Public access; verify document-specific reuse terms",
+    "max_depth": 0,
+    "source_group_hint": "cement-australia",
+    "discovered_at": "2026-09-12"
+  },
+  {
+    "id": "holcim-ready-mix",
+    "url": "https://www.holcim.us/sites/us/files/2022-08/ready_mix_concrete_sds_08172022_final2_0.pdf",
+    "allowed_hosts": [
+      "www.holcim.us"
+    ],
+    "suggested_label": "safety",
+    "license": "Public access; verify document-specific reuse terms",
+    "max_depth": 0,
+    "source_group_hint": "holcim",
+    "discovered_at": "2026-09-12"
+  },
+  {
+    "id": "heidelberg-2022",
+    "url": "https://www.heidelbergmaterials.com/sites/default/files/2023-03/HM_Annual_and_Sustainability_Report_2022.pdf",
+    "allowed_hosts": [
+      "www.heidelbergmaterials.com"
+    ],
+    "suggested_label": "industry",
+    "license": "Public access; verify document-specific reuse terms",
+    "max_depth": 0,
+    "source_group_hint": "heidelberg",
+    "discovered_at": "2026-09-12"
+  },
+  {
+    "id": "heidelberg-2021",
+    "url": "https://www.heidelbergmaterials.com/sites/default/files/2022-06/220529-HC-NB-2021-EN.pdf",
+    "allowed_hosts": [
+      "www.heidelbergmaterials.com"
+    ],
+    "suggested_label": "industry",
+    "license": "Public access; verify document-specific reuse terms",
+    "max_depth": 0,
+    "source_group_hint": "heidelberg",
+    "discovered_at": "2026-09-12"
+  },
+  {
+    "id": "nist-vcctl-1173",
+    "url": "https://www.nist.gov/document/vcctluserguidepdf",
+    "allowed_hosts": [
+      "www.nist.gov"
+    ],
+    "suggested_label": "manual",
+    "license": "Public access; verify document-specific reuse terms",
+    "max_depth": 0,
+    "source_group_hint": "nist",
+    "discovered_at": "2026-09-12"
+  },
+  {
+    "id": "nist-hydration-b97004",
+    "url": "https://www.nist.gov/system/files/documents/2017/07/25/b97004.pdf",
+    "allowed_hosts": [
+      "www.nist.gov"
+    ],
+    "suggested_label": "research",
+    "license": "Public access; verify document-specific reuse terms",
+    "max_depth": 0,
+    "source_group_hint": "nist",
+    "discovered_at": "2026-09-12"
+  },
+  {
+    "id": "fhwa-materials-manual",
+    "url": "https://www.fhwa.dot.gov/pavement/pubs/013733.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "suggested_label": "guidance",
+    "license": "Public access; verify document-specific reuse terms",
+    "max_depth": 0,
+    "source_group_hint": "fhwa",
+    "discovered_at": "2026-09-12"
+  },
+  {
+    "id": "tcc-sds-zh",
+    "url": "https://media.taiwancement.com/web_tcc/comm/pdf/認證文件/台泥%20安全資料表.pdf",
+    "suggested_label": "safety",
+    "language_hint": "zh-Hant",
+    "allowed_hosts": [
+      "media.taiwancement.com"
+    ],
+    "max_depth": 0,
+    "license": "Public access; verify document-specific reuse terms"
+  },
+  {
+    "id": "nlma-mortar-zh",
+    "url": "https://www.nlma.gov.tw/uploads/files/b94fbe336143e3e5368a18e7597b46b4.pdf",
+    "suggested_label": "guidance",
+    "language_hint": "zh-Hant",
+    "allowed_hosts": [
+      "www.nlma.gov.tw"
+    ],
+    "max_depth": 0,
+    "license": "Public access; verify document-specific reuse terms"
+  },
+  {
+    "id": "abri-shrinkage-zh",
+    "url": "https://www.abri.gov.tw/News_Content_Table.aspx?n=807&s=39202",
+    "suggested_label": "research",
+    "language_hint": "zh-Hant",
+    "allowed_hosts": [
+      "www.abri.gov.tw"
+    ],
+    "max_depth": 0,
+    "license": "Public access; verify document-specific reuse terms"
+  },
+  {
+    "id": "nist-drying-en",
+    "url": "https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=860282",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "allowed_hosts": [
+      "tsapps.nist.gov"
+    ],
+    "max_depth": 0,
+    "license": "Public access; verify document-specific reuse terms"
+  },
+  {
+    "id": "nist-kinetics-abstract-en",
+    "url": "https://www.nist.gov/publications/influence-water-cement-ratio-hydration-kinetics-simple-models-based-spatial",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "allowed_hosts": [
+      "www.nist.gov"
+    ],
+    "max_depth": 0,
+    "license": "Public access; verify document-specific reuse terms"
+  },
+  {
+    "id": "wra-concrete-zh",
+    "url": "https://www.wra.gov.tw/wralaw/Law_Content.aspx?n=9334&s=10748",
+    "suggested_label": "guidance",
+    "language_hint": "zh-Hant",
+    "allowed_hosts": [
+      "www.wra.gov.tw"
+    ],
+    "max_depth": 0,
+    "license": "Public access; verify document-specific reuse terms"
+  },
+  {
+    "id": "quota-ca-sds",
+    "url": "https://www.cementaustralia.com.au/safety-data-sheets",
+    "allowed_hosts": [
+      "www.cementaustralia.com.au"
+    ],
+    "suggested_label": "safety",
+    "language_hint": "en",
+    "max_depth": 2,
+    "link_pattern": "(?i)\\.pdf|safety.data.sheet",
+    "license": "Public access; copyright retained; local evaluation only"
+  },
+  {
+    "id": "quota-boral-sds",
+    "url": "https://www.boral.com.au/sds-sheets",
+    "allowed_hosts": [
+      "www.boral.com.au"
+    ],
+    "suggested_label": "safety",
+    "language_hint": "en",
+    "max_depth": 2,
+    "link_pattern": "(?i)\\.pdf|safety.data.sheet",
+    "license": "Public access; copyright retained; local evaluation only"
+  },
+  {
+    "id": "quota-sunstate",
+    "url": "https://sunstatecement.com.au/publications/",
+    "allowed_hosts": [
+      "sunstatecement.com.au",
+      "www.sunstatecement.com.au"
+    ],
+    "suggested_label": "safety",
+    "language_hint": "en",
+    "max_depth": 2,
+    "link_pattern": "(?i)\\.pdf|safety.data.sheet",
+    "license": "Public access; copyright retained; local evaluation only"
+  },
+  {
+    "id": "quota-acc-esg",
+    "url": "https://esg.acc.com.tw/resource_center/esg_report",
+    "allowed_hosts": [
+      "esg.acc.com.tw"
+    ],
+    "suggested_label": "industry",
+    "language_hint": "zh",
+    "max_depth": 2,
+    "link_pattern": "(?i)\\.pdf|safety.data.sheet",
+    "license": "Public access; copyright retained; local evaluation only"
+  },
+  {
+    "id": "quota-heidelberg",
+    "url": "https://www.heidelbergmaterials.com/en/company/annual-reports-sustainability-reports",
+    "allowed_hosts": [
+      "www.heidelbergmaterials.com"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf",
+    "suggested_label": "industry",
+    "language_hint": "en",
+    "license": "Public access; copyright retained"
+  },
+  {
+    "id": "quota-abri-38402",
+    "url": "https://www.abri.gov.tw/News_Content_Table.aspx?n=807&s=38402",
+    "allowed_hosts": [
+      "www.abri.gov.tw"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|Download",
+    "suggested_label": "research",
+    "language_hint": "zh",
+    "license": "Public access; verify individual rights"
+  },
+  {
+    "id": "quota-abri-39497",
+    "url": "https://www.abri.gov.tw/News_Content_Table.aspx?n=807&s=39497",
+    "allowed_hosts": [
+      "www.abri.gov.tw"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|Download",
+    "suggested_label": "research",
+    "language_hint": "zh",
+    "license": "Public access; verify individual rights"
+  },
+  {
+    "id": "quota-abri-38969",
+    "url": "https://www.abri.gov.tw/News_Content_Table.aspx?n=807&s=38969",
+    "allowed_hosts": [
+      "www.abri.gov.tw"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|Download",
+    "suggested_label": "research",
+    "language_hint": "zh",
+    "license": "Public access; verify individual rights"
+  },
+  {
+    "id": "quota-abri-38028",
+    "url": "https://www.abri.gov.tw/News_Content_Table.aspx?n=807&s=38028",
+    "allowed_hosts": [
+      "www.abri.gov.tw"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|Download",
+    "suggested_label": "research",
+    "language_hint": "zh",
+    "license": "Public access; verify individual rights"
+  },
+  {
+    "id": "quota-abri-38814",
+    "url": "https://www.abri.gov.tw/News_Content_Table.aspx?n=807&s=38814",
+    "allowed_hosts": [
+      "www.abri.gov.tw"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|Download",
+    "suggested_label": "research",
+    "language_hint": "zh",
+    "license": "Public access; verify individual rights"
+  },
+  {
+    "id": "quota-fhwa-000",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif19026.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Washington State I-90 Pavement Rehabilitation Using Precast Concrete Pavement [Primary Topic:  Materials-Concrete] 2019 FHWA-HIF-19-026 PDF [ 1 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-001",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif19021.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Permeable Interlocking Concrete Pavement [Primary Topic:  Pavement Drainage] 2019 FHWA-HIF-19-021 PDF [  ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-002",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif19015.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Tech Brief: NM 136 Continuously Reinforced Concrete Pavement [Primary Topic:  Materials-Concrete] 2019 FHWA-HIF-19-015 PDF [ 1 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-003",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif19013.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Precast Concrete Pavement Technology Implementation [Primary Topic:  Materials-Concrete] 2019 FHWA-HIF-19-013 PDF [ 2 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-004",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif19012.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Precast Concrete Pavement Technology Resources [Primary Topic:  Materials-Concrete] 2019 FHWA-HIF-19-012 PDF [ 0.3 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-005",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif19011.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Precast Concrete Pavement Implementation by U.S. Highway Agencies [Primary Topic:  Materials-Concrete] 2019 FHWA-HIF-19-011 PDF [ 0.2 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-006",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif19066.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Tech Brief: Optimized Design Details for Continuously Reinforced Concrete Pavements [Primary Topic:  Pavement Design] 2019 FHWA-HIF-19-006 PDF [ 1 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-007",
+    "url": "https://www.fhwa.dot.gov/pavement/pubs/hif019099.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Tech Brief: Overview of Precast Concrete Pavement in the United States [Primary Topic:  Materials-Concrete] 2019 FHWA-HIF-019-099 PDF [ 0.3 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-008",
+    "url": "https://www.fhwa.dot.gov/pavement/pubs/hif019098.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Tech Brief: Overview of Continuously Reinforced Concrete Pavement in the United States [Primary Topic:  Materials-Concrete] 2019 FHWA-HIF-019-098 PDF [ 0.3 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-009",
+    "url": "https://www.fhwa.dot.gov/publications/research/infrastructure/pavements/ltpp/17059/17059.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Characterizing Existing Asphalt Concrete Layer Damage for Mechanistic Pavement Rehabilitation Design [Primary Topic:  Pavement Design] 2018 FHWA-HRT-17-059 HTML PDF [ 96  mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-010",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif18051.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Technology Transfer, Delivery, and Implementation of Best Practices for Jointed Concrete Pavements [Primary Topic:  Pavement Construction] 2018 FHWA-HIF-18-051 PDF [  ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-011",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif16026.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Continuously Reinforced Concrete Pavement Manual, Guidelines for Design, Construction, Maintenance, and Rehabilitation [Primary Topic:  Materials-Concrete] 2016 FHWA-HIF-16-026 PDF [ 5 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-012",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif16025.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Continuously Reinforced Concrete Pavement (CRCP) - Executive Brief [Primary Topic:  Rigid Pavement] 2016 FHWA-HIF-16-025 PDF [ 0.2 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-013",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif16006.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Internal Curing for Concrete Pavements [Primary Topic:  Materials-Concrete] 2016 FHWA-HIF-16-006 PDF [ 0.4 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-014",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif16005.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Bases and Subbases for Concrete Pavements [Primary Topic:  Pavement Construction] 2016 FHWA-HIF-16-005 PDF [ 2 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-015",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif16004.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Technical Brief: Permeable Concrete Pavements [Primary Topic:  Pavement Drainage] 2016 FHWA-HIF-16-004 PDF [ 1 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-016",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif16003.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Technical Brief: Roller-Compacted Concrete Pavement [Primary Topic:  Pavement Construction] 2016 FHWA-HIF-16-003 PDF [ 1 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-017",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif16001.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Supplementary Cementitious Materials -  Best Practices for Concrete Pavements [Primary Topic:  Materials-Concrete] 2016 FHWA-HIF-16-001 PDF [ 0.4 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-018",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif16009.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Precast Concrete Pavement Bedding Support Systems [Primary Topic:  Pavement Base and Subbase] 2015 FHWA-HIF-16-009 PDF [ 0.1 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-019",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif16008.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Load Transfer Systems for Jointed Precast Concrete Pavements [Primary Topic:  Materials-Concrete] 2015 FHWA-HIF-16-008 PDF [ 0.3 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-020",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif15006.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "TechBrief: Permeable Interlocking Concrete Pavement [Primary Topic:  Pavement Drainage] 2015 FHWA-HIF-15-006 PDF [ 2 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-021",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif14005.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Precast Concrete Pavement Technology - Marketing Plan for Implementation of Products from SHRP2 Project R05 [Primary Topic:  Pavement Rehabilitation] 2014 FHWA-HIF-14-005 PDF [ 1 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-022",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/asr/pubs/hif14004.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Methods for Preventing ASR in New Construction Results of Field Exposure Sites [Primary Topic:  Materials-Concrete] 2013 FHWA-HIF-14-004 PDF [ 1 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-023",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/asr/pubs/hif14003.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Methods for Evaluating and Treating ASR-Affected Structures: Results of Field Application and Demonstration Projects Volume II: Details of Field Applications and Analysis Final Report [Primary Topic:  Materials-Concrete] 2013 FHWA-HIF-14-003 PDF [ 31 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-024",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/asr/pubs/hif14002.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Methods for Evaluating and Treating ASR-Affected Structures: Results of Field Application and Demonstration Projects Volume I: Summary of Findings and Recommendations Final Report [Primary Topic:  Materials-Concrete] 2013 FHWA-HIF-14-002 PDF [ 2 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-025",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif13027/hif13027.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Continuously Reinforced Concrete Pavement: Design Using the AASHTO Pavement ME Design Program [Primary Topic:  Pavement Design] 2013 FHWA-HIF-13-027 PDF [ 1 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-026",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif13025.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Continuously Reinforced Concrete Pavement: Design Using the AASHTOWare Pavement ME Design Procedure [Primary Topic:  Pavement Design] 2013 FHWA-HIF-13-025 PDF [ 2 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-027",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif12031.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Use of Air-Cooled Blast Furnace Slag as Coarse Aggregate in Concrete Pavements - Tech Brief [Primary Topic:  Materials-Concrete] 2012 FHWA-HIF-12-031 PDF [ 1 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-028",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif12009.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Use of Air-Cooled Blast Furnace Slag as Coarse Aggregate in Concrete Pavements - Guide to Best Practice [Primary Topic:  Materials-Concrete] 2012 FHWA-HIF-12-009 PDF [ 1 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-029",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif12008.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Use of Air-Cooled Blast Furnace Slag as Coarse Aggregate in Concrete Pavements - Final Report [Primary Topic:  Materials-Concrete] 2012 FHWA-HIF-12-008 PDF [ 3 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-030",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif10010/hif10010.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Impact of Temperature Curling and Moisture Warping on Jointed Concrete Pavement Performance [Primary Topic:  Pavement Base and Subbase] 2010 FHWA-HIF-10-010 PDF [ 2 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-031",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif09023/hif09023.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "TechBrief: Determination of Concrete Pavement Thickness Nondestructively Using the Magnetic Imaging Tomography Technique [Primary Topic:  Pavement Issues] 2009 FHWA-HIF-09-023 PDF [ 1 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-032",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/hif09012/hif09012.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Techbrief: Evaluating the Use of Fiber-Reinforced Polymer Bars in Continuously Reinforced Concrete Pavement [Primary Topic:  Materials-Concrete] 2009 FHWA-HIF-09-012 PDF [ 0.4 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-033",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/asr/hif09001/hif09001.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Report on Determining the Reactivity of Concrete Aggregates and Selecting Appropriate Measures for Preventing Deleterious Expansion in New Concrete Construction [Primary Topic:  Materials-Concrete] 2008 FHWA-HIF-09-001 PDF [ 6 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-034",
+    "url": "https://international.fhwa.dot.gov/pubs/pl07027/pl07027.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Long-Life Concrete Pavements in Europe and Canada [Primary Topic:  Rigid Pavement] 2007 FHWA-PL-07-027 HTML PDF [ 7 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-035",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/07030/07030.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "TechBrief: Long-Life Concrete Pavements: Best Practices and Directions from the States [Primary Topic:  Pavement Design] 2007 FHWA-IF-07-030 PDF [ 0.2 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-036",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/pubs/07021/07021.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "TechBrief: Best Practices for Dowel Placement Tolerances [Primary Topic:  Pavement Rehabilitation] 2007 FHWA-IF-07-021 PDF [ 1 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-037",
+    "url": "https://www.fhwa.dot.gov/pavement/concrete/asrbench.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Alkali-Silica Reactivity (ASR) Benchmarking Workshop Final Report [Primary Topic:  Materials-Concrete] 2006 PDF [ 0.3 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-038",
+    "url": "https://www.fhwa.dot.gov/pavement/recycling/applications.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Transportation Applications Of Recycled Concrete Aggregate [Primary Topic:  Pavement Design] 2004 PDF [ 3 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-039",
+    "url": "https://www.fhwa.dot.gov/pavement/pubs/013167.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Summary Report - U.S. Tour of European Concrete Highways (U.S. Tech) Follow-up Tour of Germany and Austria [Primary Topic:  Materials-Concrete] 1993 FHWA-SA-93-080 PDF [ 22 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-fhwa-040",
+    "url": "https://www.fhwa.dot.gov/pavement/pubs/014732.pdf",
+    "allowed_hosts": [
+      "www.fhwa.dot.gov"
+    ],
+    "max_depth": 0,
+    "suggested_label": "guidance",
+    "language_hint": "en",
+    "discovery_url": "https://www.fhwa.dot.gov/pavement/pub_listing.cfm?sort=default&areas=Design",
+    "discovery_text": "Soil and Base Stabilization and Associated Drainage Considerations - volume II, Mixture Design Considerations [Primary Topic:  Materials-Concrete] 1992 FHWA-SA-93-005 PDF [ 46 mb ]",
+    "license": "Public access; verify individual document rights"
+  },
+  {
+    "id": "quota-abri-38814-full",
+    "url": "https://ws.moi.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvT2xkRmlsZV9BYnJpX0dvdi9yZXNlYXJjaC8xNDQ1LzE0NDc5Mjk5ODUxLnBkZg%3d%3d&n=Y29tcGxldGUucGRm",
+    "allowed_hosts": [
+      "ws.moi.gov.tw"
+    ],
+    "max_depth": 0,
+    "suggested_label": "research",
+    "language_hint": "zh",
+    "document_family": "https://www.abri.gov.tw/News_Content_Table.aspx?n=807&s=38814",
+    "license": "Public access; verify rights"
+  },
+  {
+    "id": "quota-abri-38028-full",
+    "url": "https://ws.moi.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvT2xkRmlsZV9BYnJpX0dvdi9yZXNlYXJjaC82NTgvMTQ0NzkyOTgzMzEucGRm&n=Y29tcGxldGUucGRm",
+    "allowed_hosts": [
+      "ws.moi.gov.tw"
+    ],
+    "max_depth": 0,
+    "suggested_label": "research",
+    "language_hint": "zh",
+    "document_family": "https://www.abri.gov.tw/News_Content_Table.aspx?n=807&s=38028",
+    "license": "Public access; verify rights"
+  },
+  {
+    "id": "quota-abri-38969-full",
+    "url": "https://ws.moi.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvT2xkRmlsZV9BYnJpX0dvdi9yZXNlYXJjaC8xNjAwLzE0NDc5MzAwMTIxLnBkZg%3d%3d&n=Y29tcGxldGUucGRm",
+    "allowed_hosts": [
+      "ws.moi.gov.tw"
+    ],
+    "max_depth": 0,
+    "suggested_label": "research",
+    "language_hint": "zh",
+    "document_family": "https://www.abri.gov.tw/News_Content_Table.aspx?n=807&s=38969",
+    "license": "Public access; verify rights"
+  },
+  {
+    "id": "quota-abri-39497-full",
+    "url": "https://ws.moi.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvT2xkRmlsZV9BYnJpX0dvdi9yZXNlYXJjaC8yNzU3LzE1MjE0NTE5NTN4MTI5MmUucGRm&n=5YWn5pS%2f6YOo5bu656%2bJ56CU56m25omA5Y2U5ZCM56CU56m25qGIX%2ba3t%2bWHneWcn%2biIh%2bmLvOadkOihqOmdouWhl%2bijneezu%2be1seS5i%2biAkOWAmeaAp%2biDvemHj%2bWMluWIhuaekOiIh%2bS9v%2beUqOW5tOmZkOeglOepti5wZGY%3d",
+    "allowed_hosts": [
+      "ws.moi.gov.tw"
+    ],
+    "max_depth": 0,
+    "suggested_label": "research",
+    "language_hint": "zh",
+    "document_family": "https://www.abri.gov.tw/News_Content_Table.aspx?n=807&s=39497",
+    "license": "Public access; verify rights"
+  },
+  {
+    "id": "quota-abri-38402-full",
+    "url": "https://ws.moi.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvT2xkRmlsZV9BYnJpX0dvdi9yZXNlYXJjaC8xMDMyLzE0NDc5Mjk5MTExLnBkZg%3d%3d&n=Y29tcGxldGUucGRm",
+    "allowed_hosts": [
+      "ws.moi.gov.tw"
+    ],
+    "max_depth": 0,
+    "suggested_label": "research",
+    "language_hint": "zh",
+    "document_family": "https://www.abri.gov.tw/News_Content_Table.aspx?n=807&s=38402",
+    "license": "Public access; verify rights"
+  },
+  {
+    "id": "quota-biocement-notebook",
+    "url": "https://static.igem.wiki/teams/5831/notebook/lab-notebook.pdf",
+    "allowed_hosts": [
+      "static.igem.wiki"
+    ],
+    "max_depth": 0,
+    "suggested_label": "experiment_log",
+    "language_hint": "en",
+    "domain": "biocement_building_materials",
+    "license": "Public access; verify team attribution/license"
+  },
+  {
+    "id": "quota-nist-000",
+    "url": "https://www.nist.gov/publications/crack-formation-modeling-concrete-affected-iron-sulfide-reactions",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Crack Formation Modeling in Concrete Affected by Iron-Sulfide Reactions",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=0",
+    "document_family": "https://www.nist.gov/publications/crack-formation-modeling-concrete-affected-iron-sulfide-reactions",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-001",
+    "url": "https://www.nist.gov/publications/quasistatic-crack-formation-multiphase-materials-driven-internal-phases-expansion",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Quasistatic Crack Formation in Multiphase Materials Driven by Internal Phases Expansion Mechanisms: Application to Cement-Based Materials",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=0",
+    "document_family": "https://www.nist.gov/publications/quasistatic-crack-formation-multiphase-materials-driven-internal-phases-expansion",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-002",
+    "url": "https://www.nist.gov/publications/technique-situ-displacement-and-strain-measurement-laboratory-scale-x-ray-computed",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "A technique for in-situ displacement and strain measurement with laboratory-scale X-ray Computed Tomography",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=0",
+    "document_family": "https://www.nist.gov/publications/technique-situ-displacement-and-strain-measurement-laboratory-scale-x-ray-computed",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-003",
+    "url": "https://www.nist.gov/publications/correction-technique-situ-displacement-and-strain-measurement-laboratory-scale-x-ray",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Correction: A Technique for In-Situ Displacement and Strain Measurement with Laboratory-Scale X-Ray Computed Tomography",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=0",
+    "document_family": "https://www.nist.gov/publications/correction-technique-situ-displacement-and-strain-measurement-laboratory-scale-x-ray",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-004",
+    "url": "https://www.nist.gov/publications/fostering-circular-economy-and-carbon-sequestration-construction-materials-workshop",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Fostering a Circular Economy and Carbon Sequestration for Construction Materials Workshop Report: A Focus on Concrete",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=0",
+    "document_family": "https://www.nist.gov/publications/fostering-circular-economy-and-carbon-sequestration-construction-materials-workshop",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-005",
+    "url": "https://www.nist.gov/publications/quantitative-characterization-spatial-arrangement-air-voids-mortars-x-ray-ct-and",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "A quantitative characterization of spatial arrangement of air voids in mortars via X-ray CT and numerical calculations",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=0",
+    "document_family": "https://www.nist.gov/publications/quantitative-characterization-spatial-arrangement-air-voids-mortars-x-ray-ct-and",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-006",
+    "url": "https://www.nist.gov/publications/spec-fly-ash-based-lightweight-aggregate-properties-and-their-influence-fresh",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Off-spec fly ash-based lightweight aggregate properties and their influence on the fresh, mechanical, and hydration properties of lightweight concrete: A comparative study",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=0",
+    "document_family": "https://www.nist.gov/publications/spec-fly-ash-based-lightweight-aggregate-properties-and-their-influence-fresh",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-007",
+    "url": "https://www.nist.gov/publications/density-driven-damage-mechanics-d3-m-model-concrete-i-mechanical-damage",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Density Driven Damage Mechanics (D3-M) Model for Concrete I: mechanical damage",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=0",
+    "document_family": "https://www.nist.gov/publications/density-driven-damage-mechanics-d3-m-model-concrete-i-mechanical-damage",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-008",
+    "url": "https://www.nist.gov/publications/relationship-between-fine-aggregate-size-and-air-void-system-six-mortars-i-air-void",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Relationship between fine aggregate size and the air void system of six mortars: I. Air void content and diameter distribution",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=0",
+    "document_family": "https://www.nist.gov/publications/relationship-between-fine-aggregate-size-and-air-void-system-six-mortars-i-air-void",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-009",
+    "url": "https://www.nist.gov/publications/print-fidelity-metrics-additive-manufacturing-cement-based-materials",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Print Fidelity Metrics for Additive Manufacturing of Cement-based Materials",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=1",
+    "document_family": "https://www.nist.gov/publications/print-fidelity-metrics-additive-manufacturing-cement-based-materials",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-010",
+    "url": "https://www.nist.gov/publications/algorithm-computing-compressive-strength-heterogeneous-cohesive-frictional-materials",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "An Algorithm for Computing the Compressive Strength of Heterogeneous Cohesive-Frictional Materials - Application to Cement Paste",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=1",
+    "document_family": "https://www.nist.gov/publications/algorithm-computing-compressive-strength-heterogeneous-cohesive-frictional-materials",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-011",
+    "url": "https://www.nist.gov/publications/situ-microstructural-analysis-cement-paste-during-freezing-part-ii-computer-modeling",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "In-situ Microstructural Analysis of Cement Paste During Freezing. Part II: Computer Modeling",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=1",
+    "document_family": "https://www.nist.gov/publications/situ-microstructural-analysis-cement-paste-during-freezing-part-ii-computer-modeling",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-012",
+    "url": "https://www.nist.gov/publications/influence-hydrate-dissolution-water-young-s-modulus-cement-based-materials",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Influence of Hydrate Dissolution by Water on the Young s Modulus of Cement-Based Materials",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=1",
+    "document_family": "https://www.nist.gov/publications/influence-hydrate-dissolution-water-young-s-modulus-cement-based-materials",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-013",
+    "url": "https://www.nist.gov/publications/mapping-microstructural-drying-shrinkage-deformations-cement-based-materials-part-3",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Mapping Microstructural Drying Shrinkage Deformations in Cement-Based Materials. Part 3: Influence of Specific Drying Shrinkage Mechanisms",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=1",
+    "document_family": "https://www.nist.gov/publications/mapping-microstructural-drying-shrinkage-deformations-cement-based-materials-part-3",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-014",
+    "url": "https://www.nist.gov/publications/spherical-harmonic-based-random-fields-aggregates-used-concrete",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Spherical Harmonic-Based Random Fields for Aggregates Used in Concrete",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=1",
+    "document_family": "https://www.nist.gov/publications/spherical-harmonic-based-random-fields-aggregates-used-concrete",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-015",
+    "url": "https://www.nist.gov/publications/using-fine-sand-shape-metrics-determined-x-ray-microcomputed-tomography-illustrate",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Using fine sand shape metrics determined from X-ray microcomputed tomography to illustrate the influence of particle shape on the properties of dispersed mortars",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=1",
+    "document_family": "https://www.nist.gov/publications/using-fine-sand-shape-metrics-determined-x-ray-microcomputed-tomography-illustrate",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-016",
+    "url": "https://www.nist.gov/publications/homogenization-concrete-microstructures-nuclear-power-plants",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Homogenization of Concrete Microstructures in Nuclear Power Plants",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=2",
+    "document_family": "https://www.nist.gov/publications/homogenization-concrete-microstructures-nuclear-power-plants",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-017",
+    "url": "https://www.nist.gov/publications/microstructure-homogenization-concrete-used-nuclear-power-plants",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Microstructure Homogenization of Concrete Used in Nuclear Power Plants",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=2",
+    "document_family": "https://www.nist.gov/publications/microstructure-homogenization-concrete-used-nuclear-power-plants",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-018",
+    "url": "https://www.nist.gov/publications/designing-3d-printable-cementitious-materials-gel-forming-polymers",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Designing 3D printable cementitious materials with gel-forming polymers",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=2",
+    "document_family": "https://www.nist.gov/publications/designing-3d-printable-cementitious-materials-gel-forming-polymers",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-019",
+    "url": "https://www.nist.gov/publications/density-driven-damage-mechanics-d3-m-model-concrete-ii-fully-coupled-chemo-mechanical",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Density Driven Damage Mechanics (D3-M) Model for Concrete II: Fully Coupled Chemo-Mechanical Damage",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=2",
+    "document_family": "https://www.nist.gov/publications/density-driven-damage-mechanics-d3-m-model-concrete-ii-fully-coupled-chemo-mechanical",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-020",
+    "url": "https://www.nist.gov/publications/how-clay-particulates-affect-shear-jamming-and-coiling-stability-yield-stress-matched",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "How clay particulates affect shear jamming and the coiling stability of yield stress-matched cementing suspensions",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=2",
+    "document_family": "https://www.nist.gov/publications/how-clay-particulates-affect-shear-jamming-and-coiling-stability-yield-stress-matched",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-021",
+    "url": "https://www.nist.gov/publications/three-dimensional-mortars-using-real-shaped-sand-particles-and-uniform-thickness",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Three-dimensional mortars using real-shaped sand particles and uniform thickness interfacial transition zones: Artifacts seen in 2D slices",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=3",
+    "document_family": "https://www.nist.gov/publications/three-dimensional-mortars-using-real-shaped-sand-particles-and-uniform-thickness",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-022",
+    "url": "https://www.nist.gov/publications/potential-use-lightweight-aggregate-lwa-produced-bottom-coal-ash-internal-curing",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Potential Use of Lightweight Aggregate (LWA) Produced from Bottom Coal Ash for Internal Curing of Concrete Systems",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=3",
+    "document_family": "https://www.nist.gov/publications/potential-use-lightweight-aggregate-lwa-produced-bottom-coal-ash-internal-curing",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-023",
+    "url": "https://www.nist.gov/publications/certification-srm-2497-standard-reference-concrete-rheological-measurements",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Certification of SRM 2497: Standard Reference Concrete for Rheological Measurements",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=3",
+    "document_family": "https://www.nist.gov/publications/certification-srm-2497-standard-reference-concrete-rheological-measurements",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-024",
+    "url": "https://www.nist.gov/publications/three-dimensional-shape-characterization-fine-sands-and-influence-particle-shape",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Three-dimensional shape characterization of fine sands and the influence of particle shape on the packing and workability of mortars",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=3",
+    "document_family": "https://www.nist.gov/publications/three-dimensional-shape-characterization-fine-sands-and-influence-particle-shape",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-025",
+    "url": "https://www.nist.gov/publications/numerical-study-initial-particle-parking-structure-cementgeopolymer-paste-and",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Numerical study of the initial particle parking structure of cement/geopolymer paste and dissolution of amorphous silica using real-shape particles",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=3",
+    "document_family": "https://www.nist.gov/publications/numerical-study-initial-particle-parking-structure-cementgeopolymer-paste-and",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-026",
+    "url": "https://www.nist.gov/publications/freeze-thaw-crack-determination-cementitious-materials-using-3d-x-ray-computed",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Freeze-Thaw Crack Determination in Cementitious Materials Using 3D X-ray Computed Tomography and Acoustic Emission",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=3",
+    "document_family": "https://www.nist.gov/publications/freeze-thaw-crack-determination-cementitious-materials-using-3d-x-ray-computed",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-027",
+    "url": "https://www.nist.gov/publications/simulation-influence-intrinsic-c-s-h-aging-time-dependent-relaxation-hydrating-cement",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Simulation of the Influence of Intrinsic C-S-H Aging on Time-Dependent Relaxation of Hydrating Cement Paste",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=4",
+    "document_family": "https://www.nist.gov/publications/simulation-influence-intrinsic-c-s-h-aging-time-dependent-relaxation-hydrating-cement",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-028",
+    "url": "https://www.nist.gov/publications/numerical-study-initial-particle-parking-structure-cementgeopolymer-pastes-and",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Numerical study of the initial particle parking structure of cement/geopolymer pastes and dissolution of amorphous silica using real-shape particles",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=4",
+    "document_family": "https://www.nist.gov/publications/numerical-study-initial-particle-parking-structure-cementgeopolymer-pastes-and",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-029",
+    "url": "https://www.nist.gov/publications/certification-srm-2493standard-reference-mortar-rheological-measurements",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Certification of SRM 2493:Standard Reference Mortar for Rheological Measurements",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=4",
+    "document_family": "https://www.nist.gov/publications/certification-srm-2493standard-reference-mortar-rheological-measurements",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-030",
+    "url": "https://www.nist.gov/publications/multiscale-microstructure-model-cement-paste-sulfate-attack-crystallization-pressure",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "A Multiscale Microstructure Model of Cement Paste Sulfate Attack by Crystallization Pressure",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=4",
+    "document_family": "https://www.nist.gov/publications/multiscale-microstructure-model-cement-paste-sulfate-attack-crystallization-pressure",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-031",
+    "url": "https://www.nist.gov/publications/measurement-and-modeling-needs-next-generation-concrete-binders",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Measurement and Modeling Needs for Next-Generation Concrete Binders",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=4",
+    "document_family": "https://www.nist.gov/publications/measurement-and-modeling-needs-next-generation-concrete-binders",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-032",
+    "url": "https://www.nist.gov/publications/comparison-2-d-and-3-d-shape-analysis-concrete-aggregate-fines-vsi-crushing",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Comparison of 2-D and 3-D shape analysis of concrete aggregate fines from VSI crushing",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=4",
+    "document_family": "https://www.nist.gov/publications/comparison-2-d-and-3-d-shape-analysis-concrete-aggregate-fines-vsi-crushing",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-033",
+    "url": "https://www.nist.gov/publications/final-report-forepa-lag-no-dw-13-93903501-0-expanding-tool-predicting-chloride",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Final Report for:EPA: LAG No. DW-13-93903501-0 Expanding a Tool for Predicting Chloride Diffusivity in Concrete So It Can Be Used by Manufacturers to Evaluate the Durability of Concrete Made With Blended Cements. Part I: Characterizing Blended Cement...",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=4",
+    "document_family": "https://www.nist.gov/publications/final-report-forepa-lag-no-dw-13-93903501-0-expanding-tool-predicting-chloride",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-034",
+    "url": "https://www.nist.gov/publications/measurement-particle-size-distribution-and-specific-surface-area-crushed-concrete",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Measurement of particle size distribution and specific surface area for crushed concrete aggregate fines",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=4",
+    "document_family": "https://www.nist.gov/publications/measurement-particle-size-distribution-and-specific-surface-area-crushed-concrete",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-035",
+    "url": "https://www.nist.gov/publications/three-dimensional-shape-analysis-concrete-aggregate-fines-produced-vertical-shaft",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Three dimensional shape analysis of concrete aggregate fines produced by vertical shaft impact crushing",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=4",
+    "document_family": "https://www.nist.gov/publications/three-dimensional-shape-analysis-concrete-aggregate-fines-produced-vertical-shaft",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-036",
+    "url": "https://www.nist.gov/publications/irreversible-desiccation-shrinkage-cement-paste-caused-cement-grain-dissolution",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Irreversible Desiccation Shrinkage of Cement Paste Caused by Cement Grain Dissolution",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=4",
+    "document_family": "https://www.nist.gov/publications/irreversible-desiccation-shrinkage-cement-paste-caused-cement-grain-dissolution",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-037",
+    "url": "https://www.nist.gov/publications/giant-surface-conductivity-enhancement-carbon-nanotube-composite-ultraviolet-light",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Giant surface conductivity enhancement in a carbon nanotube composite by ultraviolet light exposure",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=5",
+    "document_family": "https://www.nist.gov/publications/giant-surface-conductivity-enhancement-carbon-nanotube-composite-ultraviolet-light",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-038",
+    "url": "https://www.nist.gov/publications/calibration-rheometers-cementitious-materials",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Calibration of rheometers for cementitious materials",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=5",
+    "document_family": "https://www.nist.gov/publications/calibration-rheometers-cementitious-materials",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-039",
+    "url": "https://www.nist.gov/publications/microstructural-origins-cement-paste-degradation-external-sulfate-attack",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Microstructural Origins of Cement Paste Degradation by External Sulfate Attack",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=5",
+    "document_family": "https://www.nist.gov/publications/microstructural-origins-cement-paste-degradation-external-sulfate-attack",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-040",
+    "url": "https://www.nist.gov/publications/real-microstructural-model-cement-concrete-modeling",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "A real microstructural model for cement concrete modeling",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=5",
+    "document_family": "https://www.nist.gov/publications/real-microstructural-model-cement-concrete-modeling",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-041",
+    "url": "https://www.nist.gov/publications/improved-model-three-dimensional-virtual-concrete-anm-model",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Improved Model for Three-Dimensional Virtual Concrete: Anm Model",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=5",
+    "document_family": "https://www.nist.gov/publications/improved-model-three-dimensional-virtual-concrete-anm-model",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-042",
+    "url": "https://www.nist.gov/publications/computing-time-evolution-apparent-viscoelasticviscoplastic-poissons-ratio-hydrating",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Computing the Time Evolution of the Apparent Viscoelastic/Viscoplastic Poisson's Ratio of Hydrating Cement Paste",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=5",
+    "document_family": "https://www.nist.gov/publications/computing-time-evolution-apparent-viscoelasticviscoplastic-poissons-ratio-hydrating",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-043",
+    "url": "https://www.nist.gov/publications/modeling-apparent-and-intrinsic-viscoelastic-relaxation-hydrating-cement-paste",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Modeling the apparent and intrinsic viscoelastic relaxation of hydrating cement paste",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=5",
+    "document_family": "https://www.nist.gov/publications/modeling-apparent-and-intrinsic-viscoelastic-relaxation-hydrating-cement-paste",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-044",
+    "url": "https://www.nist.gov/publications/material-model-and-its-application-simulate-composite-material-structure-mortar-and",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "A material model and its application to simulate the composite material structure of mortar and concrete using real-shape particles",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=5",
+    "document_family": "https://www.nist.gov/publications/material-model-and-its-application-simulate-composite-material-structure-mortar-and",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-045",
+    "url": "https://www.nist.gov/publications/filler-crushed-aggregate-concrete-pore-structure-specific-surface-particle-shape-and",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Filler from crushed aggregate for concrete: Pore structure, specific surface, particle shape and size distribution",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=5",
+    "document_family": "https://www.nist.gov/publications/filler-crushed-aggregate-concrete-pore-structure-specific-surface-particle-shape-and",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-046",
+    "url": "https://www.nist.gov/publications/corrosion-detection-concrete-rebars-using-spectroscopic-technique",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Corrosion Detection in Concrete Rebars Using a Spectroscopic Technique",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=5",
+    "document_family": "https://www.nist.gov/publications/corrosion-detection-concrete-rebars-using-spectroscopic-technique",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-047",
+    "url": "https://www.nist.gov/publications/measurement-and-simulation-millimeter-wave-scattering-cross-sections-steel-reinforced",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Measurement and Simulation of Millimeter Wave Scattering Cross-sections from Steel-Reinforced Concrete",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=6",
+    "document_family": "https://www.nist.gov/publications/measurement-and-simulation-millimeter-wave-scattering-cross-sections-steel-reinforced",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-048",
+    "url": "https://www.nist.gov/publications/computational-materials-science-concrete-past-present-future",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "The Computational Materials Science of Concrete: Past-Present-Future",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=6",
+    "document_family": "https://www.nist.gov/publications/computational-materials-science-concrete-past-present-future",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-049",
+    "url": "https://www.nist.gov/publications/modeling-influence-transverse-cracking-chloride-penetration-concrete",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Modeling of the Influence of Transverse Cracking on Chloride Penetration into Concrete",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=6",
+    "document_family": "https://www.nist.gov/publications/modeling-influence-transverse-cracking-chloride-penetration-concrete",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-050",
+    "url": "https://www.nist.gov/publications/identifying-improved-standardized-tests-measuring-cement-particle-size-and-surface-0",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Identifying improved standardized tests for measuring cement particle size and surface area",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=6",
+    "document_family": "https://www.nist.gov/publications/identifying-improved-standardized-tests-measuring-cement-particle-size-and-surface-0",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-051",
+    "url": "https://www.nist.gov/publications/identifying-improved-standardized-tests-measuring-cement-particle-size-and-surface-area",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Identifying improved standardized tests for measuring cement particle size and surface area",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=6",
+    "document_family": "https://www.nist.gov/publications/identifying-improved-standardized-tests-measuring-cement-particle-size-and-surface-area",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-052",
+    "url": "https://www.nist.gov/publications/modeling-chloride-transport-cracked-concrete-3-d-image-based-microstructure-simulation",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Modeling Chloride transport in Cracked Concrete: A 3-D image-based microstructure simulation",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=6",
+    "document_family": "https://www.nist.gov/publications/modeling-chloride-transport-cracked-concrete-3-d-image-based-microstructure-simulation",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-053",
+    "url": "https://www.nist.gov/publications/argument-virtual-testing-cement-plant",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "An Argument for Virtual Testing in the Cement Plant",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=6",
+    "document_family": "https://www.nist.gov/publications/argument-virtual-testing-cement-plant",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-054",
+    "url": "https://www.nist.gov/publications/advancing-materials-science-concrete-supercomputers",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Advancing the materials science of concrete with supercomputers",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=6",
+    "document_family": "https://www.nist.gov/publications/advancing-materials-science-concrete-supercomputers",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-055",
+    "url": "https://www.nist.gov/publications/shape-comparison-between-04-ym-20-ym-and-20-ym-60-ym-cement-particles",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Shape comparison between 0.4 ym to 2.0 ym and 20 ym to 60 ym cement particles",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=6",
+    "document_family": "https://www.nist.gov/publications/shape-comparison-between-04-ym-20-ym-and-20-ym-60-ym-cement-particles",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-056",
+    "url": "https://www.nist.gov/publications/concrete-nanoscience-and-nanotechnology-definitions-and-applications",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Concrete nanoscience and nanotechnology: Definitions and applications",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=7",
+    "document_family": "https://www.nist.gov/publications/concrete-nanoscience-and-nanotechnology-definitions-and-applications",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-057",
+    "url": "https://www.nist.gov/publications/virtual-cement-and-concrete-testing-laboratory-quality-testing-and-sustainability",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Virtual Cement and Concrete Testing Laboratory for Quality Testing and Sustainability of Concrete",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=7",
+    "document_family": "https://www.nist.gov/publications/virtual-cement-and-concrete-testing-laboratory-quality-testing-and-sustainability",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-058",
+    "url": "https://www.nist.gov/publications/virtual-testing-concrete-transport-properties",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Virtual Testing of Concrete Transport Properties",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=7",
+    "document_family": "https://www.nist.gov/publications/virtual-testing-concrete-transport-properties",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-059",
+    "url": "https://www.nist.gov/publications/virtual-cement-and-concrete",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Virtual Cement and Concrete",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=7",
+    "document_family": "https://www.nist.gov/publications/virtual-cement-and-concrete",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-060",
+    "url": "https://www.nist.gov/publications/virtual-testing-concrete-using-computational-materials-science",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Virtual Testing of Concrete Using Computational Materials Science",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=7",
+    "document_family": "https://www.nist.gov/publications/virtual-testing-concrete-using-computational-materials-science",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-061",
+    "url": "https://www.nist.gov/publications/prediction-elastic-properties-concrete-using-virtual-cement-and-concrete-testing",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Prediction of Elastic Properties of Concrete Using the Virtual Cement and Concrete Testing Laboratory",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=7",
+    "document_family": "https://www.nist.gov/publications/prediction-elastic-properties-concrete-using-virtual-cement-and-concrete-testing",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-062",
+    "url": "https://www.nist.gov/publications/cement-and-concrete-materials-research-national-institute-standards-and-technology-nist",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Cement and Concrete Materials Research at the National Institute of Standards and Technology (NIST)",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=7",
+    "document_family": "https://www.nist.gov/publications/cement-and-concrete-materials-research-national-institute-standards-and-technology-nist",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-063",
+    "url": "https://www.nist.gov/publications/model-investigation-influence-particle-shape-portland-cement-hydration",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Model Investigation of the Influence of Particle Shape on Portland Cement Hydration.",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=7",
+    "document_family": "https://www.nist.gov/publications/model-investigation-influence-particle-shape-portland-cement-hydration",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-064",
+    "url": "https://www.nist.gov/publications/uncertainty-analysis-virtual-cement-measurement",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Uncertainty Analysis for Virtual Cement Measurement",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=7",
+    "document_family": "https://www.nist.gov/publications/uncertainty-analysis-virtual-cement-measurement",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-065",
+    "url": "https://www.nist.gov/publications/virtual-testing-cement-and-concrete",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Virtual Testing of Cement and Concrete",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=7",
+    "document_family": "https://www.nist.gov/publications/virtual-testing-cement-and-concrete",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-066",
+    "url": "https://www.nist.gov/publications/epa-lag-no-dw-13-93903501-0-expanding-tool-predicting-chloride-diffusivity-concrete-so",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "EPA: LAG No. DW-13-93903501-0 Expanding a Tool for Predicting Chloride Diffusivity in Concrete So It Can Be Used by Manufacturers to Evaluate the Durability of Concrete Made With Blended Cements. Part I: Characterizing Blended Cement Materials. Final Repo",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=7",
+    "document_family": "https://www.nist.gov/publications/epa-lag-no-dw-13-93903501-0-expanding-tool-predicting-chloride-diffusivity-concrete-so",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-067",
+    "url": "https://www.nist.gov/publications/estimation-degree-hydration-blended-cement-pastes-scanning-electron-microscopy-point",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Estimation of the Degree of Hydration of Blended Cement Pastes by a Scanning Electron Microscopy Point-Counting Procedure.",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=7",
+    "document_family": "https://www.nist.gov/publications/estimation-degree-hydration-blended-cement-pastes-scanning-electron-microscopy-point",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-068",
+    "url": "https://www.nist.gov/publications/shape-analysis-reference-cement-0",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Shape Analysis of a Reference Cement.",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=8",
+    "document_family": "https://www.nist.gov/publications/shape-analysis-reference-cement-0",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-069",
+    "url": "https://www.nist.gov/publications/virtual-cement-chapter-103",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Virtual Cement. Chapter 10.3.",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=8",
+    "document_family": "https://www.nist.gov/publications/virtual-cement-chapter-103",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-070",
+    "url": "https://www.nist.gov/publications/virtual-testing-cement-and-concrete-usa-2004",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Virtual Testing of Cement and Concrete-USA 2004",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=8",
+    "document_family": "https://www.nist.gov/publications/virtual-testing-cement-and-concrete-usa-2004",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-071",
+    "url": "https://www.nist.gov/publications/estimation-degree-hydration-blended-cement-pastes-scanning-electron-microscope-point",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Estimation of the Degree of Hydration of Blended Cement Pastes by a Scanning Electron Microscope Point-Counting Procedure",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=8",
+    "document_family": "https://www.nist.gov/publications/estimation-degree-hydration-blended-cement-pastes-scanning-electron-microscope-point",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-072",
+    "url": "https://www.nist.gov/publications/shape-analysis-reference-cement",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Shape Analysis of a Reference Cement",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=8",
+    "document_family": "https://www.nist.gov/publications/shape-analysis-reference-cement",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-073",
+    "url": "https://www.nist.gov/publications/ultrasonic-evaluation-methods-applicable-polymer-concrete-composites-0",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Ultrasonic Evaluation Methods Applicable to Polymer Concrete Composites.",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=8",
+    "document_family": "https://www.nist.gov/publications/ultrasonic-evaluation-methods-applicable-polymer-concrete-composites-0",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-074",
+    "url": "https://www.nist.gov/publications/user-manual-finite-element-and-finite-difference-programs-parallel-version-nistir-6269",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "manual",
+    "language_hint": "en",
+    "discovery_text": "User Manual for Finite Element and Finite Difference Programs: A Parallel Version of NISTIR 6269 and NISTIR 6997",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=8",
+    "document_family": "https://www.nist.gov/publications/user-manual-finite-element-and-finite-difference-programs-parallel-version-nistir-6269",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-075",
+    "url": "https://www.nist.gov/publications/ultrasonic-evaluation-methods-applicable-polymer-concrete-composites",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Ultrasonic Evaluation Methods Applicable to Polymer Concrete Composites",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=8",
+    "document_family": "https://www.nist.gov/publications/ultrasonic-evaluation-methods-applicable-polymer-concrete-composites",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-076",
+    "url": "https://www.nist.gov/publications/three-dimensional-mathematical-analysis-particle-shape-using-x-ray-tomography-and",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Three-Dimensional Mathematical Analysis of Particle Shape Using X-Ray Tomography And Spherical Harmonics: Application To Aggregates Used In Concrete",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=8",
+    "document_family": "https://www.nist.gov/publications/three-dimensional-mathematical-analysis-particle-shape-using-x-ray-tomography-and",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-077",
+    "url": "https://www.nist.gov/publications/e-concrete-believe-it",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "E-Concrete? Believe It!",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=8",
+    "document_family": "https://www.nist.gov/publications/e-concrete-believe-it",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-078",
+    "url": "https://www.nist.gov/publications/multi-scale-microstructural-modeling-predict-chloride-ion-diffusivity-high-performance",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Multi-Scale Microstructural Modeling to Predict Chloride Ion Diffusivity for High Performance Concrete",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=8",
+    "document_family": "https://www.nist.gov/publications/multi-scale-microstructural-modeling-predict-chloride-ion-diffusivity-high-performance",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-079",
+    "url": "https://www.nist.gov/publications/effect-statistical-fluctuation-finite-size-error-and-digital-resolution-phase",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "The Effect of Statistical Fluctuation, Finite Size Error, and Digital Resolution on the Phase Percolation and Transport Properties of the NIST Cement Hydration Model",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=8",
+    "document_family": "https://www.nist.gov/publications/effect-statistical-fluctuation-finite-size-error-and-digital-resolution-phase",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-080",
+    "url": "https://www.nist.gov/publications/sorptivity-based-service-life-predictions-concrete-pavements",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Sorptivity-Based Service Life Predictions for Concrete Pavements",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=8",
+    "document_family": "https://www.nist.gov/publications/sorptivity-based-service-life-predictions-concrete-pavements",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-081",
+    "url": "https://www.nist.gov/publications/electrical-impedance-spectra-monitor-damage-during-tensile-loading-cement-composites",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Electrical Impedance Spectra to Monitor Damage, During Tensile Loading, of Cement Composites",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=9",
+    "document_family": "https://www.nist.gov/publications/electrical-impedance-spectra-monitor-damage-during-tensile-loading-cement-composites",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-082",
+    "url": "https://www.nist.gov/publications/finite-element-stress-computations-applied-images-damaged-concrete-possible-new",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Finite Element Stress Computations Applied to Images of Damaged Concrete: A Possible New Diagnostic Tool for Concrete Petrography",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=9",
+    "document_family": "https://www.nist.gov/publications/finite-element-stress-computations-applied-images-damaged-concrete-possible-new",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-083",
+    "url": "https://www.nist.gov/publications/knowledge-based-systems-and-computational-tools-concrete-computer-integrated-knowledge",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "Knowledge-Based Systems and Computational Tools for Concrete - Computer Integrated Knowledge Systems Combine Databases, Models, and Computing Tools to Address the Complex Nature of Concrete",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=9",
+    "document_family": "https://www.nist.gov/publications/knowledge-based-systems-and-computational-tools-concrete-computer-integrated-knowledge",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-nist-084",
+    "url": "https://www.nist.gov/publications/users-guide-nist-virtual-cement-and-concrete-testing-laboratory-version-10",
+    "allowed_hosts": [
+      "www.nist.gov",
+      "tsapps.nist.gov",
+      "nvlpubs.nist.gov"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|get_pdf\\.cfm",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "discovery_text": "User's Guide to the NIST Virtual Cement and Concrete Testing Laboratory. Version 1.0",
+    "discovery_url": "https://www.nist.gov/publications/search_by_author/1147021?page=9",
+    "document_family": "https://www.nist.gov/publications/users-guide-nist-virtual-cement-and-concrete-testing-laboratory-version-10",
+    "license": "Public access; verify publication rights"
+  },
+  {
+    "id": "quota-mit-soil-notes",
+    "url": "https://ocw.mit.edu/courses/1-361-advanced-soil-mechanics-fall-2004/pages/lecture-notes/",
+    "allowed_hosts": [
+      "ocw.mit.edu"
+    ],
+    "max_depth": 2,
+    "link_pattern": "(?i)/resources/part_|\\.pdf",
+    "suggested_label": "manuscript_notes",
+    "domain": "civil_geotechnical",
+    "language_hint": "en",
+    "document_family": "MIT-1.361-fall2004-notes",
+    "license": "MIT OCW terms; verify file-specific exceptions"
+  },
+  {
+    "id": "quota-humboldt-manuals",
+    "url": "https://www.humboldtmfg.com/literature/concrete/",
+    "allowed_hosts": [
+      "www.humboldtmfg.com"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)manual|Product Manual",
+    "suggested_label": "manual",
+    "language_hint": "en",
+    "domain": "cement_concrete",
+    "license": "Public manufacturer documentation; copyright retained"
+  },
+  {
+    "id": "quota-stalite-tests",
+    "url": "https://stalite.com/resources/",
+    "allowed_hosts": [
+      "stalite.com",
+      "www.stalite.com"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)test.*report|report.*test",
+    "suggested_label": "experiment_log",
+    "language_hint": "en",
+    "domain": "civil_building_materials",
+    "license": "Public access; verify individual report rights"
+  },
+  {
+    "id": "quota-zh-test-0",
+    "url": "https://minghung-group.com/dowload/report03.pdf",
+    "allowed_hosts": [
+      "minghung-group.com"
+    ],
+    "max_depth": 0,
+    "suggested_label": "experiment_log",
+    "domain": "civil_building_materials",
+    "language_hint": "zh",
+    "license": "Public full report; copyright retained; check reproduction restrictions"
+  },
+  {
+    "id": "quota-zh-test-1",
+    "url": "https://jin-matrix.com.tw/upload/tesring/1663574165.pdf",
+    "allowed_hosts": [
+      "jin-matrix.com.tw"
+    ],
+    "max_depth": 0,
+    "suggested_label": "experiment_log",
+    "domain": "civil_building_materials",
+    "language_hint": "zh",
+    "license": "Public full report; copyright retained; check reproduction restrictions"
+  },
+  {
+    "id": "quota-zh-test-2",
+    "url": "https://www.prowin.tw/UserFiles/down/file_D201707200001220170720174510c4h7p.pdf",
+    "allowed_hosts": [
+      "www.prowin.tw"
+    ],
+    "max_depth": 0,
+    "suggested_label": "experiment_log",
+    "domain": "civil_building_materials",
+    "language_hint": "zh",
+    "license": "Public full report; copyright retained; check reproduction restrictions"
+  },
+  {
+    "id": "quota-zh-sika-0",
+    "url": "https://twn.sika.com/dms/getdocument.get/9dfd3569-b770-4e54-9c6f-c5df316e298d/sikafume.pdf",
+    "allowed_hosts": [
+      "twn.sika.com"
+    ],
+    "max_depth": 0,
+    "link_pattern": "(?i)\\.pdf",
+    "suggested_label": "guidance",
+    "domain": "cement_concrete",
+    "language_hint": "zh",
+    "license": "Public manufacturer document; copyright retained"
+  },
+  {
+    "id": "quota-zh-sika-1",
+    "url": "https://twn.sika.com/zh/construction/52669/66175/sikashield-w1.html",
+    "allowed_hosts": [
+      "twn.sika.com"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf",
+    "suggested_label": "guidance",
+    "domain": "cement_concrete",
+    "language_hint": "zh",
+    "license": "Public manufacturer document; copyright retained"
+  },
+  {
+    "id": "quota-zh-sika-2",
+    "url": "https://twn.sika.com/zh/construction/52671/66188/78126/sikagard-5500.html",
+    "allowed_hosts": [
+      "twn.sika.com"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf",
+    "suggested_label": "guidance",
+    "domain": "cement_concrete",
+    "language_hint": "zh",
+    "license": "Public manufacturer document; copyright retained"
+  },
+  {
+    "id": "quota-fourth-gilson-auto",
+    "url": "https://www.globalgilson.com/300000lbf-rigid-frame-automatic-concrete-compression-machines",
+    "allowed_hosts": [
+      "www.globalgilson.com"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)product-manuals|\\.pdf",
+    "suggested_label": "manual",
+    "domain": "cement_concrete",
+    "language_hint": "en",
+    "license": "Public official source; copyright retained; candidate purpose requires review"
+  },
+  {
+    "id": "quota-fourth-gilson-basic",
+    "url": "https://www.globalgilson.com/325000lbf-basic-concrete-compression-machines",
+    "allowed_hosts": [
+      "www.globalgilson.com"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)product-manuals|\\.pdf",
+    "suggested_label": "manual",
+    "domain": "cement_concrete",
+    "language_hint": "en",
+    "license": "Public official source; copyright retained; candidate purpose requires review"
+  },
+  {
+    "id": "quota-fourth-princeton-notes",
+    "url": "https://www.princeton.edu/~civ102/Concrete_notes.pdf",
+    "allowed_hosts": [
+      "www.princeton.edu"
+    ],
+    "max_depth": 0,
+    "link_pattern": "(?i)product-manuals|\\.pdf",
+    "suggested_label": "manuscript_notes",
+    "domain": "cement_concrete",
+    "language_hint": "en",
+    "license": "Public official source; copyright retained; candidate purpose requires review"
+  },
+  {
+    "id": "quota-fourth-basrah-notes",
+    "url": "https://un.uobasrah.edu.iq/lectures/3048.pdf",
+    "allowed_hosts": [
+      "un.uobasrah.edu.iq"
+    ],
+    "max_depth": 0,
+    "link_pattern": "(?i)product-manuals|\\.pdf",
+    "suggested_label": "manuscript_notes",
+    "domain": "cement_concrete",
+    "language_hint": "en",
+    "license": "Public official source; copyright retained; candidate purpose requires review"
+  },
+  {
+    "id": "quota-fourth-chc-archive",
+    "url": "https://www.chc.com.tw/en/dow.html",
+    "allowed_hosts": [
+      "www.chc.com.tw"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf",
+    "suggested_label": "industry",
+    "language_hint": "en",
+    "domain": "cement_concrete",
+    "license": "Public report; copyright retained"
+  },
+  {
+    "id": "quota-fourth-chc2023",
+    "url": "https://www.chc.com.tw/en/pdf/2023CSR.pdf",
+    "allowed_hosts": [
+      "www.chc.com.tw"
+    ],
+    "max_depth": 0,
+    "suggested_label": "industry",
+    "language_hint": "en",
+    "domain": "cement_concrete",
+    "license": "Public report; copyright retained",
+    "verified_content_length": 35895512
+  },
+  {
+    "id": "quota-fourth-gilson-pdf",
+    "url": "https://www.globalgilson.com/Content/Images/uploaded/pdf/product-manuals/manual-auto-compression-machines.pdf",
+    "allowed_hosts": [
+      "www.globalgilson.com"
+    ],
+    "max_depth": 0,
+    "suggested_label": "manual",
+    "language_hint": "en",
+    "domain": "cement_concrete",
+    "license": "Public manufacturer manual; copyright retained"
+  },
+  {
+    "id": "quota-fourth-chc",
+    "url": "https://www.chc.com.tw/csr/",
+    "allowed_hosts": [
+      "www.chc.com.tw"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf",
+    "suggested_label": "industry",
+    "language_hint": "zh",
+    "domain": "cement_concrete",
+    "license": "Public report; copyright retained"
+  },
+  {
+    "id": "quota-fourth-taiheiyo",
+    "url": "https://www.taiheiyo-cement.co.jp/english/csr/pdf/data/2025/Taiheiyo-Cement-rep2025en.pdf",
+    "allowed_hosts": [
+      "www.taiheiyo-cement.co.jp"
+    ],
+    "max_depth": 0,
+    "suggested_label": "industry",
+    "language_hint": "en",
+    "domain": "cement_concrete",
+    "license": "Public report; copyright retained"
+  },
+  {
+    "id": "quota-fourth-mit-concrete-notes",
+    "url": "https://ocw.mit.edu/courses/1-054-mechanics-and-design-of-concrete-structures-spring-2004/pages/lecture-notes/",
+    "allowed_hosts": [
+      "ocw.mit.edu"
+    ],
+    "max_depth": 2,
+    "link_pattern": "(?i)/resources/|\\.pdf",
+    "suggested_label": "manuscript_notes",
+    "language_hint": "en",
+    "domain": "cement_concrete",
+    "subtype": "course_handout",
+    "document_family": "MIT-1.054-spring2004",
+    "license": "MIT OCW terms; verify file-specific exceptions"
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "id": "nist-kinetics-abstract-en",
+    "url": "https://www.nist.gov/publications/influence-water-cement-ratio-hydration-kinetics-simple-models-based-spatial",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "allowed_hosts": [
+      "www.nist.gov"
+    ],
+    "max_depth": 0,
+    "license": "Public access; verify document-specific reuse terms"
+  },
+  {
+    "id": "wra-concrete-zh",
+    "url": "https://www.wra.gov.tw/wralaw/Law_Content.aspx?n=9334&s=10748",
+    "suggested_label": "guidance",
+    "language_hint": "zh-Hant",
+    "allowed_hosts": [
+      "www.wra.gov.tw"
+    ],
+    "max_depth": 0,
+    "license": "Public access; verify document-specific reuse terms"
+  }
+]

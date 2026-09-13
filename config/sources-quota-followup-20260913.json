@@ -1,0 +1,74 @@
+[
+  {
+    "id": "quota-abri-38814-full",
+    "url": "https://ws.moi.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvT2xkRmlsZV9BYnJpX0dvdi9yZXNlYXJjaC8xNDQ1LzE0NDc5Mjk5ODUxLnBkZg%3d%3d&n=Y29tcGxldGUucGRm",
+    "allowed_hosts": [
+      "ws.moi.gov.tw"
+    ],
+    "max_depth": 0,
+    "suggested_label": "research",
+    "language_hint": "zh",
+    "document_family": "https://www.abri.gov.tw/News_Content_Table.aspx?n=807&s=38814",
+    "license": "Public access; verify rights"
+  },
+  {
+    "id": "quota-abri-38028-full",
+    "url": "https://ws.moi.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvT2xkRmlsZV9BYnJpX0dvdi9yZXNlYXJjaC82NTgvMTQ0NzkyOTgzMzEucGRm&n=Y29tcGxldGUucGRm",
+    "allowed_hosts": [
+      "ws.moi.gov.tw"
+    ],
+    "max_depth": 0,
+    "suggested_label": "research",
+    "language_hint": "zh",
+    "document_family": "https://www.abri.gov.tw/News_Content_Table.aspx?n=807&s=38028",
+    "license": "Public access; verify rights"
+  },
+  {
+    "id": "quota-abri-38969-full",
+    "url": "https://ws.moi.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvT2xkRmlsZV9BYnJpX0dvdi9yZXNlYXJjaC8xNjAwLzE0NDc5MzAwMTIxLnBkZg%3d%3d&n=Y29tcGxldGUucGRm",
+    "allowed_hosts": [
+      "ws.moi.gov.tw"
+    ],
+    "max_depth": 0,
+    "suggested_label": "research",
+    "language_hint": "zh",
+    "document_family": "https://www.abri.gov.tw/News_Content_Table.aspx?n=807&s=38969",
+    "license": "Public access; verify rights"
+  },
+  {
+    "id": "quota-abri-39497-full",
+    "url": "https://ws.moi.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvT2xkRmlsZV9BYnJpX0dvdi9yZXNlYXJjaC8yNzU3LzE1MjE0NTE5NTN4MTI5MmUucGRm&n=5YWn5pS%2f6YOo5bu656%2bJ56CU56m25omA5Y2U5ZCM56CU56m25qGIX%2ba3t%2bWHneWcn%2biIh%2bmLvOadkOihqOmdouWhl%2bijneezu%2be1seS5i%2biAkOWAmeaAp%2biDvemHj%2bWMluWIhuaekOiIh%2bS9v%2beUqOW5tOmZkOeglOepti5wZGY%3d",
+    "allowed_hosts": [
+      "ws.moi.gov.tw"
+    ],
+    "max_depth": 0,
+    "suggested_label": "research",
+    "language_hint": "zh",
+    "document_family": "https://www.abri.gov.tw/News_Content_Table.aspx?n=807&s=39497",
+    "license": "Public access; verify rights"
+  },
+  {
+    "id": "quota-abri-38402-full",
+    "url": "https://ws.moi.gov.tw/Download.ashx?u=LzAwMS9VcGxvYWQvT2xkRmlsZV9BYnJpX0dvdi9yZXNlYXJjaC8xMDMyLzE0NDc5Mjk5MTExLnBkZg%3d%3d&n=Y29tcGxldGUucGRm",
+    "allowed_hosts": [
+      "ws.moi.gov.tw"
+    ],
+    "max_depth": 0,
+    "suggested_label": "research",
+    "language_hint": "zh",
+    "document_family": "https://www.abri.gov.tw/News_Content_Table.aspx?n=807&s=38402",
+    "license": "Public access; verify rights"
+  },
+  {
+    "id": "quota-biocement-notebook",
+    "url": "https://static.igem.wiki/teams/5831/notebook/lab-notebook.pdf",
+    "allowed_hosts": [
+      "static.igem.wiki"
+    ],
+    "max_depth": 0,
+    "suggested_label": "experiment_log",
+    "language_hint": "en",
+    "domain": "biocement_building_materials",
+    "license": "Public access; verify team attribution/license"
+  }
+]

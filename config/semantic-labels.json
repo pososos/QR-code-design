@@ -1,0 +1,33 @@
+{
+  "version": "purpose-bilingual-v3-course-notes",
+  "labels": {
+    "research": {
+      "zh": "研究論文或研究報告：提出研究問題、方法、實驗或模型，分析結果並形成研究結論。",
+      "en": "Research paper or report presenting a research question, methods, experiments or models, results and scientific conclusions."
+    },
+    "manual": {
+      "zh": "操作手冊：說明工具或軟體的安裝、設定、操作步驟及功能使用方法。",
+      "en": "User manual explaining installation, configuration, operating steps and how to use a tool or software."
+    },
+    "guidance": {
+      "zh": "工程應用指引或施工規範：提供材料選用、配比、施工、品質檢驗的建議或要求。",
+      "en": "Engineering guidance or construction specification providing recommendations or requirements for material selection, mixtures, construction and quality inspection."
+    },
+    "safety": {
+      "zh": "安全資料表：說明產品成分、危害辨識、急救措施、暴露防護及安全處置。",
+      "en": "Safety data sheet describing product composition, hazard identification, first aid, exposure controls and safe handling."
+    },
+    "industry": {
+      "zh": "企業年報、永續報告或產業報告：揭露營運、財務、營收、排放與永續績效。",
+      "en": "Corporate annual, sustainability or industry report disclosing operations, financial results, revenue, emissions and sustainability performance."
+    },
+    "experiment_log": {
+      "zh": "實驗記錄：逐次記載試驗日期、試體編號、操作條件、量測數值、原始觀察與異常的紀錄表或實驗日誌。",
+      "en": "Experiment log or laboratory record documenting run dates, specimen identifiers, operating conditions, measurements, raw observations and anomalies."
+    },
+    "manuscript_notes": {
+      "zh": "手稿筆記：草稿、工作筆記、課堂筆記、講義或課堂投影片；可打字或手寫。以記錄想法或教學整理為主，子類分開標記。正式研究報告與設備操作手冊不屬此類。",
+      "en": "Draft manuscripts, working notes, classroom notes, course handouts or lecture slides, typed or handwritten, recording ideas or teaching material. Track subtypes separately; exclude formal research reports and equipment operating manuals."
+    }
+  }
+}

@@ -1,0 +1,54 @@
+[
+  {
+    "id": "quota-fourth-gilson-auto",
+    "url": "https://www.globalgilson.com/300000lbf-rigid-frame-automatic-concrete-compression-machines",
+    "allowed_hosts": [
+      "www.globalgilson.com"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)product-manuals|\\.pdf",
+    "suggested_label": "manual",
+    "domain": "cement_concrete",
+    "language_hint": "en",
+    "license": "Public official source; copyright retained; candidate purpose requires review"
+  },
+  {
+    "id": "quota-fourth-gilson-basic",
+    "url": "https://www.globalgilson.com/325000lbf-basic-concrete-compression-machines",
+    "allowed_hosts": [
+      "www.globalgilson.com"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)product-manuals|\\.pdf",
+    "suggested_label": "manual",
+    "domain": "cement_concrete",
+    "language_hint": "en",
+    "license": "Public official source; copyright retained; candidate purpose requires review"
+  },
+  {
+    "id": "quota-fourth-princeton-notes",
+    "url": "https://www.princeton.edu/~civ102/Concrete_notes.pdf",
+    "allowed_hosts": [
+      "www.princeton.edu"
+    ],
+    "max_depth": 0,
+    "link_pattern": "(?i)product-manuals|\\.pdf",
+    "suggested_label": "manuscript_notes",
+    "domain": "cement_concrete",
+    "language_hint": "en",
+    "license": "Public official source; copyright retained; candidate purpose requires review"
+  },
+  {
+    "id": "quota-fourth-basrah-notes",
+    "url": "https://un.uobasrah.edu.iq/lectures/3048.pdf",
+    "allowed_hosts": [
+      "un.uobasrah.edu.iq"
+    ],
+    "max_depth": 0,
+    "link_pattern": "(?i)product-manuals|\\.pdf",
+    "suggested_label": "manuscript_notes",
+    "domain": "cement_concrete",
+    "language_hint": "en",
+    "license": "Public official source; copyright retained; candidate purpose requires review"
+  }
+]

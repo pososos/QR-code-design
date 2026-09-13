@@ -1,0 +1,41 @@
+[
+  {
+    "id": "quota-zh-sika-0",
+    "url": "https://twn.sika.com/dms/getdocument.get/9dfd3569-b770-4e54-9c6f-c5df316e298d/sikafume.pdf",
+    "allowed_hosts": [
+      "twn.sika.com"
+    ],
+    "max_depth": 0,
+    "link_pattern": "(?i)\\.pdf",
+    "suggested_label": "guidance",
+    "domain": "cement_concrete",
+    "language_hint": "zh",
+    "license": "Public manufacturer document; copyright retained"
+  },
+  {
+    "id": "quota-zh-sika-1",
+    "url": "https://twn.sika.com/zh/construction/52669/66175/sikashield-w1.html",
+    "allowed_hosts": [
+      "twn.sika.com"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf",
+    "suggested_label": "guidance",
+    "domain": "cement_concrete",
+    "language_hint": "zh",
+    "license": "Public manufacturer document; copyright retained"
+  },
+  {
+    "id": "quota-zh-sika-2",
+    "url": "https://twn.sika.com/zh/construction/52671/66188/78126/sikagard-5500.html",
+    "allowed_hosts": [
+      "twn.sika.com"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf",
+    "suggested_label": "guidance",
+    "domain": "cement_concrete",
+    "language_hint": "zh",
+    "license": "Public manufacturer document; copyright retained"
+  }
+]

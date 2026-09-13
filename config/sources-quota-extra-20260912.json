@@ -1,0 +1,74 @@
+[
+  {
+    "id": "quota-heidelberg",
+    "url": "https://www.heidelbergmaterials.com/en/company/annual-reports-sustainability-reports",
+    "allowed_hosts": [
+      "www.heidelbergmaterials.com"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf",
+    "suggested_label": "industry",
+    "language_hint": "en",
+    "license": "Public access; copyright retained"
+  },
+  {
+    "id": "quota-abri-38402",
+    "url": "https://www.abri.gov.tw/News_Content_Table.aspx?n=807&s=38402",
+    "allowed_hosts": [
+      "www.abri.gov.tw"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|Download",
+    "suggested_label": "research",
+    "language_hint": "zh",
+    "license": "Public access; verify individual rights"
+  },
+  {
+    "id": "quota-abri-39497",
+    "url": "https://www.abri.gov.tw/News_Content_Table.aspx?n=807&s=39497",
+    "allowed_hosts": [
+      "www.abri.gov.tw"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|Download",
+    "suggested_label": "research",
+    "language_hint": "zh",
+    "license": "Public access; verify individual rights"
+  },
+  {
+    "id": "quota-abri-38969",
+    "url": "https://www.abri.gov.tw/News_Content_Table.aspx?n=807&s=38969",
+    "allowed_hosts": [
+      "www.abri.gov.tw"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|Download",
+    "suggested_label": "research",
+    "language_hint": "zh",
+    "license": "Public access; verify individual rights"
+  },
+  {
+    "id": "quota-abri-38028",
+    "url": "https://www.abri.gov.tw/News_Content_Table.aspx?n=807&s=38028",
+    "allowed_hosts": [
+      "www.abri.gov.tw"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|Download",
+    "suggested_label": "research",
+    "language_hint": "zh",
+    "license": "Public access; verify individual rights"
+  },
+  {
+    "id": "quota-abri-38814",
+    "url": "https://www.abri.gov.tw/News_Content_Table.aspx?n=807&s=38814",
+    "allowed_hosts": [
+      "www.abri.gov.tw"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)\\.pdf|Download",
+    "suggested_label": "research",
+    "language_hint": "zh",
+    "license": "Public access; verify individual rights"
+  }
+]

@@ -1,0 +1,46 @@
+[
+  {
+    "id": "tcc-sds-zh",
+    "url": "https://media.taiwancement.com/web_tcc/comm/pdf/認證文件/台泥%20安全資料表.pdf",
+    "suggested_label": "safety",
+    "language_hint": "zh-Hant",
+    "allowed_hosts": [
+      "media.taiwancement.com"
+    ],
+    "max_depth": 0,
+    "license": "Public access; verify document-specific reuse terms"
+  },
+  {
+    "id": "nlma-mortar-zh",
+    "url": "https://www.nlma.gov.tw/uploads/files/b94fbe336143e3e5368a18e7597b46b4.pdf",
+    "suggested_label": "guidance",
+    "language_hint": "zh-Hant",
+    "allowed_hosts": [
+      "www.nlma.gov.tw"
+    ],
+    "max_depth": 0,
+    "license": "Public access; verify document-specific reuse terms"
+  },
+  {
+    "id": "abri-shrinkage-zh",
+    "url": "https://www.abri.gov.tw/News_Content_Table.aspx?n=807&s=39202",
+    "suggested_label": "research",
+    "language_hint": "zh-Hant",
+    "allowed_hosts": [
+      "www.abri.gov.tw"
+    ],
+    "max_depth": 0,
+    "license": "Public access; verify document-specific reuse terms"
+  },
+  {
+    "id": "nist-drying-en",
+    "url": "https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=860282",
+    "suggested_label": "research",
+    "language_hint": "en",
+    "allowed_hosts": [
+      "tsapps.nist.gov"
+    ],
+    "max_depth": 0,
+    "license": "Public access; verify document-specific reuse terms"
+  }
+]

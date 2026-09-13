@@ -1,0 +1,15 @@
+[
+  {
+    "id": "quota-fourth-chc2023",
+    "url": "https://www.chc.com.tw/en/pdf/2023CSR.pdf",
+    "allowed_hosts": [
+      "www.chc.com.tw"
+    ],
+    "max_depth": 0,
+    "suggested_label": "industry",
+    "language_hint": "en",
+    "domain": "cement_concrete",
+    "license": "Public report; copyright retained",
+    "verified_content_length": 35895512
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "id": "quota-ca-sds",
+    "url": "https://www.cementaustralia.com.au/safety-data-sheets",
+    "allowed_hosts": [
+      "www.cementaustralia.com.au"
+    ],
+    "suggested_label": "safety",
+    "language_hint": "en",
+    "max_depth": 2,
+    "link_pattern": "(?i)\\.pdf|safety.data.sheet",
+    "license": "Public access; copyright retained; local evaluation only"
+  },
+  {
+    "id": "quota-boral-sds",
+    "url": "https://www.boral.com.au/sds-sheets",
+    "allowed_hosts": [
+      "www.boral.com.au"
+    ],
+    "suggested_label": "safety",
+    "language_hint": "en",
+    "max_depth": 2,
+    "link_pattern": "(?i)\\.pdf|safety.data.sheet",
+    "license": "Public access; copyright retained; local evaluation only"
+  },
+  {
+    "id": "quota-sunstate",
+    "url": "https://sunstatecement.com.au/publications/",
+    "allowed_hosts": [
+      "sunstatecement.com.au",
+      "www.sunstatecement.com.au"
+    ],
+    "suggested_label": "safety",
+    "language_hint": "en",
+    "max_depth": 2,
+    "link_pattern": "(?i)\\.pdf|safety.data.sheet",
+    "license": "Public access; copyright retained; local evaluation only"
+  },
+  {
+    "id": "quota-acc-esg",
+    "url": "https://esg.acc.com.tw/resource_center/esg_report",
+    "allowed_hosts": [
+      "esg.acc.com.tw"
+    ],
+    "suggested_label": "industry",
+    "language_hint": "zh",
+    "max_depth": 2,
+    "link_pattern": "(?i)\\.pdf|safety.data.sheet",
+    "license": "Public access; copyright retained; local evaluation only"
+  }
+]

@@ -1,0 +1,77 @@
+{
+  "version": "cement-graph-v1-draft",
+  "status": "design_contract_not_runtime_validator",
+  "node_types": [
+    "DocumentVersion",
+    "Evidence",
+    "Entity",
+    "Event",
+    "Condition",
+    "Outcome",
+    "Claim",
+    "Tag"
+  ],
+  "relation_types": [
+    "describes",
+    "participates_in",
+    "occurs_under",
+    "has_outcome",
+    "claims_cause",
+    "supports",
+    "contradicts",
+    "concludes_from",
+    "precedes",
+    "same_event_candidate",
+    "tagged_with",
+    "broader",
+    "related"
+  ],
+  "required_evidence_fields": [
+    "document_id",
+    "text_hash",
+    "page",
+    "start_char",
+    "end_char",
+    "quote"
+  ],
+  "required_relation_fields": [
+    "id",
+    "from_id",
+    "to_id",
+    "relation_type",
+    "evidence_ids",
+    "origin",
+    "assertion_mode",
+    "review_status",
+    "extractor_version",
+    "conditions",
+    "polarity"
+  ],
+  "assertion_modes": [
+    "explicit_in_source",
+    "model_inference",
+    "human_interpretation"
+  ],
+  "review_states": [
+    "pending",
+    "accepted",
+    "rejected",
+    "stale"
+  ],
+  "tag_fields": [
+    "id",
+    "pref_labels",
+    "aliases",
+    "definition",
+    "broader_ids",
+    "related_ids",
+    "version",
+    "status"
+  ],
+  "rules": [
+    "Every semantic relation must cite evidence; tag vocabulary links instead cite curator provenance.",
+    "Temporal precedence does not establish causality.",
+    "New tags are pending until reviewed; multilingual aliases do not automatically merge events.",
+    "Raw source text hash changes invalidate dependent evidence and relationships."
+  ]
+}

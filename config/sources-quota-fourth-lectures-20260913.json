@@ -1,0 +1,17 @@
+[
+  {
+    "id": "quota-fourth-mit-concrete-notes",
+    "url": "https://ocw.mit.edu/courses/1-054-mechanics-and-design-of-concrete-structures-spring-2004/pages/lecture-notes/",
+    "allowed_hosts": [
+      "ocw.mit.edu"
+    ],
+    "max_depth": 2,
+    "link_pattern": "(?i)/resources/|\\.pdf",
+    "suggested_label": "manuscript_notes",
+    "language_hint": "en",
+    "domain": "cement_concrete",
+    "subtype": "course_handout",
+    "document_family": "MIT-1.054-spring2004",
+    "license": "MIT OCW terms; verify file-specific exceptions"
+  }
+]

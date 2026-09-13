@@ -1,0 +1,30 @@
+{
+  "quota-fourth-princeton-notes": {
+    "subtype": "lecture_slides",
+    "subtype_zh": "課堂投影片",
+    "domain": "cement_concrete",
+    "document_family": "Princeton-CIV102",
+    "provenance": "Official course PDF; content inspected"
+  },
+  "quota-mit-soil-notes": {
+    "subtype": "handwritten_course_notes",
+    "subtype_zh": "手寫課堂筆記",
+    "domain": "civil_geotechnical",
+    "document_family": "MIT-1.361-fall2004",
+    "provenance": "Official lecture-notes catalog; OCR pending"
+  },
+  "quota-fourth-basrah-notes": {
+    "subtype": "handwritten_course_notes",
+    "subtype_zh": "手寫課堂筆記",
+    "domain": "civil_structural",
+    "document_family": "Basrah-3048",
+    "provenance": "Official university PDF; OCR pending"
+  },
+  "quota-fourth-mit-concrete-notes": {
+    "subtype": "course_handout",
+    "subtype_zh": "課堂講義",
+    "domain": "cement_concrete",
+    "document_family": "MIT-1.054-spring2004",
+    "provenance": "Official lecture-notes catalog; candidate metadata, not human label"
+  }
+}

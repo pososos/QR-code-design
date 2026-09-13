@@ -1,0 +1,15 @@
+[
+  {
+    "id": "quota-humboldt-cement",
+    "url": "https://www.humboldtmfg.com/literature/cement",
+    "allowed_hosts": [
+      "www.humboldtmfg.com"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)/manuals/.*\\.pdf",
+    "suggested_label": "manual",
+    "language_hint": "en",
+    "domain": "cement_concrete",
+    "license": "Public manufacturer documentation; copyright retained"
+  }
+]

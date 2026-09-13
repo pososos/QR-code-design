@@ -1,0 +1,14 @@
+[
+  {
+    "id": "quota-fourth-gilson-pdf",
+    "url": "https://www.globalgilson.com/Content/Images/uploaded/pdf/product-manuals/manual-auto-compression-machines.pdf",
+    "allowed_hosts": [
+      "www.globalgilson.com"
+    ],
+    "max_depth": 0,
+    "suggested_label": "manual",
+    "language_hint": "en",
+    "domain": "cement_concrete",
+    "license": "Public manufacturer manual; copyright retained"
+  }
+]

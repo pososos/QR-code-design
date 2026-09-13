@@ -1,0 +1,29 @@
+[
+  {
+    "id": "quota-humboldt-manuals",
+    "url": "https://www.humboldtmfg.com/literature/concrete/",
+    "allowed_hosts": [
+      "www.humboldtmfg.com"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)manual|Product Manual",
+    "suggested_label": "manual",
+    "language_hint": "en",
+    "domain": "cement_concrete",
+    "license": "Public manufacturer documentation; copyright retained"
+  },
+  {
+    "id": "quota-stalite-tests",
+    "url": "https://stalite.com/resources/",
+    "allowed_hosts": [
+      "stalite.com",
+      "www.stalite.com"
+    ],
+    "max_depth": 1,
+    "link_pattern": "(?i)test.*report|report.*test",
+    "suggested_label": "experiment_log",
+    "language_hint": "en",
+    "domain": "civil_building_materials",
+    "license": "Public access; verify individual report rights"
+  }
+]
