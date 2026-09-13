@@ -47,15 +47,46 @@ $('fileInput').addEventListener('change',async()=>{
  finally{if(task)await task.destroy();}
 });
 
-let modelAvailable=false;
-fetch('api/model-status').then(r=>{if(!r.ok)throw Error();return r.json()}).then(status=>{
- modelAvailable=status.available===true;$('runModel').disabled=!modelAvailable;
- for(const option of $('modelMethod').options){if(option.value==='classifier')option.disabled=!status.classifier;if(option.value==='retrieval_rerank')option.disabled=!status.reranker}
- $('modelStatus').textContent='本網站已連接真實模型服務；首次載入模型可能較慢。';
-}).catch(()=>{$('modelStatus').textContent='此 GitHub Pages 網站沒有模型運算服務。請使用本機模型展示服務；公開雲端入口待部署。';});
+const HF_SPACE_URL='https://you-lin-qr-code-design.hf.space';
+let modelAvailable=false,modelBackend=null;
+async function callSpace(text,useReranker){
+ const started=performance.now();
+ const post=await fetch(HF_SPACE_URL+'/gradio_api/call/predict',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({data:[text,useReranker]})});
+ if(!post.ok)throw Error('Space 服務暫時無法使用（HTTP '+post.status+'）。');
+ const {event_id}=await post.json();
+ return await new Promise((resolve,reject)=>{
+  const es=new EventSource(HF_SPACE_URL+'/gradio_api/call/predict/'+event_id);
+  const timer=setTimeout(()=>{es.close();reject(Error('Space 回應逾時，請稍後再試（免費 GPU 額度可能正在排隊）。'))},60000);
+  es.addEventListener('complete',ev=>{clearTimeout(timer);es.close();
+   try{const [label,,traceText,note]=JSON.parse(ev.data);
+    resolve({displayLabel:routes[label]?.name||label,seconds:(performance.now()-started)/1000,
+              method:'hf-space:'+(useReranker?'retrieval_rerank':'retrieval'),traceLines:[traceText,note].filter(Boolean)})
+   }catch{reject(Error('無法解析 Space 回應。'))}});
+  es.addEventListener('error',()=>{clearTimeout(timer);es.close();reject(Error('Space 分析失敗，請確認輸入或稍後再試。'))});
+ });
+}
+(async()=>{
+ try{const r=await fetch('api/model-status');if(!r.ok)throw Error();const status=await r.json();
+  modelAvailable=status.available===true;modelBackend='local';$('runModel').disabled=!modelAvailable;
+  for(const option of $('modelMethod').options){if(option.value==='classifier')option.disabled=!status.classifier;if(option.value==='retrieval_rerank')option.disabled=!status.reranker}
+  $('modelStatus').textContent='本網站已連接本機模型服務；首次載入模型可能較慢。';return}catch{}
+ try{const r=await fetch(HF_SPACE_URL+'/config',{mode:'cors'});if(!r.ok)throw Error();
+  modelAvailable=true;modelBackend='space';
+  for(const option of $('modelMethod').options)option.disabled=option.value==='classifier';
+  if($('modelMethod').selectedOptions[0]?.disabled)$('modelMethod').value='retrieval';
+  $('runModel').disabled=false;
+  $('modelStatus').textContent='已連接公開 Hugging Face Space（ZeroGPU）真實模型服務；文字片段會傳送到該服務分析，服務不保存輸入。首次喚醒或排隊可能需數十秒，不含自訓分類選項。';return}catch{}
+ $('modelStatus').textContent='目前沒有可用的真實模型服務（本機與公開 Space 皆未連上）。';
+})();
 $('runModel').onclick=async()=>{
  const text=$('demoInput').value;if(!text.trim()){$('modelResult').textContent='請先上傳文件或輸入片段。';return}
- const method=$('modelMethod').value;$('runModel').disabled=true;$('modelResult').textContent='模型推論中…首次下載／載入可能需數分鐘。';
- try{const response=await fetch('api/infer',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text,method:method==='classifier'?'classifier':'retrieval',use_reranker:method==='retrieval_rerank'})});const result=await response.json();if(!response.ok)throw Error(result.detail||'推論失敗');$('modelResult').textContent='用途建議：'+(routes[result.label]?.name||'棄權／待確認')+'\n耗時：'+result.seconds.toFixed(2)+' 秒\n方法：'+result.method+'\n'+(result.trace||[]).map(t=>t.stage+' → '+t.method).join('\n')+'\n分數未校準，需人工確認。'+(text!==$('demoInput').value?'\n注意：輸入已變更，此結果對應執行時的片段。':'')}
- catch(e){$('modelResult').textContent=e.message}finally{$('runModel').disabled=!modelAvailable}
+ const method=$('modelMethod').value;$('runModel').disabled=true;
+ $('modelResult').textContent='模型推論中…'+(modelBackend==='space'?'公開 Space 首次喚醒或排隊可能需數十秒。':'首次下載／載入可能需數分鐘。');
+ try{
+  let result;
+  if(modelBackend==='space'){result=await callSpace(text,method==='retrieval_rerank')}
+  else{const response=await fetch('api/infer',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text,method:method==='classifier'?'classifier':'retrieval',use_reranker:method==='retrieval_rerank'})});const body=await response.json();if(!response.ok)throw Error(body.detail||'推論失敗');
+   result={displayLabel:routes[body.label]?.name||'棄權／待確認',seconds:body.seconds,method:body.method,traceLines:(body.trace||[]).map(t=>t.stage+' → '+t.method)}}
+  $('modelResult').textContent='用途建議：'+result.displayLabel+'\n耗時：'+result.seconds.toFixed(2)+' 秒\n方法：'+result.method+'\n'+result.traceLines.join('\n')+'\n分數未校準，需人工確認。'+(text!==$('demoInput').value?'\n注意：輸入已變更，此結果對應執行時的片段。':'')
+ }catch(e){$('modelResult').textContent=e.message}finally{$('runModel').disabled=!modelAvailable}
 };
