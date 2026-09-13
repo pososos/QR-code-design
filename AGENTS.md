@@ -355,3 +355,9 @@ node語法與無頭Edge實測通過：文字檔、真實文字PDF、截斷、非
 使用者要求展示頁加入未來方向與具體價值說明。`docs/index.html` 新增 `#roadmap` 區塊（導覽列同步加連結），說明本輪 LLM 標註＋四方法比較實際證明的工程能力（可稽核標註來源、同測試集頭對頭比較、誠實揭露重排負面結果），並明確列出「還缺什麼」——所有成效數字建立在 LLM 自身標籤或僅12筆人工標籤上，下一步關鍵是真實代表性資料與獨立測試集（D-007），不是模型或工程問題，無法用更多 LLM 標註繞過。同時把 project-note 區塊的清冊快照數字更新為當下實際值（513／414／59，含標籤來源分布）。僅新增/修改 HTML 文字與既有 CSS class，未加新前端相依套件；未改 JS 邏輯。已用瀏覽器讀取頁面文字與 console 確認無錯誤、無破版。
 
 瀏覽器實測 https://pososos.github.io/QR-code-design/ ：狀態列正確顯示「已連接公開 Hugging Face Space」；輸入 SDS 相關英文文字，retrieval 方法在 title 階段以 embedding score=0.901 命中 safety，耗時 4.66 秒；輸入水泥收縮開裂中文段落，retrieval_rerank 方法跑完 title→body embedding→body reranker 全部三階段，因 reranker score=-5.128 未達 ≥0 門檻正確棄權（即使 gap=1.719 已達標，兩條件需同時成立），耗時 11.56 秒。兩次呼叫皆為真實模型推論，非模擬。59 項既有 pytest 不受影響（僅改前端 JS／HTML 與 hf_space/ 部署檔）。
+
+## 全庫 parsed 文件標註完成（2026-09-14，同日修正方法一致性）
+
+使用者要求完成全部檔案標註並記錄判定邏輯。延續 D-010，對剩餘 163 份未標註 parsed 文件標註匯入，過程中找出並排除 2 個「內容優先於來源」例外（NIST軟體手冊判manual非research；FHWA-HRT研究中心報告判research非guidance）。全庫 414 份 `status=parsed` 文件現已 100% 有標籤（402份 `claude-sonnet-5-llm`＋12份既有 `pososos`，持續分開稽核，人工標籤未被覆寫）；另 99 份（out_of_scope／needs_ocr／needs_review／blocked_content）結構上無可用文字，不在「全部可標註文件」範圍內，已在 README 明確界定。
+
+**方法一致性修正**：這 163 份第一次匯入時只讀了約350字並以「同host前批已大量抽樣過」為由跳過逐份獨立閱讀，跟前 251 份「每份都讀1,200字」的深度不一致；被使用者指出「兩輪判定邏輯應一致」後，已用完全相同的1,200字深度重新逐份閱讀全部163份，確認原標籤全部維持不變（2個例外也再次確認成立），並更新資料庫note欄位使其準確反映實際方法，不是事後靜默改掉。全庫402份LLM標籤現在採用單一、一致的判斷深度。完整判定邏輯（七類判準、批次判定的唯一例外Hannover TXT及其驗證方法、已知限制）記錄在 [README_總體架構.md](README_總體架構.md) 對應章節。59項既有 pytest 通過，未動 cement/ 套件程式碼。
