@@ -323,3 +323,9 @@ node語法與無頭Edge實測通過：文字檔、真實文字PDF、截斷、非
 新增cement.evaluation：就緒檢查、21份未代填的來源分散開發審核包、排除訓練曝光／過期審核的舊holdout比較。有效比較僅3份，不能宣稱七類成效；有效train/test membership仍不足，2:8混合訓練未完成。
 新增cement.pipeline：已下載文件逐份解析→FTS→弱候選→圖譜候選，可選語意索引；狀態／日誌／resume、每步2次上限、600秒timeout與全資料根鎖。實跑22份解析＋3階段全部完成，修復search.reindex交易內巢狀連線鎖定。全庫513、parsed414、人工label12不變。此次未更新語意快取；不自動爬網或訓練。
 59項測試與瀏覽器模型試用通過。免費部署D-009：HF CPU Basic新建運算Space需付費方案；免費ZeroGPU需驗證email且帳號超過30天，僅Gradio，資格／移植尚待確認；Render512MB不推薦E5＋重排。詳細研究、路徑、命令、實測與限制見 [模型試用評估與自動流程](docs/模型試用評估與自動流程20260913.md)。保留根目錄不明來源的qr-code.svg未納入提交。
+
+## HF ZeroGPU Space 部署檔案（2026-09-13）
+
+使用者已自行建立 HF ZeroGPU Space，要求串接。新增 [hf_space/app.py](hf_space/app.py)：自包含 Gradio 版 cement/inference.py 檢索＋可選重排邏輯（不依賴本機 SQLite／cement 套件其餘部分，不暴露清冊或標註端點），`stages()`／`top()` 已用單元比對確認與 cement/staged_classification.py 逐字元一致，7 類描述已核對與 config/semantic-labels.json 完全相同（原稿 manuscript_notes 曾有改寫差異，已修正為逐字相同）。另有 [hf_space/requirements.txt](hf_space/requirements.txt)、[hf_space/README.md](hf_space/README.md)（含 Spaces YAML 前頭與推送步驟）。
+
+推送需使用者自己 `hf auth login` 或 git 推送，本輪未取得 token 也未代為登入。已用 `py_compile` 確認語法正確，因本機無 gradio/spaces/torch 無法端到端執行；核心邏輯已用單元測試驗證行為與既有程式一致。59 項既有 pytest 不受影響（未改動 cement/ 套件）。下一步待使用者提供實際部署後的 Space API 網址，才能把 docs/showcase.js 接上真正的公開推論端點。
