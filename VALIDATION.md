@@ -176,3 +176,10 @@ node語法與無頭Edge實測通過：文字檔、真實文字PDF、截斷、非
 ## 系統架構圖展示（2026-09-13）
 展示頁技術區新增明確架構：A公開GitHub Pages瀏覽器層、B本機JavaScript介面→HTTP/JSON→FastAPI→用途分類／雙路檢索／知識整理→SQLite及檔案儲存、C用途分類模型離線實驗。另畫CLI批次資料準備，標明非自動佇列、公開頁無本機API連線，圖譜使用SQLite並非另有圖資料庫。補上分類與檢索分離、人工證據關卡、新文件衍生資料更新的設計理由。保留可點選模組詳情與上傳體驗。此次為現有設計呈現，不改模型策略或後端。
 驗證：無頭Edge檢查架構分層、三個服務區塊、模組切換；1440／390px皆無水平溢出。手機架構截圖data/reports/system-architecture-mobile.png。未推送公開頁。
+
+
+## QR、真實模型試用與流程自動化（2026-09-13）
+使用者確認展示驗收完成。README加入docs/assets/showcase-qr.svg並推送5074716。新增獨立cement.demo_api（8023）與inference，僅提供有界文字推論、單請求鎖及靜態頁；真實自訓／E5／內容BGE皆實測HTTP200。公開GitHub Pages仍無模型運算，按鈕依同站能力啟用，送出前明示文字傳送。
+新增cement.evaluation：就緒檢查、21份未代填的來源分散開發審核包、排除訓練曝光／過期審核的舊holdout比較。有效比較僅3份，不能宣稱七類成效；有效train/test membership仍不足，2:8混合訓練未完成。
+新增cement.pipeline：已下載文件逐份解析→FTS→弱候選→圖譜候選，可選語意索引；狀態／日誌／resume、每步2次上限、600秒timeout與全資料根鎖。實跑22份解析＋3階段全部完成，修復search.reindex交易內巢狀連線鎖定。全庫513、parsed414、人工label12不變。此次未更新語意快取；不自動爬網或訓練。
+59項測試與瀏覽器模型試用通過。免費部署D-009：HF CPU Basic新建運算Space需付費方案；免費ZeroGPU需驗證email且帳號超過30天，僅Gradio，資格／移植尚待確認；Render512MB不推薦E5＋重排。詳細研究、路徑、命令、實測與限制見 [模型試用評估與自動流程](docs/模型試用評估與自動流程20260913.md)。保留根目錄不明來源的qr-code.svg未納入提交。

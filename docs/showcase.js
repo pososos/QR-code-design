@@ -46,3 +46,16 @@ $('fileInput').addEventListener('change',async()=>{
  }catch(e){if(revision===uploadRevision){$('fileStatus').textContent=e.name==='PasswordException'?'PDF 已加密，請改用未加密文件。':e.name==='InvalidPDFException'?'PDF 無法解析，請確認檔案未損毀。':e.message;}}
  finally{if(task)await task.destroy();}
 });
+
+let modelAvailable=false;
+fetch('api/model-status').then(r=>{if(!r.ok)throw Error();return r.json()}).then(status=>{
+ modelAvailable=status.available===true;$('runModel').disabled=!modelAvailable;
+ for(const option of $('modelMethod').options){if(option.value==='classifier')option.disabled=!status.classifier;if(option.value==='retrieval_rerank')option.disabled=!status.reranker}
+ $('modelStatus').textContent='本網站已連接真實模型服務；首次載入模型可能較慢。';
+}).catch(()=>{$('modelStatus').textContent='此 GitHub Pages 網站沒有模型運算服務。請使用本機模型展示服務；公開雲端入口待部署。';});
+$('runModel').onclick=async()=>{
+ const text=$('demoInput').value;if(!text.trim()){$('modelResult').textContent='請先上傳文件或輸入片段。';return}
+ const method=$('modelMethod').value;$('runModel').disabled=true;$('modelResult').textContent='模型推論中…首次下載／載入可能需數分鐘。';
+ try{const response=await fetch('api/infer',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text,method:method==='classifier'?'classifier':'retrieval',use_reranker:method==='retrieval_rerank'})});const result=await response.json();if(!response.ok)throw Error(result.detail||'推論失敗');$('modelResult').textContent='用途建議：'+(routes[result.label]?.name||'棄權／待確認')+'\n耗時：'+result.seconds.toFixed(2)+' 秒\n方法：'+result.method+'\n'+(result.trace||[]).map(t=>t.stage+' → '+t.method).join('\n')+'\n分數未校準，需人工確認。'+(text!==$('demoInput').value?'\n注意：輸入已變更，此結果對應執行時的片段。':'')}
+ catch(e){$('modelResult').textContent=e.message}finally{$('runModel').disabled=!modelAvailable}
+};

@@ -26,10 +26,11 @@ def schema(db):
 def reindex():
     """Index every parsed document regardless of label so purpose classification cannot become the only retrieval gate."""
     count = 0
+    documents = store.documents()  # Snapshot before acquiring the write transaction.
     with store.connect() as db:
         schema(db)
         db.execute('DELETE FROM document_text_fts')
-        for doc in store.documents():
+        for doc in documents:
             if doc['status'] != 'parsed' or not doc['text_path']:
                 continue
             db.execute('INSERT INTO document_text_fts(document_id, title, body) VALUES (?,?,?)',
