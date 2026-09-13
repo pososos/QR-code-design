@@ -8,3 +8,9 @@
 - [實測紀錄](VALIDATION.md)
 
 原 README 內容已按上述兩份文件拆分；本頁只保留導覽。
+
+## 掃碼體驗
+
+[![公開互動展示頁 QR Code](docs/assets/showcase-qr.svg)](https://pososos.github.io/QR-code-design/)
+
+[開啟互動展示頁](https://pososos.github.io/QR-code-design/) · 支援檔案讀取、分類示範與系統架構展示。
