@@ -205,7 +205,7 @@ API 每次預測重新載入本機 joblib；不接收上傳 pickle，勿載入�
 | PUT /api/documents/{doc_id}/label | JSON {"label":"research"} 或 null；未知文件 404、非法值 422 |
 | GET /api/documents/{doc_id}/text | 約 18,000 字元的首中尾文字預覽；未知文件 404 |
 | POST /api/predict | JSON {"text":"..."}，1–100000 字元；回 label、scores、review_required=true；無模型 409 |
-| GET /api/qr?url=... | HTTP(S) 網址最長 500 字元，回 SVG；不發出外部請求 |
+| GET /api/qr?url=... | HTTP(S) 網址最長 500 字元，回 SVG；不發出外部請求；管理頁固定傳 GitHub repo 網址（2026-09-13 起，見下方 QR 固定化說明），非本機網址 |
 | GET /api/search?q=...&limit= | FTS5 全文關鍵字搜尋，涵蓋全部 parsed 文件，不以 label 篩選；query 空白 400 |
 | POST /api/search/reindex | 從目前 parsed 文件重建索引；需在新增/重解析文件後手動呼叫 |
 | GET／PUT /api/documents/{doc_id}/policy | 處理政策（unset/fast_track/standard/deprioritized/excluded），須明確 set_by，不會由分類自動推定 |
@@ -508,3 +508,7 @@ API：`POST/GET /api/graph/candidate-relations`。本機實測：對既有 pendi
 技術債：`/api/documents`／`/api/search` 前端（管理頁）已接上分頁；`cement/train.py` 新增 `models/registry.json` 模型登錄與 `evaluation.json.calibration`（top-label 信心校準桶，樣本數過小時明確加註不是有效校準）；`/api/predict` 記錄延遲到 `prediction_log`，`GET /api/predict-log`／`GET /api/model-registry` 供查詢。
 
 一切節點／關係／tag／實體對齊皆為人工從已接受候選手動建立，不是自動 NLP／LLM 抽取；實體候選只是 [config/entity-gazetteer.json](config/entity-gazetteer.json) 小型詞表的規則命中，跨文件對齊需人工明確連結，字串相同不自動合併。54 項 pytest 通過（新增 10 項）。瀏覽器實測：語意索引對 392 份文件建置約 61 秒、查詢結果主題相關；管理頁分頁 513 份/11 頁正確；實體候選 281 筆，兩份不同文件的「NIST」候選連到同一實體後正確顯示「2 處提及、2 個文件版本」；節點分解＋正式關係＋tag broader 皆驗證成功；`/timeline` 正確分開顯示人工事件時間與抓取時間。過程中發現並修正一個真實前端 bug（實體連結後畫面更新順序寫反，導致新建實體不會立刻出現在其他候選的下拉選單）。詳見 [知識圖譜深化與語意檢索](docs/知識圖譜深化與語意檢索20260913.md)，含完整限制聲明。
+
+## QR 固定指向 GitHub repo（2026-09-13）
+
+使用者要求 QR「固定狀態、非本機展示」；原本 QR 內容跟隨開頁面當下的網址（`location.origin`），同機用 localhost、跨裝置要用區網 IP，換機器換網路會不同，不符合固定要求。已改為 [cement/static/index.html](cement/static/index.html) 與 `GET /api/qr` 預設值都硬編碼 `https://github.com/pososos/QR-code-design`（公開 repo，零風險，不涉及本機服務曝露）；管理頁 QR 圖旁加「掃描開啟 GitHub 專案頁」文字，圖片本身也包成超連結。取捨：QR 不再直接帶到本機互動介面，只帶到原始碼與文件；本機服務仍無登入／權限保護，不適合公開部署互動版本。詳見 [QR Demo 腳本](docs/QR_Demo腳本20260913.md) 的「QR 現在指向哪裡」。54 項 pytest 仍全數通過。
